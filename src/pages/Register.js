@@ -90,12 +90,33 @@ export default function LoginPage() {
                 margin="normal"
                 required
                 fullWidth
+                id="name"
+                label="Nome Completo"
+                name="name"
+                autoComplete="name"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="CPF"
+                label="CPF"
+                name="CPF"
+                autoComplete="CPF"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
                 id="email"
                 label="Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
               />
+
               <TextField
                 margin="normal"
                 required
@@ -105,9 +126,18 @@ export default function LoginPage() {
                 type="password"
                 id="password"
               />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Confirme sua senha"
+                type="password"
+                id="password"
+              />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Lembre-me"
+                label="Remember me"
               />
               <Button
                 type="submit"
@@ -121,12 +151,12 @@ export default function LoginPage() {
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
-                    Esqueceu sua senha?
+                    Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/register" variant="body2">
-                    Registre-se
+                  <Link href="#" variant="body2">
+                    {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
