@@ -1,6 +1,8 @@
 import React from 'react'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import DashBoard from './pages/DashBoard'
+import Add from './pages/Add'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { ThemeProvider } from '@material-ui/core/styles'
@@ -20,7 +22,19 @@ export default function App() {
             <Route path="/register">
               <Register />
             </Route>
+            <Route path="/dash">
+              <DashBoard />
+            </Route>
+            <Route path="/add_compra">
+              <Add />
+            </Route>
+            <Route path="/update_lista">
+              <DashBoard />
+            </Route>
             <Route path="/">
+              <Login />
+            </Route>
+            <Route path="*">
               <Login />
             </Route>
           </Switch>
