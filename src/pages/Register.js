@@ -165,6 +165,7 @@ export default function LoginPage() {
               onChange={handleOnChangeName}
               error={errors.name}
               helperText={errors.name && 'Nome Inválido'}
+              data-test="name"
             />
             <TextField
               margin="normal"
@@ -182,6 +183,7 @@ export default function LoginPage() {
               }}
               error={errors.cpf}
               helperText={errors.cpf && 'CPF inválido'}
+              data-test="CPF"
             />
 
             <TextField
@@ -197,6 +199,7 @@ export default function LoginPage() {
               onChange={handleOnChangeEmail}
               error={errors.email}
               helperText={errors.email && 'Email inválido'}
+              data-test="email"
             />
 
             <TextField
@@ -212,6 +215,7 @@ export default function LoginPage() {
               onChange={handleOnChangePassword}
               error={errors.password}
               helperText={errors.password && 'Password tem que ser iguais'}
+              data-test="password"
             />
             <TextField
               margin="normal"
@@ -228,6 +232,7 @@ export default function LoginPage() {
               helperText={
                 errors.confirmPassword && 'Password tem que ser iguais'
               }
+              data-test="confirmPassword"
             />
 
             <Button
@@ -236,11 +241,12 @@ export default function LoginPage() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              data-test="submitButton"
             >
               Entrar
             </Button>
             <Grid container justify="flex-end">
-              <Link href="/" variant="body2">
+              <Link href="/" variant="body2" data-test="loginLink">
                 Já é cadastrado?
               </Link>
             </Grid>

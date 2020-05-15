@@ -140,6 +140,7 @@ export default function LoginPage() {
               color="secondary"
               value={email}
               onChange={handleOnChangeEmail}
+              data-test="email"
             />
             <TextField
               margin="normal"
@@ -153,6 +154,7 @@ export default function LoginPage() {
               color="secondary"
               value={password}
               onChange={handleOnChangePassword}
+              data-test="password"
             />
             <FormControlLabel
               control={
@@ -161,6 +163,7 @@ export default function LoginPage() {
                   color="primary"
                   onChange={handleOnClickChecked}
                   checked={checked}
+                  data-test="rememberMe"
                 />
               }
               label="Lembre-me"
@@ -171,11 +174,12 @@ export default function LoginPage() {
               variant="contained"
               color="secondary"
               className={classes.submit}
+              data-test="submitButton"
             >
               Entrar
             </Button>
             <Grid container justify="flex-end">
-              <Link href="/register" variant="body2">
+              <Link href="/register" variant="body2" data-test="registerLink">
                 Registre-se
               </Link>
             </Grid>
