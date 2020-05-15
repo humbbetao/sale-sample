@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Header from '../../components/Header'
+import { useDispatch } from 'react-redux'
+import { addBuy } from '../../store/reducers/buy/actionCreators'
 const useStyles = makeStyles((theme) => {
   console.log(theme)
   return {
@@ -56,12 +58,19 @@ export default function LoginPage() {
   const [code, setCode] = useState('')
   const [value, setValue] = useState('')
   const [date, setDate] = useState('')
+  const dispatch = useDispatch()
   const handleOnSubmit = useCallback(
     (event) => {
       event.preventDefault()
       console.log(code, value, date)
+      const isFormValidated = true
+      if (isFormValidated) {
+        dispatch(addBuy(code, value, date))
+      } else {
+        console.log('ops deu erro')
+      }
     },
-    [code, value, date]
+    [code, value, date, dispatch]
   )
   const handleOnChangeCode = useCallback((event) => {
     const code = event.target.value
