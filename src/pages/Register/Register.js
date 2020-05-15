@@ -9,7 +9,6 @@ import Avatar from '@material-ui/core/Avatar'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import styled from 'styled-components'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
 import MaskedInput from 'react-text-mask'
 
 const useStyles = makeStyles((theme) => {
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => {
     root: {
       width: '100vw',
       height: '100vh',
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.primary.main,
     },
     loginContainer: {
       backgroundColor: theme.palette.common.white,
@@ -25,8 +24,11 @@ const useStyles = makeStyles((theme) => {
       borderRadius: '8px',
       display: 'flex',
       justifyContent: 'center',
+      alignItems: 'center',
+      direction: 'column',
       [theme.breakpoints.down('md')]: {
         margin: '0 16px',
+        direction: 'row',
       },
     },
     paper: {
@@ -83,7 +85,6 @@ function CPFMaskCustom(props) {
 
 export default function LoginPage() {
   const classes = useStyles()
-  const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
 
   const [name, setName] = useState('')
   const [cpf, setCpf] = useState('')
@@ -130,15 +131,7 @@ export default function LoginPage() {
       alignItems="center"
       classes={{ root: classes.root }}
     >
-      <Grid
-        item
-        xs="12"
-        sm="6"
-        direction={matches ? 'row' : 'column'}
-        justify="center"
-        alignItems="center"
-        classes={{ root: classes.loginContainer }}
-      >
+      <Grid item xs={12} sm={6} classes={{ root: classes.loginContainer }}>
         <Container maxWidth="xs" classes={{ root: classes.img }}>
           <Img src={Logo} />
         </Container>

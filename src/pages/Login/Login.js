@@ -11,7 +11,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import styled from 'styled-components'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+
 const useStyles = makeStyles((theme) => {
   return {
     root: {
@@ -25,8 +25,11 @@ const useStyles = makeStyles((theme) => {
       borderRadius: '8px',
       display: 'flex',
       justifyContent: 'center',
+      alignItems: 'center',
+      direction: 'column',
       [theme.breakpoints.down('md')]: {
         margin: '0 16px',
+        direction: 'row',
       },
     },
     paper: {
@@ -62,7 +65,6 @@ const Img = styled.img`
 
 export default function LoginPage() {
   const classes = useStyles()
-  const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [checked, setChecked] = useState(false)
@@ -106,15 +108,7 @@ export default function LoginPage() {
       alignItems="center"
       classes={{ root: classes.root }}
     >
-      <Grid
-        item
-        xs="12"
-        sm="6"
-        direction={matches ? 'row' : 'column'}
-        justify="center"
-        alignItems="center"
-        classes={{ root: classes.loginContainer }}
-      >
+      <Grid item xs={12} sm={6} classes={{ root: classes.loginContainer }}>
         <Container maxWidth="xs" classes={{ root: classes.img }}>
           <Img src={Logo} />
         </Container>

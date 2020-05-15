@@ -5,7 +5,7 @@ import { ThemeProvider as ThemeStyled } from 'styled-components'
 import GlobalStyle, {
   themeStyled,
   themeMaterialUi,
-} from './components/GlobalStyle'
+} from '../components/GlobalStyle'
 
 const AllTheProviders = ({ children }) => {
   return (
