@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
@@ -9,39 +9,42 @@ import Header from '../../components/Header'
 const useStyles = makeStyles((theme) => {
   console.log(theme)
   return {
-    root: {
+    loginContainer: {
+      padding: '16px',
       width: '100vw',
       height: '100vh',
-      backgroundColor: theme.palette.primary.main,
-    },
-    loginContainer: {
       backgroundColor: theme.palette.common.white,
-      padding: '16px',
-      borderRadius: '8px',
-      display: 'flex',
-      justifyContent: 'center',
     },
     paper: {
       marginTop: theme.spacing(8),
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
-    },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
     },
     form: {
       width: '100%',
-      // Fix IE 11 issue.
-      marginTop: theme.spacing(1),
+      height: '100vh',
+      marginTop: theme.spacing(12),
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
-    img: {
+
+    actions: {
+      flexDirection: 'column',
       display: 'flex',
       justifyContent: 'center',
+      '& > *': {
+        margin: theme.spacing(1, 0),
+      },
+
+      [theme.breakpoints.up('md')]: {
+        flexDirection: 'row',
+        margin: theme.spacing(3),
+        '& > *': {
+          width: '200px',
+          margin: theme.spacing(1),
+        },
+      },
     },
   }
 })
@@ -49,15 +52,36 @@ const useStyles = makeStyles((theme) => {
 export default function LoginPage() {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
+  const actionButtonsInFullWidth = useMemo(() => !matches, [matches])
+  const [code, setCode] = useState('')
+  const [value, setValue] = useState('')
+  const [date, setDate] = useState('')
+  const handleOnSubmit = useCallback(
+    (event) => {
+      event.preventDefault()
+      console.log(code, value, date)
+    },
+    [code, value, date]
+  )
+  const handleOnChangeCode = useCallback((event) => {
+    const code = event.target.value
+    setCode(code)
+  }, [])
+  const handleOnChangeValue = useCallback((event) => {
+    const value = event.target.value
+    setValue(value)
+  }, [])
+  const handleOnChangeDate = useCallback((event) => {
+    const date = event.target.value
+    setDate(date)
+  }, [])
 
   return (
     <React.Fragment>
       <Header />
 
       <Grid
-        item
-        xs="12"
-        sm="8"
+        container
         direction={matches ? 'row' : 'column'}
         justify="center"
         alignItems="center"
@@ -65,7 +89,7 @@ export default function LoginPage() {
       >
         <Container maxWidth="md">
           <div className={classes.paper}>
-            <form className={classes.form} noValidate>
+            <form className={classes.form} noValidate onSubmit={handleOnSubmit}>
               <TextField
                 margin="normal"
                 required
@@ -75,6 +99,8 @@ export default function LoginPage() {
                 name="Codigo"
                 autoComplete="Codigo"
                 autoFocus
+                value={code}
+                onChange={handleOnChangeCode}
               />
               <TextField
                 margin="normal"
@@ -84,7 +110,8 @@ export default function LoginPage() {
                 label="Date"
                 name="Date"
                 autoComplete="Date"
-                autoFocus
+                value={date}
+                onChange={handleOnChangeDate}
               />
               <TextField
                 margin="normal"
@@ -94,18 +121,35 @@ export default function LoginPage() {
                 label="Valor"
                 name="Valor"
                 autoComplete="Valor"
-                autoFocus
+                value={value}
+                onChange={handleOnChangeValue}
               />
-
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
+              <Grid
+                container
+                direction="column"
+                justify="flex-end"
+                alignItems="center"
+                className={classes.actions}
               >
-                Entrar
-              </Button>
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  fullWidth={actionButtonsInFullWidth}
+                  color="primary"
+                  component="a"
+                  href="/dash"
+                >
+                  Cancelar
+                </Button>
+                <Button
+                  type="submit"
+                  fullWidth={actionButtonsInFullWidth}
+                  variant="contained"
+                  color="primary"
+                >
+                  Adicionar
+                </Button>
+              </Grid>
             </form>
           </div>
         </Container>

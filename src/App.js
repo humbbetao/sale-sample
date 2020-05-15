@@ -27,11 +27,8 @@ export default function App() {
               <Route path="/dash">
                 <DashBoard />
               </Route>
-              <Route path="/add_buy">
+              <Route path={['/add_buy', '/edit_buy/:code']}>
                 <FormBuy />
-              </Route>
-              <Route path="/edit_buy/:code">
-                <DashBoard />
               </Route>
               <Route path="/">
                 <Login />

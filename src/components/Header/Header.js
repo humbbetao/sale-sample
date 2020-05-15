@@ -4,11 +4,10 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-// import Badge from '@material-ui/core/Badge'
 import MenuItem from '@material-ui/core/MenuItem'
 import AccountCircle from '@material-ui/icons/AccountCircle'
-import MailIcon from '@material-ui/icons/Mail'
-import NotificationsIcon from '@material-ui/icons/Notifications'
+import Add from '@material-ui/icons/Add'
+import Home from '@material-ui/icons/Home'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const useStyles = makeStyles((theme) => ({
@@ -104,24 +103,22 @@ export default function Header() {
             <div className={classes.grow} />
 
             <div className={classes.sectionDesktop}>
-              <MenuItem component="a" href="/buy">
+              <MenuItem component="a" href="/dash">
+                <IconButton aria-label="show 4 new mails" color="inherit">
+                  {/* <Badge badgeContent={4} color="secondary"> */}
+                  <Home />
+                  {/* </Badge> */}
+                </IconButton>
+                <p>Início</p>
+              </MenuItem>
+
+              <MenuItem component="a" href="/add_buy">
                 <IconButton aria-label="show 4 new mails" color="inherit">
                   {/* <Badge badgeContent={} color="secondary"> */}
-                  <MailIcon />
+                  <Add />
                   {/* </Badge> */}
                 </IconButton>
-                <p>Compras</p>
-              </MenuItem>
-              <MenuItem component="a" href="/about">
-                <IconButton
-                  aria-label="show 11 new notifications"
-                  color="inherit"
-                >
-                  {/* <Badge badgeContent={11} color="secondary"> */}
-                  <NotificationsIcon />
-                  {/* </Badge> */}
-                </IconButton>
-                <p>Sobre</p>
+                <p>Nova Compra</p>
               </MenuItem>
               <MenuItem>
                 <IconButton
@@ -165,21 +162,21 @@ export default function Header() {
 
       <AppBar position="fixed" classes={{ root: classes.appBarBottom }}>
         <Toolbar classes={{ root: classes.appBarBottom }}>
-          <MenuItem component="a" href="/buy">
+          <MenuItem component="a" href="/add_buy">
             <IconButton aria-label="show 4 new mails" color="inherit">
               {/* <Badge badgeContent={4} color="secondary"> */}
-              <MailIcon />
+              <Home />
               {/* </Badge> */}
             </IconButton>
-            <p>Compras</p>
+            <p>Início</p>
           </MenuItem>
-          <MenuItem component="a" href="/about">
-            <IconButton aria-label="show 11 new notifications" color="inherit">
-              {/* <Badge badgeContent={11} color="secondary"> */}
-              <NotificationsIcon />
+          <MenuItem component="a" href="/add_buy">
+            <IconButton aria-label="show 4 new mails" color="inherit">
+              {/* <Badge badgeContent={4} color="secondary"> */}
+              <Add />
               {/* </Badge> */}
             </IconButton>
-            <p>Sobre</p>
+            <p>Nova Compra</p>
           </MenuItem>
         </Toolbar>
       </AppBar>
