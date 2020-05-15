@@ -1,21 +1,44 @@
-import { fireEvent, screen } from '@testing-library/react'
 import React from 'react'
-import { render } from '../../../utils/test-utils'
+import { shallow, mount } from 'enzyme'
 import Login from '../Login'
-
 describe('Login', () => {
-  it('fill the platform', () => {
-    const { asFragment } = render(<Login />)
-    const firstRender = asFragment()
+  it('should render the Login page correctly', () => {
+    let wrapper = shallow(<Login />)
 
-    fireEvent.change(screen.getByLabelText('data-test="email"'), {
-      target: { value: 'joao_das_neves@gmail.com' },
-    })
-    fireEvent.change(screen.getByLabelText(/password/i), {
-      target: { value: 'teste123' },
-    })
-    fireEvent.click(screen.getByText(/submit/i))
+    expect(wrapper).toMatchSnapshot()
+    expect(wrapper).toHaveLength(1)
+  })
+  it('should have email after type correctly', () => {
+    const wrapper = mount(<Login />)
 
-    expect(firstRender).toMatchDiffSnapshot(asFragment())
+    const email = 'joa@gmail.com'
+    const event = { target: { name: 'name', value: email } }
+    wrapper.find('[data-test="email"] input').simulate('change', event)
+    expect(wrapper.find('[data-test="email"] input').props().value).toEqual(
+      email
+    )
+  })
+  it('should have password after type correctly', () => {
+    const wrapper = mount(<Login />)
+
+    const password = 'password'
+    const event = { target: { name: 'password', value: password } }
+    wrapper.find('[data-test="password"] input').simulate('change', event)
+    expect(wrapper.find('[data-test="password"] input').props().value).toEqual(
+      password
+    )
+  })
+
+  it('should check be ckecked after click on it', () => {
+    const wrapper = mount(<Login />)
+
+    const event = { target: { checked: true } }
+    expect(
+      wrapper.find('[data-test="rememberMe"] input').props().checked
+    ).toBeFalsy()
+    wrapper.find('[data-test="rememberMe"] input').simulate('change', event)
+    expect(
+      wrapper.find('[data-test="rememberMe"] input').props().checked
+    ).toBeTruthy()
   })
 })
