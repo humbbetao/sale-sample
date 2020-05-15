@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
@@ -6,19 +6,18 @@ import Typography from '@material-ui/core/Typography'
 import Logo from '../assets/o-boticario-logo.png'
 import { makeStyles } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import styled from 'styled-components'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import MaskedInput from 'react-text-mask'
+
 const useStyles = makeStyles((theme) => {
-  console.log(theme)
   return {
     root: {
       width: '100vw',
       height: '100vh',
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.secondary.main,
     },
     loginContainer: {
       backgroundColor: theme.palette.common.white,
@@ -26,19 +25,25 @@ const useStyles = makeStyles((theme) => {
       borderRadius: '8px',
       display: 'flex',
       justifyContent: 'center',
+      [theme.breakpoints.down('md')]: {
+        margin: '0 16px',
+      },
     },
     paper: {
-      marginTop: theme.spacing(8),
+      margin: `${theme.spacing(2)}px 0 `,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      [theme.breakpoints.down('md')]: {
+        margin: `${theme.spacing(8)}px 0 `,
+      },
     },
     avatar: {
       margin: theme.spacing(1),
       backgroundColor: theme.palette.secondary.main,
     },
     form: {
-      width: '100%', // Fix IE 11 issue.
+      width: '100%',
       marginTop: theme.spacing(1),
     },
     submit: {
@@ -55,9 +60,67 @@ const Img = styled.img`
   width: 50%;
 `
 
+const cpfRegex = [
+  /\d/,
+  /\d/,
+  /\d/,
+  '.',
+  /\d/,
+  /\d/,
+  /\d/,
+  '.',
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+]
+function CPFMaskCustom(props) {
+  const { inputRef, ...other } = props
+  return <MaskedInput {...other} ref={inputRef} mask={cpfRegex} />
+}
+
 export default function LoginPage() {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
+
+  const [name, setName] = useState('')
+  const [cpf, setCpf] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  // const [errors, setErrors] = useState({})
+  const errors = {}
+
+  const handleOnChangeEmail = useCallback((event) => {
+    const email = event.target.value
+    setEmail(email)
+  }, [])
+
+  const handleOnChangePassword = useCallback((event) => {
+    const password = event.target.value
+    setPassword(password)
+  }, [])
+
+  const handleOnChangeName = useCallback((event) => {
+    const name = event.target.value
+    setName(name)
+  }, [])
+
+  const handleOnChangeCpf = useCallback((event) => {
+    const cpf = event.target.value
+    setCpf(cpf)
+  }, [])
+
+  const handleOnChangeConfirmPassword = useCallback((event) => {
+    const confirmPassword = event.target.value
+    setConfirmPassword(confirmPassword)
+  }, [])
+
+  const handleOnClickOnSubmit = (event) => {
+    event.stopPropagation()
+  }
 
   return (
     <Grid
@@ -79,89 +142,109 @@ export default function LoginPage() {
         <Container maxWidth="xs" classes={{ root: classes.img }}>
           <Img src={Logo} />
         </Container>
-        <Container maxWidth="xs">
-          <div className={classes.paper}>
-            <Avatar className={classes.avatar}></Avatar>
-            <Typography component="h1" variant="h5">
-              Eu revendedor
-            </Typography>
-            <form className={classes.form} noValidate>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="Nome Completo"
-                name="name"
-                autoComplete="name"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="CPF"
-                label="CPF"
-                name="CPF"
-                autoComplete="CPF"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
+        <Container maxWidth="xs" className={classes.paper}>
+          <Avatar className={classes.avatar}></Avatar>
+          <Typography component="h1" variant="h5">
+            Eu revendedor
+          </Typography>
+          <form
+            className={classes.form}
+            noValidate
+            onSubmit={handleOnClickOnSubmit}
+          >
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Nome Completo"
+              name="name"
+              autoComplete="name"
+              autoFocus
+              value={name}
+              onChange={handleOnChangeName}
+              error={errors.name}
+              helperText={errors.name && 'Nome Inválido'}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="CPF"
+              label="CPF"
+              name="CPF"
+              autoComplete="CPF"
+              autoFocus
+              value={cpf}
+              onChange={handleOnChangeCpf}
+              InputProps={{
+                inputComponent: CPFMaskCustom,
+              }}
+              error={errors.cpf}
+              helperText={errors.cpf && 'CPF inválido'}
+            />
 
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Senha"
-                type="password"
-                id="password"
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Confirme sua senha"
-                type="password"
-                id="password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
-                Entrar
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-            </form>
-          </div>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              value={email}
+              onChange={handleOnChangeEmail}
+              error={errors.email}
+              helperText={errors.email && 'Email inválido'}
+            />
+
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Senha"
+              type="password"
+              id="password"
+              autoComplete="new-password"
+              value={password}
+              onChange={handleOnChangePassword}
+              error={errors.password}
+              helperText={errors.password && 'Password tem que ser iguais'}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="confirmPassword"
+              label="Confirme sua senha"
+              type="password"
+              id="confirmPassword"
+              autoComplete="new-password"
+              value={confirmPassword}
+              onChange={handleOnChangeConfirmPassword}
+              error={errors.confirmPassword}
+              helperText={
+                errors.confirmPassword && 'Password tem que ser iguais'
+              }
+            />
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Entrar
+            </Button>
+            <Grid container justify="flex-end">
+              <Link href="/" variant="body2">
+                Já é cadastrado?
+              </Link>
+            </Grid>
+          </form>
         </Container>
       </Grid>
     </Grid>

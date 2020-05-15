@@ -174,12 +174,10 @@ export default function LoginPage() {
             >
               Entrar
             </Button>
-            <Grid container>
-              <Grid item>
-                <Link href="/register" variant="body2">
-                  Registre-se
-                </Link>
-              </Grid>
+            <Grid container justify="flex-end">
+              <Link href="/register" variant="body2">
+                Registre-se
+              </Link>
             </Grid>
           </form>
         </Container>
