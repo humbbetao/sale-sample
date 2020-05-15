@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 const useStyles = makeStyles((theme) => {
   console.log(theme)
   return {

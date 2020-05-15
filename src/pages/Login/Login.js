@@ -1,17 +1,17 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import Logo from '../assets/o-boticario-logo.png'
+import Logo from '../../assets/o-boticario-logo.png'
 import { makeStyles } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import styled from 'styled-components'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import MaskedInput from 'react-text-mask'
-
 const useStyles = makeStyles((theme) => {
   return {
     root: {
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => {
     },
     avatar: {
       margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.primary.main,
     },
     form: {
       width: '100%',
@@ -60,38 +60,20 @@ const Img = styled.img`
   width: 50%;
 `
 
-const cpfRegex = [
-  /\d/,
-  /\d/,
-  /\d/,
-  '.',
-  /\d/,
-  /\d/,
-  /\d/,
-  '.',
-  /\d/,
-  /\d/,
-  /\d/,
-  '-',
-  /\d/,
-  /\d/,
-]
-function CPFMaskCustom(props) {
-  const { inputRef, ...other } = props
-  return <MaskedInput {...other} ref={inputRef} mask={cpfRegex} />
-}
-
 export default function LoginPage() {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
-
-  const [name, setName] = useState('')
-  const [cpf, setCpf] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  // const [errors, setErrors] = useState({})
-  const errors = {}
+  const [checked, setChecked] = useState(false)
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('USER'))
+    if (!user) return
+    setEmail(user.email)
+    setPassword(user.password)
+    setChecked(Boolean(user))
+  }, [])
 
   const handleOnChangeEmail = useCallback((event) => {
     const email = event.target.value
@@ -103,23 +85,17 @@ export default function LoginPage() {
     setPassword(password)
   }, [])
 
-  const handleOnChangeName = useCallback((event) => {
-    const name = event.target.value
-    setName(name)
-  }, [])
-
-  const handleOnChangeCpf = useCallback((event) => {
-    const cpf = event.target.value
-    setCpf(cpf)
-  }, [])
-
-  const handleOnChangeConfirmPassword = useCallback((event) => {
-    const confirmPassword = event.target.value
-    setConfirmPassword(confirmPassword)
+  const handleOnClickChecked = useCallback(() => {
+    setChecked((state) => !state)
   }, [])
 
   const handleOnClickOnSubmit = (event) => {
-    event.stopPropagation()
+    event.preventDefault()
+    if (checked) {
+      localStorage.setItem('USER', JSON.stringify({ email, password }))
+    } else {
+      localStorage.removeItem('USER')
+    }
   }
 
   return (
@@ -156,98 +132,55 @@ export default function LoginPage() {
               margin="normal"
               required
               fullWidth
-              id="name"
-              label="Nome Completo"
-              name="name"
-              autoComplete="name"
-              autoFocus
-              value={name}
-              onChange={handleOnChangeName}
-              error={errors.name}
-              helperText={errors.name && 'Nome Inválido'}
-              data-test="name"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="CPF"
-              label="CPF"
-              name="CPF"
-              autoComplete="CPF"
-              autoFocus
-              value={cpf}
-              onChange={handleOnChangeCpf}
-              InputProps={{
-                inputComponent: CPFMaskCustom,
-              }}
-              error={errors.cpf}
-              helperText={errors.cpf && 'CPF inválido'}
-              data-test="CPF"
-            />
-
-            <TextField
-              margin="normal"
-              required
-              fullWidth
               id="email"
               label="Email"
               name="email"
               autoComplete="email"
               autoFocus
+              color="secondary"
               value={email}
               onChange={handleOnChangeEmail}
-              error={errors.email}
-              helperText={errors.email && 'Email inválido'}
               data-test="email"
             />
-
             <TextField
               margin="normal"
               required
               fullWidth
+              autoComplete="current-password"
               name="password"
               label="Senha"
               type="password"
               id="password"
-              autoComplete="new-password"
+              color="secondary"
               value={password}
               onChange={handleOnChangePassword}
-              error={errors.password}
-              helperText={errors.password && 'Password tem que ser iguais'}
               data-test="password"
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="confirmPassword"
-              label="Confirme sua senha"
-              type="password"
-              id="confirmPassword"
-              autoComplete="new-password"
-              value={confirmPassword}
-              onChange={handleOnChangeConfirmPassword}
-              error={errors.confirmPassword}
-              helperText={
-                errors.confirmPassword && 'Password tem que ser iguais'
+            <FormControlLabel
+              control={
+                <Checkbox
+                  value="remember"
+                  color="primary"
+                  onChange={handleOnClickChecked}
+                  checked={checked}
+                  data-test="rememberMe"
+                />
               }
-              data-test="confirmPassword"
+              label="Lembre-me"
             />
-
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              color="secondary"
               className={classes.submit}
               data-test="submitButton"
             >
               Entrar
             </Button>
             <Grid container justify="flex-end">
-              <Link href="/" variant="body2" data-test="loginLink">
-                Já é cadastrado?
+              <Link href="/register" variant="body2" data-test="registerLink">
+                Registre-se
               </Link>
             </Grid>
           </form>
