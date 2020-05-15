@@ -21,18 +21,31 @@ export default createGlobalStyle`
 export const themeStyled = { breakpoints, colors }
 export const themeMaterialUi = createMuiTheme({
   palette: {
-    primary: { main: themeStyled.colors.red, type: themeStyled.colors.black },
+    common: { black: '#000', white: '#fff' },
+    background: { paper: '#fff', default: '#fafafa' },
+    primary: {
+      light: 'rgba(198, 67, 133, 1)',
+      main: 'rgba(199, 69, 93, 1)',
+      dark: 'rgba(146, 51, 67, 1)',
+      contrastText: 'rgba(230, 230, 230, 1)',
+    },
+    secondary: {
+      light: 'rgba(115, 235, 255, 1)',
+      main: 'rgba(50, 100, 110, 1)',
+      dark: 'rgba(43, 86, 95, 1)',
+      contrastText: 'rgba(255, 255, 255, 1)',
+    },
     error: {
-      light: themeStyled.colors.pink,
-      main: themeStyled.colors.red,
-      dark: themeStyled.colors.gray,
-      contrastText: themeStyled.colors.red,
+      light: '#e57373',
+      main: '#f44336',
+      dark: '#d32f2f',
+      contrastText: '#fff',
     },
-    secondary: { main: themeStyled.colors.red },
     text: {
-      primary: themeStyled.colors.black,
-      secondary: themeStyled.colors.pink,
+      primary: 'rgba(60, 60, 60, 1)',
+      secondary: 'rgba(112, 112, 112, 1)',
+      disabled: 'rgba(201, 201, 201, 1)',
+      hint: 'rgba(230, 230, 230, 1)',
     },
-    color: { main: themeStyled.colors.black },
   },
 })
