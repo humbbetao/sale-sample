@@ -11,7 +11,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import styled from 'styled-components'
-
+import { useHistory } from 'react-router-dom'
 const useStyles = makeStyles((theme) => {
   return {
     root: {
@@ -68,7 +68,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [checked, setChecked] = useState(false)
-
+  const history = useHistory()
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('USER'))
     if (!user) return
@@ -93,10 +93,18 @@ export default function LoginPage() {
 
   const handleOnClickOnSubmit = (event) => {
     event.preventDefault()
-    if (checked) {
-      localStorage.setItem('USER', JSON.stringify({ email, password }))
+    const users = JSON.parse(localStorage.getItem('USERS'))
+    if (
+      users.some((user) => user.email === email && user.password === password)
+    ) {
+      if (checked) {
+        localStorage.setItem('USER', JSON.stringify({ email, password }))
+      } else {
+        localStorage.removeItem('USER')
+      }
+      history.push('/dash')
     } else {
-      localStorage.removeItem('USER')
+      console.log('is not registered')
     }
   }
 

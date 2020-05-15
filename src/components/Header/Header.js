@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import Badge from '@material-ui/core/Badge'
+// import Badge from '@material-ui/core/Badge'
 import MenuItem from '@material-ui/core/MenuItem'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import MailIcon from '@material-ui/icons/Mail'
@@ -104,22 +104,22 @@ export default function Header() {
             <div className={classes.grow} />
 
             <div className={classes.sectionDesktop}>
-              <MenuItem>
+              <MenuItem component="a" href="/buy">
                 <IconButton aria-label="show 4 new mails" color="inherit">
-                  <Badge badgeContent={4} color="secondary">
-                    <MailIcon />
-                  </Badge>
+                  {/* <Badge badgeContent={} color="secondary"> */}
+                  <MailIcon />
+                  {/* </Badge> */}
                 </IconButton>
                 <p>Compras</p>
               </MenuItem>
-              <MenuItem>
+              <MenuItem component="a" href="/about">
                 <IconButton
                   aria-label="show 11 new notifications"
                   color="inherit"
                 >
-                  <Badge badgeContent={11} color="secondary">
-                    <NotificationsIcon />
-                  </Badge>
+                  {/* <Badge badgeContent={11} color="secondary"> */}
+                  <NotificationsIcon />
+                  {/* </Badge> */}
                 </IconButton>
                 <p>Sobre</p>
               </MenuItem>
@@ -165,19 +165,19 @@ export default function Header() {
 
       <AppBar position="fixed" classes={{ root: classes.appBarBottom }}>
         <Toolbar classes={{ root: classes.appBarBottom }}>
-          <MenuItem>
+          <MenuItem component="a" href="/buy">
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
+              {/* <Badge badgeContent={4} color="secondary"> */}
+              <MailIcon />
+              {/* </Badge> */}
             </IconButton>
             <p>Compras</p>
           </MenuItem>
-          <MenuItem>
+          <MenuItem component="a" href="/about">
             <IconButton aria-label="show 11 new notifications" color="inherit">
-              <Badge badgeContent={11} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+              {/* <Badge badgeContent={11} color="secondary"> */}
+              <NotificationsIcon />
+              {/* </Badge> */}
             </IconButton>
             <p>Sobre</p>
           </MenuItem>

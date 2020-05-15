@@ -14,9 +14,10 @@ import { Container } from '@material-ui/core'
 import Chip from '@material-ui/core/Chip'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
+
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.primary.dark,
     color: theme.palette.common.white,
   },
   body: {
@@ -77,12 +78,12 @@ export default function CustomizedTables() {
       <Container classes={{ root: classes.container }} maxWidth="lg">
         <Paper classes={{ root: classes.paper }}>
           <Typography color="textSecondary" gutterBottom>
-            Seu total acumulado de cashback é: R$2000,00
+            Seu total acumulado de cashback é: <b>R$2000,00</b>
           </Typography>
         </Paper>
 
         <TableContainer className={classes.table}>
-          <Table aria-label="customized table">
+          <Table stickyHeader aria-label="customized table">
             <TableHead>
               <TableRow>
                 <StyledTableCell>Codigo</StyledTableCell>

@@ -120,7 +120,17 @@ export default function LoginPage() {
   }, [])
 
   const handleOnClickOnSubmit = (event) => {
-    event.stopPropagation()
+    // event.stopPropagation()
+    event.preventDefault()
+    const isFormValidated = true
+    console.log({ name, cpf, email, password, confirmPassword })
+    if (!isFormValidated) {
+      console.log('not isFormValidated')
+      return
+    }
+    const users = localStorage.getItem('USERS') || []
+    users.push({ name, cpf, email, password, confirmPassword })
+    localStorage.setItem('USERS', JSON.stringify(users))
   }
 
   return (
@@ -168,7 +178,6 @@ export default function LoginPage() {
               label="CPF"
               name="CPF"
               autoComplete="CPF"
-              autoFocus
               value={cpf}
               onChange={handleOnChangeCpf}
               InputProps={{
@@ -187,7 +196,6 @@ export default function LoginPage() {
               label="Email"
               name="email"
               autoComplete="email"
-              autoFocus
               value={email}
               onChange={handleOnChangeEmail}
               error={errors.email}
