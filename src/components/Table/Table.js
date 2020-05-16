@@ -14,6 +14,8 @@ import { Container } from '@material-ui/core'
 import Chip from '@material-ui/core/Chip'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
+import { useSelector } from 'react-redux'
+import CashbackInfo from '../CashbackInfo'
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -33,28 +35,14 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow)
 
-function createData(name, date, totalValue, refundValue, status) {
-  return { name, date, totalValue, refundValue, status }
-}
-
-const rows = [
-  createData('12222', '07/01/2019', 2052, 21, 'Em Validação'),
-  createData('12222', '07/01/2019', 2052, 21, 'Em Validação'),
-  createData('12222', '07/01/2019', 2052, 21, 'Em Validação'),
-  createData('12222', '07/01/2019', 2052, 21, 'Em Validação'),
-  createData('12222', '07/01/2019', 2052, 21, 'Em Validação'),
-]
-
 const useStyles = makeStyles({
   table: {
-    // padding: '16px',
     boxSizing: 'border-box',
     width: '100%',
     borderRadius: '8px',
     marginTop: '16px',
   },
   container: {
-    // margin: '120px 0',
     paddingTop: '90px',
     width: '100%',
     display: 'flex',
@@ -63,24 +51,28 @@ const useStyles = makeStyles({
   },
   paper: {
     boxSizing: 'border-box',
-    // marginTop: '72px',
     padding: '20px',
     width: '100%',
     margin: '16px 0',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
 })
 
 export default function CustomizedTables() {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
+  const { rows, cashback } = useSelector((state) => ({
+    rows: state.buy.list,
+    cashback: state.buy.cashback,
+  }))
+
   if (matches) {
     return (
       <Container classes={{ root: classes.container }} maxWidth="lg">
-        <Paper classes={{ root: classes.paper }}>
-          <Typography color="textSecondary" gutterBottom>
-            Seu total acumulado de cashback é: <b>R$2000,00</b>
-          </Typography>
-        </Paper>
+        <CashbackInfo value={cashback}></CashbackInfo>
 
         <TableContainer className={classes.table}>
           <Table stickyHeader aria-label="customized table">
