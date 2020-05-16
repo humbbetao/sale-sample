@@ -105,18 +105,14 @@ export default function Header() {
             <div className={classes.sectionDesktop}>
               <MenuItem component="a" href="/dash">
                 <IconButton aria-label="show 4 new mails" color="inherit">
-                  {/* <Badge badgeContent={4} color="secondary"> */}
                   <Home />
-                  {/* </Badge> */}
                 </IconButton>
                 <p>Início</p>
               </MenuItem>
 
               <MenuItem component="a" href="/add_buy">
                 <IconButton aria-label="show 4 new mails" color="inherit">
-                  {/* <Badge badgeContent={} color="secondary"> */}
                   <Add />
-                  {/* </Badge> */}
                 </IconButton>
                 <p>Nova Compra</p>
               </MenuItem>
@@ -162,19 +158,15 @@ export default function Header() {
 
       <AppBar position="fixed" classes={{ root: classes.appBarBottom }}>
         <Toolbar classes={{ root: classes.appBarBottom }}>
-          <MenuItem component="a" href="/add_buy">
+          <MenuItem component="a" href="/dash">
             <IconButton aria-label="show 4 new mails" color="inherit">
-              {/* <Badge badgeContent={4} color="secondary"> */}
               <Home />
-              {/* </Badge> */}
             </IconButton>
             <p>Início</p>
           </MenuItem>
           <MenuItem component="a" href="/add_buy">
             <IconButton aria-label="show 4 new mails" color="inherit">
-              {/* <Badge badgeContent={4} color="secondary"> */}
               <Add />
-              {/* </Badge> */}
             </IconButton>
             <p>Nova Compra</p>
           </MenuItem>
