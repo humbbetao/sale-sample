@@ -1,8 +1,8 @@
 import { createStore, combineReducers } from 'redux'
-import buy from './reducers/buy'
+import purchase from './reducers/purchase'
 import enhancer from './enhancer'
 
-const reducers = combineReducers({ buy })
+const reducers = combineReducers({ purchase })
 const store = createStore(reducers, enhancer)
 
 export default store

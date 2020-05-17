@@ -92,7 +92,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header({ handleOnOpenDialog }) {
   const classes = useStyles()
-
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
   if (matches) {
     return (

@@ -55,7 +55,7 @@ const Img = styled.img`
   width: 50%;
 `
 
-export default function LoginContainer({ children, handleOnClickOnSubmit }) {
+export default function LoginContainer({ children, handleOnSubmit }) {
   const classes = useStyles()
 
   return (
@@ -75,11 +75,7 @@ export default function LoginContainer({ children, handleOnClickOnSubmit }) {
           <Typography component="h1" variant="h5">
             Eu revendedor
           </Typography>
-          <form
-            className={classes.form}
-            noValidate
-            onSubmit={handleOnClickOnSubmit}
-          >
+          <form className={classes.form} noValidate onSubmit={handleOnSubmit}>
             {children}
           </form>
         </Container>

@@ -9,7 +9,7 @@ import TableCell from '../TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import Chip from '@material-ui/core/Chip'
 import { useDispatch } from 'react-redux'
-import { deleteBuy } from '../../store/reducers/buy/actionCreators'
+import { deleteBuy } from '../../store/reducers/purchase/actionCreators'
 import Transition from '../Transition'
 
 export default function AlertDialogSlide({ purchase, handleClose }) {

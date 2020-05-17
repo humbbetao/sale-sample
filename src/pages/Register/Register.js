@@ -65,7 +65,7 @@ export default function Register() {
   }
 
   return (
-    <LoginContainer handleOnChangeEmail={handleOnClickOnSubmit}>
+    <LoginContainer handleOnSubmit={handleOnClickOnSubmit}>
       <TextField
         margin="normal"
         required

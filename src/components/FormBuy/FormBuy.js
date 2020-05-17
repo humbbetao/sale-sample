@@ -9,7 +9,7 @@ import {
   addBuy,
   editBuy,
   calculateCashBack,
-} from '../../store/reducers/buy/actionCreators'
+} from '../../store/reducers/purchase/actionCreators'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'

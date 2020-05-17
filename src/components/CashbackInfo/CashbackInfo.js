@@ -88,7 +88,7 @@ function CashBackIsEmpty({ handleOnOpenDialog }) {
 
 export default function CashbackInfo({ isEmpty, handleOnOpenDialog }) {
   const classes = useStyles()
-  const cashback = useSelector((state) => state.buy.cashback)
+  const cashback = useSelector((state) => state.purchase.cashback)
 
   if (isEmpty) {
     return <CashBackIsEmpty handleOnOpenDialog={handleOnOpenDialog} />

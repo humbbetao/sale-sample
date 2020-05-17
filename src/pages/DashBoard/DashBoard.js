@@ -1,6 +1,6 @@
 import React, { useState, useCallback, Suspense, lazy } from 'react'
 import Header from '../../components/Header'
-import Table from '../../components/Table'
+import Purchases from '../../components/Purchases'
 import { useSelector } from 'react-redux'
 import CashBackInfo from '../../components/CashbackInfo'
 import Loading from '../../components/Loading'
@@ -18,7 +18,7 @@ export default function DashBoard() {
     setIsNewBuyOpened(true)
   }, [])
 
-  const isEmpty = useSelector((state) => state.buy.purchases.length === 0)
+  const isEmpty = useSelector((state) => state.purchase.purchases.length === 0)
 
   if (isEmpty) {
     return (
@@ -43,7 +43,7 @@ export default function DashBoard() {
   return (
     <React.Fragment>
       <Header handleOnOpenDialog={handleOnOpenDialog} />
-      <Table handleOnOpenDialog={handleOnOpenDialog} />
+      <Purchases handleOnOpenDialog={handleOnOpenDialog} />
       <Suspense fallback={<Loading handleOnClick={handleOnCloseDialog} />}>
         {isNewBuyOpened && (
           <NewBuyDialog

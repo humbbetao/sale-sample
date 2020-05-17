@@ -51,20 +51,20 @@ export default function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         purchases: state.purchases.filter(
-          (buy) => buy.code !== action.payload.code
+          (purchase) => purchase.code !== action.payload.code
         ),
       }
     }
     case ActionTypes.EDIT_BUY: {
-      const buyIndex = state.purchases.findIndex(
-        (buy) => buy.code === action.payload.code
+      const purchaseIndex = state.purchases.findIndex(
+        (purchase) => purchase.code === action.payload.code
       )
-      if (buyIndex === -1) {
+      if (purchaseIndex === -1) {
         throw new Error('this should not happen')
       }
       const purchases = [...state.purchases]
-      purchases[buyIndex] = {
-        ...purchases[buyIndex],
+      purchases[purchaseIndex] = {
+        ...purchases[purchaseIndex],
         code: action.payload.code,
         value: action.payload.value,
         date: action.payload.date,

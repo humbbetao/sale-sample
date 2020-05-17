@@ -32,24 +32,14 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     flexDirection: 'column',
   },
-  paper: {
-    boxSizing: 'border-box',
-    padding: '20px',
-    width: '100%',
-    margin: '16px 0',
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-  },
 })
 
-export default function CustomizedTables() {
+export default function Purchases() {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
   const { purchases, cashback } = useSelector((state) => ({
-    purchases: state.buy.purchases,
-    cashback: state.buy.cashback,
+    purchases: state.purchase.purchases,
+    cashback: state.purchase.cashback,
   }))
   const [openDeleteDialog, setOpenDeleteDialog] = React.useState(false)
   const [purchaseSelected, setPurchaseSelected] = React.useState(false)
