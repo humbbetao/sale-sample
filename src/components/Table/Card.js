@@ -36,7 +36,11 @@ const useStyles = makeStyles({
   },
 })
 
-export default function ProductCard({ purchase }) {
+export default function ProductCard({
+  purchase,
+  handleOnClickOnEdit,
+  handleOnClickOnDelete,
+}) {
   const classes = useStyles()
 
   return (
@@ -100,10 +104,18 @@ export default function ProductCard({ purchase }) {
         </div>
       </CardContent>
       <CardActions classes={{ root: classes.cardActions }}>
-        <Button color="secondary" variant="outlined">
+        <Button
+          color="secondary"
+          variant="outlined"
+          onClick={handleOnClickOnEdit(purchase)}
+        >
           Editar
         </Button>
-        <Button color="primary" variant="outlined">
+        <Button
+          color="primary"
+          variant="outlined"
+          onClick={handleOnClickOnDelete(purchase)}
+        >
           Excluir
         </Button>
       </CardActions>

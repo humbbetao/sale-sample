@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { withStyles, makeStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -15,6 +15,8 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
 import { useSelector } from 'react-redux'
 import CashbackInfo from '../CashbackInfo'
+const DeletePurchaseDialog = lazy(() => import('../DeletePurchaseDialog'))
+const FormBuy = lazy(() => import('../../pages/FormBuy'))
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -60,14 +62,36 @@ const useStyles = makeStyles({
   },
 })
 
-export default function CustomizedTables({ handleOnOpenDialog }) {
+export default function CustomizedTables() {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
   const { purchases, cashback } = useSelector((state) => ({
     purchases: state.buy.purchases,
     cashback: state.buy.cashback,
   }))
+  const [openDeleteDialog, setOpenDeleteDialog] = React.useState(false)
+  const [purchaseSelected, setPurchaseSelected] = React.useState(false)
+  const [openEditDialog, setOpenEditDialog] = React.useState(false)
 
+  const handleClickOpenDeleteDialog = (purchase) => () => {
+    setPurchaseSelected(purchase)
+    setOpenDeleteDialog(true)
+  }
+
+  const handleClickCloseDeleteDialog = () => {
+    setPurchaseSelected(null)
+    setOpenDeleteDialog(false)
+  }
+
+  const handleClickOpenEditDialog = (purchase) => () => {
+    setPurchaseSelected(purchase)
+    setOpenEditDialog(true)
+  }
+
+  const handleClickCloseEditDialog = () => {
+    setPurchaseSelected(null)
+    setOpenEditDialog(false)
+  }
   if (matches) {
     return (
       <React.Fragment>
@@ -121,7 +145,7 @@ export default function CustomizedTables({ handleOnOpenDialog }) {
                         size="small"
                         color="secondary"
                         startIcon={<EditIcon />}
-                        onClick={handleOnOpenDialog}
+                        onClick={handleClickOpenEditDialog(purchase)}
                       >
                         Editar
                       </Button>
@@ -129,7 +153,7 @@ export default function CustomizedTables({ handleOnOpenDialog }) {
                         size="small"
                         color="primary"
                         startIcon={<DeleteIcon />}
-                        onClick={handleOnOpenDialog}
+                        onClick={handleClickOpenDeleteDialog(purchase)}
                       >
                         Excluir
                       </Button>
@@ -140,6 +164,18 @@ export default function CustomizedTables({ handleOnOpenDialog }) {
             </Table>
           </TableContainer>
         </Container>
+        {openDeleteDialog && (
+          <DeletePurchaseDialog
+            purchase={purchaseSelected}
+            handleClose={handleClickCloseDeleteDialog}
+          />
+        )}
+        {openEditDialog && (
+          <FormBuy
+            purchase={purchaseSelected}
+            handleOnClose={handleClickCloseEditDialog}
+          />
+        )}
       </React.Fragment>
     )
   }
@@ -148,8 +184,25 @@ export default function CustomizedTables({ handleOnOpenDialog }) {
       <CashbackInfo value={cashback}></CashbackInfo>
 
       {purchases.map((purchase) => (
-        <Card key={purchase.code} purchase={purchase} />
+        <Card
+          key={purchase.code}
+          purchase={purchase}
+          handleOnClickOnDelete={handleClickOpenDeleteDialog}
+          handleOnClickOnEdit={handleClickOpenEditDialog}
+        />
       ))}
+      {openDeleteDialog && (
+        <DeletePurchaseDialog
+          purchase={purchaseSelected}
+          handleClose={handleClickCloseDeleteDialog}
+        />
+      )}
+      {openEditDialog && (
+        <FormBuy
+          purchase={purchaseSelected}
+          handleOnClose={handleClickCloseEditDialog}
+        />
+      )}
     </React.Fragment>
   )
 }

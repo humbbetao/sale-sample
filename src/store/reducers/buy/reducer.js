@@ -5,7 +5,7 @@ const values = {
     {
       code: '123',
       value: '450',
-      date: '17/5/2020',
+      date: '17/04/2020',
       cashbackRate: '0.35',
       cashbackValue: '157.50',
       status: 'Aprovado',
@@ -47,7 +47,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         ...state,
       }
     }
-    case ActionTypes.REMOVE_BUY: {
+    case ActionTypes.DELETE_BUY: {
       return {
         ...state,
         purchases: state.purchases.filter(
@@ -71,7 +71,7 @@ export default function reducer(state = INITIAL_STATE, action) {
       }
       return {
         ...state,
-        purchasess: [...purchases],
+        purchases: [...purchases],
       }
     }
     default: {

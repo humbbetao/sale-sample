@@ -7,6 +7,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { useDispatch } from 'react-redux'
 import {
   addBuy,
+  editBuy,
   calculateCashBack,
 } from '../../store/reducers/buy/actionCreators'
 import Dialog from '@material-ui/core/Dialog'
@@ -65,30 +66,47 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-export default function FormBuy({ open = true, handleOnClose }) {
+export default function FormBuy({ open = true, handleOnClose, purchase = {} }) {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
   const actionButtonsInFullWidth = useMemo(() => !matches, [matches])
-  const [code, setCode] = useState('')
-  const [value, setValue] = useState('')
-  const [date, setDate] = useState(new Date())
+  const [code, setCode] = useState(purchase.code || '')
+  const [value, setValue] = useState(purchase.value || '')
+  const hasDate = Boolean(purchase.date)
+  const [date, setDate] = useState(
+    hasDate
+      ? new Date(
+          purchase.date.substring(6, 10),
+          parseInt(purchase.date.substring(3, 5)),
+          purchase.date.substring(0, 2)
+        )
+      : new Date()
+  )
   const dispatch = useDispatch()
   const handleOnSubmit = useCallback(
     (event) => {
       event.preventDefault()
       const isFormValidated = true
-      if (isFormValidated) {
-        const formattedDate = `${date.getDate()}/${
-          date.getMonth() + 1
-        }/${date.getFullYear()}`
-        dispatch(addBuy(code, value, formattedDate))
-        dispatch(calculateCashBack(code, value))
-        handleOnClose()
-      } else {
+      if (!isFormValidated) {
         console.log('ops deu erro')
       }
+      if (purchase.code) {
+        const formattedDate = `${('0' + date.getDate()).slice(-2)}/${(
+          '0' + date.getMonth()
+        ).slice(-2)}/${date.getFullYear()}`
+        dispatch(editBuy(code, value, formattedDate))
+        dispatch(calculateCashBack(code, value))
+        handleOnClose()
+        return
+      }
+      const formattedDate = `${('0' + date.getDate()).slice(-2)}/${(
+        '0' + date.getMonth()
+      ).slice(-2)}/${date.getFullYear()}`
+      dispatch(addBuy(code, value, formattedDate))
+      dispatch(calculateCashBack(code, value))
+      handleOnClose()
     },
-    [code, date, value, dispatch, handleOnClose]
+    [code, date, value, dispatch, handleOnClose, purchase.code]
   )
 
   const handleOnChangeCode = useCallback((event) => {
