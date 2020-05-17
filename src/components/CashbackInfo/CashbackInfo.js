@@ -45,11 +45,9 @@ const useStyles = makeStyles((theme) => ({
     boxSizing: 'border-box',
     padding: '16px',
     display: 'flex',
-    // justifyContent: 'space-between',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    // align
     '& > *': {
       padding: theme.spacing(2),
     },

@@ -99,7 +99,6 @@ export default function LoginPage() {
     false
   )
 
-  // const [errors, setErrors] = useState({})
   const errors = {}
 
   const handleOnChangeEmail = useCallback((event) => {
@@ -143,7 +142,6 @@ export default function LoginPage() {
   }, [])
 
   const handleOnClickOnSubmit = (event) => {
-    // event.stopPropagation()
     event.preventDefault()
     const isFormValidated = true
     if (!isFormValidated) {
