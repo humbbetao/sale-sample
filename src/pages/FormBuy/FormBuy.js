@@ -64,6 +64,10 @@ const useStyles = makeStyles((theme) => {
         },
       },
     },
+    dialog: {
+      marginTop: '16px',
+      borderRadius: '16px',
+    },
   }
 })
 
@@ -113,6 +117,7 @@ export default function FormBuy({ open = true, handleOnClose }) {
       keepMounted
       fullScreen={fullScreen}
       onClose={handleOnClose}
+      className={classes.dialog}
     >
       <DialogTitle id="max-width-dialog-title">Nova compra</DialogTitle>
       <DialogContent>

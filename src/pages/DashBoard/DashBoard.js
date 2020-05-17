@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, Suspense, lazy } from 'react'
 import Header from '../../components/Header'
 import Table from '../../components/Table'
 import Fab from '@material-ui/core/Fab'
@@ -6,7 +6,7 @@ import AddIcon from '@material-ui/icons/Add'
 import { makeStyles } from '@material-ui/core/styles'
 import { useSelector } from 'react-redux'
 import CashBackInfo from '../../components/CashbackInfo'
-import NewBuyDialog from '../FormBuy'
+const NewBuyDialog = lazy(() => import('../FormBuy'))
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'absolute',
@@ -40,12 +40,14 @@ export default function DashBoard() {
           isEmpty
           handleOnOpenDialog={handleOnOpenDialog}
         ></CashBackInfo>
-        {isNewBuyOpened && (
-          <NewBuyDialog
-            open={isNewBuyOpened}
-            handleOnClose={handleOnCloseDialog}
-          ></NewBuyDialog>
-        )}
+        <Suspense fallback={<div>Loading</div>}>
+          {isNewBuyOpened && (
+            <NewBuyDialog
+              open={isNewBuyOpened}
+              handleOnClose={handleOnCloseDialog}
+            ></NewBuyDialog>
+          )}
+        </Suspense>
       </React.Fragment>
     )
   }
