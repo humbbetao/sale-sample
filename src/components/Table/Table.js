@@ -1,11 +1,9 @@
 import React, { lazy } from 'react'
-import { withStyles, makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
 import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Card from './Card'
 import Button from '@material-ui/core/Button'
@@ -15,26 +13,10 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
 import { useSelector } from 'react-redux'
 import CashbackInfo from '../CashbackInfo'
+import TableCell from '../TableCell'
+import TableRow from '../TableRow'
 const DeletePurchaseDialog = lazy(() => import('../DeletePurchaseDialog'))
 const FormBuy = lazy(() => import('../../pages/FormBuy'))
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.primary.dark,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell)
-
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
-    },
-  },
-}))(TableRow)
 
 const useStyles = makeStyles({
   table: {
@@ -102,45 +84,45 @@ export default function CustomizedTables() {
             <Table stickyHeader aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCell scope="row" align="center">
+                  <TableCell scope="row" align="center">
                     Codigo
-                  </StyledTableCell>
-                  <StyledTableCell scope="row" align="center">
+                  </TableCell>
+                  <TableCell scope="row" align="center">
                     Data
-                  </StyledTableCell>
-                  <StyledTableCell scope="row" align="center">
+                  </TableCell>
+                  <TableCell scope="row" align="center">
                     Valor
-                  </StyledTableCell>
-                  <StyledTableCell scope="row" align="center">
+                  </TableCell>
+                  <TableCell scope="row" align="center">
                     Cashback
-                  </StyledTableCell>
-                  <StyledTableCell scope="row" align="center">
+                  </TableCell>
+                  <TableCell scope="row" align="center">
                     Status
-                  </StyledTableCell>
-                  <StyledTableCell scope="row" align="center">
+                  </TableCell>
+                  <TableCell scope="row" align="center">
                     Ações
-                  </StyledTableCell>
+                  </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {purchases.map((purchase) => (
-                  <StyledTableRow key={purchase.code}>
-                    <StyledTableCell component="th" scope="row" align="center">
+                  <TableRow key={purchase.code}>
+                    <TableCell component="th" scope="row" align="center">
                       {purchase.code}
-                    </StyledTableCell>
-                    <StyledTableCell scope="row" align="center">
+                    </TableCell>
+                    <TableCell scope="row" align="center">
                       {purchase.date}
-                    </StyledTableCell>
-                    <StyledTableCell scope="row" align="center">
+                    </TableCell>
+                    <TableCell scope="row" align="center">
                       {purchase.value}
-                    </StyledTableCell>
-                    <StyledTableCell scope="row" align="center">
+                    </TableCell>
+                    <TableCell scope="row" align="center">
                       {purchase.cashbackValue}
-                    </StyledTableCell>
-                    <StyledTableCell scope="row" align="center">
+                    </TableCell>
+                    <TableCell scope="row" align="center">
                       <Chip label={purchase.status} color="primary" />
-                    </StyledTableCell>
-                    <StyledTableCell scope="row" align="right">
+                    </TableCell>
+                    <TableCell scope="row" align="right">
                       <Button
                         size="small"
                         color="secondary"
@@ -157,8 +139,8 @@ export default function CustomizedTables() {
                       >
                         Excluir
                       </Button>
-                    </StyledTableCell>
-                  </StyledTableRow>
+                    </TableCell>
+                  </TableRow>
                 ))}
               </TableBody>
             </Table>

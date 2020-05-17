@@ -5,34 +5,12 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
-import Slide from '@material-ui/core/Slide'
-import { withStyles } from '@material-ui/core/styles'
-import TableCell from '@material-ui/core/TableCell'
+import TableCell from '../TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import Chip from '@material-ui/core/Chip'
 import { useDispatch } from 'react-redux'
 import { deleteBuy } from '../../store/reducers/buy/actionCreators'
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />
-})
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.primary.dark,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell)
-
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
-    },
-  },
-}))(TableRow)
+import Transition from '../Transition'
 
 export default function AlertDialogSlide({ purchase, handleClose }) {
   const dispatch = useDispatch()
@@ -54,23 +32,23 @@ export default function AlertDialogSlide({ purchase, handleClose }) {
       </DialogTitle>
       <DialogContent>
         <DialogContentText>
-          <StyledTableRow key={purchase.code}>
-            <StyledTableCell component="th" scope="row" align="center">
+          <TableRow key={purchase.code}>
+            <TableCell component="th" scope="row" align="center">
               Código {purchase.code}
-            </StyledTableCell>
-            <StyledTableCell scope="row" align="center">
+            </TableCell>
+            <TableCell scope="row" align="center">
               Data {purchase.date}
-            </StyledTableCell>
-            <StyledTableCell scope="row" align="center">
+            </TableCell>
+            <TableCell scope="row" align="center">
               {`Valor R$ ${purchase.value}`}
-            </StyledTableCell>
-            <StyledTableCell scope="row" align="center">
+            </TableCell>
+            <TableCell scope="row" align="center">
               {`Cashback R$ ${purchase.cashbackValue}`}
-            </StyledTableCell>
-            <StyledTableCell scope="row" align="center">
+            </TableCell>
+            <TableCell scope="row" align="center">
               Status <Chip label={purchase.status} color="primary" />
-            </StyledTableCell>
-          </StyledTableRow>
+            </TableCell>
+          </TableRow>
         </DialogContentText>
       </DialogContent>
       <DialogActions>
