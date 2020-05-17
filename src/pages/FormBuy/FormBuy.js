@@ -88,7 +88,7 @@ export default function FormBuy({ open = true, handleOnClose }) {
         console.log('ops deu erro')
       }
     },
-    [code, value, date, dispatch]
+    [code, value, date, dispatch, history]
   )
   const handleOnChangeCode = useCallback((event) => {
     const code = event.target.value
@@ -166,13 +166,12 @@ export default function FormBuy({ open = true, handleOnClose }) {
           className={classes.actions}
         >
           <Button
-            type="submit"
             variant="outlined"
             fullWidth={actionButtonsInFullWidth}
             color="primary"
-            component="a"
-            href="/dash"
             size="large"
+            type="button"
+            onClick={handleOnClose}
           >
             Cancelar
           </Button>

@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function CashBackIsEmpty() {
+function CashBackIsEmpty({ handleOnOpenDialog }) {
   const classes = useStyles()
   return (
     <Container classes={{ root: classes.container }} maxWidth="lg">
@@ -92,10 +92,10 @@ function CashBackIsEmpty() {
         <CofrinhoIcon></CofrinhoIcon>
 
         <Button
-          component="a"
           color="primary"
-          href="/add_buy"
+          component="button"
           variant="outlined"
+          onClick={handleOnOpenDialog}
           startIcon={
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Add />
@@ -109,12 +109,12 @@ function CashBackIsEmpty() {
   )
 }
 
-export default function CashbackInfo({ isEmpty }) {
+export default function CashbackInfo({ isEmpty, handleOnOpenDialog }) {
   const classes = useStyles()
   const cashback = useSelector((state) => state.buy.cashback)
 
   if (isEmpty) {
-    return <CashBackIsEmpty />
+    return <CashBackIsEmpty handleOnOpenDialog={handleOnOpenDialog} />
   }
   return (
     <Container classes={{ root: classes.container }} maxWidth="lg">
