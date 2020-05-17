@@ -19,6 +19,7 @@ export default function PurchaseRow({
           color="secondary"
           startIcon={<EditIcon />}
           onClick={handleClickOpenEditDialog(purchase)}
+          data-test="edit-purchase-button"
         >
           Editar
         </Button>
@@ -27,6 +28,7 @@ export default function PurchaseRow({
           color="primary"
           startIcon={<DeleteIcon />}
           onClick={handleClickOpenDeleteDialog(purchase)}
+          data-test="delete-purchase-button"
         >
           Excluir
         </Button>

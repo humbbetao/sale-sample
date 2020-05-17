@@ -34,10 +34,18 @@ export default function AlertDialogSlide({ purchase, handleClose }) {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose} color="primary">
+        <Button
+          onClick={handleClose}
+          color="primary"
+          data-test="disagree-button"
+        >
           Não quero
         </Button>
-        <Button onClick={handleOnConfirm} color="primary">
+        <Button
+          onClick={handleOnConfirm}
+          color="primary"
+          data-test="agree-button"
+        >
           Concordo
         </Button>
       </DialogActions>

@@ -49,6 +49,7 @@ export default function PasswordTextInput({
               onClick={handleClickShowPassword}
               onMouseDown={handleMouseDownPassword}
               edge="end"
+              data-test="visibility-icon"
             >
               {isPasswordVisible ? <Visibility /> : <VisibilityOff />}
             </IconButton>

@@ -24,8 +24,10 @@ export default function DashBoard() {
     return (
       <React.Fragment>
         <Header handleOnOpenDialog={handleOnOpenDialog} />
-        <CashbackEmpty handleOnOpenDialog={handleOnOpenDialog}></CashbackEmpty>
         <Suspense fallback={<Loading handleOnClick={handleOnCloseDialog} />}>
+          <CashbackEmpty
+            handleOnOpenDialog={handleOnOpenDialog}
+          ></CashbackEmpty>
           {isNewBuyOpened && (
             <NewBuyDialog
               open={isNewBuyOpened}

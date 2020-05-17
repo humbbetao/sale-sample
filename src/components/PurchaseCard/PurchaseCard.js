@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
+import formattedCurrency from '../../helpers/formattedCurrency'
 const useStyles = makeStyles({
   root: {
     margin: '16px 16px 16px 16px ',
@@ -58,8 +59,9 @@ export default function PurchaseCard({
             className={classes.title}
             color="textSecondary"
             gutterBottom
+            data-test="purchase-cashbackValue"
           >
-            {`R$ ${purchase.cashbackValue}`}
+            {formattedCurrency(purchase.cashbackValue)}
           </Typography>
         </div>
         <div className={classes.cardContent}>
@@ -74,6 +76,7 @@ export default function PurchaseCard({
             className={classes.title}
             color="textSecondary"
             gutterBottom
+            data-test="purchase-code"
           >
             {purchase.code}
           </Typography>
@@ -90,15 +93,37 @@ export default function PurchaseCard({
             className={classes.title}
             color="textSecondary"
             gutterBottom
+            data-test="purchase-value"
           >
-            {`R$ ${purchase.value}`}
+            {formattedCurrency(purchase.value)}
+          </Typography>
+        </div>
+        <div className={classes.cardContent}>
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+          >
+            Data
+          </Typography>
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+            data-test="purchase-date"
+          >
+            {purchase.date}
           </Typography>
         </div>
         <div className={classes.cardContent}>
           <Typography className={classes.pos} color="textSecondary">
             Status
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography
+            className={classes.pos}
+            color="textSecondary"
+            data-test="purchase-status"
+          >
             <Chip label={purchase.status} color="primary" />
           </Typography>
         </div>
@@ -108,6 +133,7 @@ export default function PurchaseCard({
           color="secondary"
           variant="outlined"
           onClick={handleOnClickOnEdit(purchase)}
+          data-test="edit-purchase-button"
         >
           Editar
         </Button>
@@ -115,6 +141,7 @@ export default function PurchaseCard({
           color="primary"
           variant="outlined"
           onClick={handleOnClickOnDelete(purchase)}
+          data-test="delete-purchase-button"
         >
           Excluir
         </Button>

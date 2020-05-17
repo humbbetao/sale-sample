@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 import { ReactComponent as Cofrinho } from '../../assets/cofrinho.svg'
 import styled from 'styled-components'
+import formattedCurrency from '../../helpers/formattedCurrency'
 
 const CofrinhoIcon = styled(Cofrinho)`
   fill: ${(props) => props.theme.colors.red};
@@ -56,11 +57,9 @@ export default function CashbackInfo() {
           <CofrinhoIcon></CofrinhoIcon>
         </div>
 
-        <Typography
-          color="primary"
-          align="left"
-          variant="h4"
-        >{`R$ ${cashback}`}</Typography>
+        <Typography color="primary" align="left" variant="h4">
+          {formattedCurrency(cashback)}
+        </Typography>
       </Paper>
     </Container>
   )
