@@ -6,6 +6,9 @@ import AddIcon from '@material-ui/icons/Add'
 import { makeStyles } from '@material-ui/core/styles'
 import { useSelector } from 'react-redux'
 import CashBackInfo from '../../components/CashbackInfo'
+import Backdrop from '@material-ui/core/Backdrop'
+import CircularProgress from '@material-ui/core/CircularProgress'
+
 const NewBuyDialog = lazy(() => import('../FormBuy'))
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,6 +35,7 @@ export default function DashBoard() {
   }, [])
 
   const isEmpty = useSelector((state) => state.buy.list.length === 0)
+
   if (isEmpty) {
     return (
       <React.Fragment>
@@ -40,7 +44,13 @@ export default function DashBoard() {
           isEmpty
           handleOnOpenDialog={handleOnOpenDialog}
         ></CashBackInfo>
-        <Suspense fallback={<div>Loading</div>}>
+        <Suspense
+          fallback={
+            <Backdrop open onClick={handleOnCloseDialog}>
+              <CircularProgress color="primary" />
+            </Backdrop>
+          }
+        >
           {isNewBuyOpened && (
             <NewBuyDialog
               open={isNewBuyOpened}

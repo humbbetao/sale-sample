@@ -14,7 +14,7 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import Slide from '@material-ui/core/Slide'
 import { useTheme } from '@material-ui/core/styles'
 import FormControl from '@material-ui/core/FormControl'
-
+import { KeyboardDatePicker } from '@material-ui/pickers'
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />
 })
@@ -65,8 +65,14 @@ const useStyles = makeStyles((theme) => {
       },
     },
     dialog: {
-      marginTop: '32px',
-      borderRadius: '16px 16px 0 0',
+      [theme.breakpoints.down('md')]: {
+        marginTop: '32px',
+        boxSizing: 'border-box',
+        height: 'calc(100% - 32px)',
+        borderRadius: '16px 16px 0 0',
+      },
+      borderRadius: '16px 16px',
+      marginTop: '0',
     },
   }
 })
@@ -77,7 +83,7 @@ export default function FormBuy({ open = true, handleOnClose }) {
   const actionButtonsInFullWidth = useMemo(() => !matches, [matches])
   const [code, setCode] = useState('')
   const [value, setValue] = useState('')
-  const [date, setDate] = useState('')
+  const [date, setDate] = useState(new Date())
   const dispatch = useDispatch()
   const history = useHistory()
   const handleOnSubmit = useCallback(
@@ -102,8 +108,7 @@ export default function FormBuy({ open = true, handleOnClose }) {
     const value = event.target.value
     setValue(value)
   }, [])
-  const handleOnChangeDate = useCallback((event) => {
-    const date = event.target.value
+  const handleOnChangeDate = useCallback((date) => {
     setDate(date)
   }, [])
 
@@ -121,7 +126,6 @@ export default function FormBuy({ open = true, handleOnClose }) {
     >
       <DialogTitle id="max-width-dialog-title">Nova compra</DialogTitle>
       <DialogContent>
-        {/* <DialogContentText>Adicione uma nova compra</DialogContentText> */}
         <form className={classes.form} noValidate onSubmit={handleOnSubmit}>
           <FormControl className={classes.formControl}>
             <TextField
@@ -136,17 +140,19 @@ export default function FormBuy({ open = true, handleOnClose }) {
               value={code}
               onChange={handleOnChangeCode}
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="Date"
-              label="Date"
-              name="Date"
-              autoComplete="Date"
+            <KeyboardDatePicker
+              format="MM/dd/yyyy"
               value={date}
               onChange={handleOnChangeDate}
+              label="Date"
+              name="Date"
+              required
+              autoComplete="Date"
+              KeyboardButtonProps={{
+                'aria-label': 'change date',
+              }}
             />
+
             <TextField
               margin="normal"
               required

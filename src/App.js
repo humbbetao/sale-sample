@@ -13,31 +13,37 @@ import GlobalStyle, {
   themeMaterialUi,
 } from './components/GlobalStyle'
 
+import { MuiPickersUtilsProvider } from '@material-ui/pickers'
+
+import DateFnsUtils from '@date-io/date-fns'
+
 export default function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={themeMaterialUi}>
         <ThemeStyled theme={themeStyled}>
-          <GlobalStyle />
-          <Router>
-            <Switch>
-              <Route path="/register">
-                <Register />
-              </Route>
-              <Route path="/dash">
-                <DashBoard />
-              </Route>
-              <Route path={['/add_buy', '/edit_buy/:code']}>
-                <FormBuy />
-              </Route>
-              <Route path="/">
-                <Login />
-              </Route>
-              <Route path="*">
-                <Login />
-              </Route>
-            </Switch>
-          </Router>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <GlobalStyle />
+            <Router>
+              <Switch>
+                <Route path="/register">
+                  <Register />
+                </Route>
+                <Route path="/dash">
+                  <DashBoard />
+                </Route>
+                <Route path={['/add_buy', '/edit_buy/:code']}>
+                  <FormBuy />
+                </Route>
+                <Route path="/">
+                  <Login />
+                </Route>
+                <Route path="*">
+                  <Login />
+                </Route>
+              </Switch>
+            </Router>
+          </MuiPickersUtilsProvider>
         </ThemeStyled>
       </ThemeProvider>
     </Provider>
