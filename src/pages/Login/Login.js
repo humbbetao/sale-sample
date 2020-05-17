@@ -12,6 +12,11 @@ import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
+import IconButton from '@material-ui/core/IconButton'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
+import Visibility from '@material-ui/icons/Visibility'
+
 const useStyles = makeStyles((theme) => {
   return {
     root: {
@@ -68,6 +73,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [checked, setChecked] = useState(false)
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const history = useHistory()
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('USER'))
@@ -85,6 +91,14 @@ export default function LoginPage() {
   const handleOnChangePassword = useCallback((event) => {
     const password = event.target.value
     setPassword(password)
+  }, [])
+
+  const handleClickShowPassword = useCallback(() => {
+    setIsPasswordVisible(true)
+  }, [])
+
+  const handleMouseDownPassword = useCallback(() => {
+    setIsPasswordVisible(false)
   }, [])
 
   const handleOnClickChecked = useCallback(() => {
@@ -151,12 +165,26 @@ export default function LoginPage() {
               autoComplete="current-password"
               name="password"
               label="Senha"
-              type="password"
+              type={isPasswordVisible ? 'text' : 'password'}
               id="password"
               color="secondary"
               value={password}
               onChange={handleOnChangePassword}
               data-test="password"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {isPasswordVisible ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
             <FormControlLabel
               control={
