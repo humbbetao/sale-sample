@@ -6,7 +6,6 @@ import TableCell from '@material-ui/core/TableCell'
 import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
-import Paper from '@material-ui/core/Paper'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Card from './Card'
 import Button from '@material-ui/core/Button'
@@ -14,8 +13,6 @@ import { Container } from '@material-ui/core'
 import Chip from '@material-ui/core/Chip'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
-import Typography from '@material-ui/core/Typography'
-import Link from '@material-ui/core/Link'
 import { useSelector } from 'react-redux'
 import CashbackInfo from '../CashbackInfo'
 
@@ -63,115 +60,96 @@ const useStyles = makeStyles({
   },
 })
 
-export default function CustomizedTables() {
+export default function CustomizedTables({ handleOnOpenDialog }) {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
-  const { rows, cashback } = useSelector((state) => ({
-    rows: state.buy.list,
+  const { purchases, cashback } = useSelector((state) => ({
+    purchases: state.buy.purchases,
     cashback: state.buy.cashback,
   }))
 
   if (matches) {
     return (
-      <Container classes={{ root: classes.container }} maxWidth="lg">
+      <React.Fragment>
         <CashbackInfo value={cashback}></CashbackInfo>
 
-        <TableContainer className={classes.table}>
-          <Table stickyHeader aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <StyledTableCell scope="row" align="center">
-                  Codigo
-                </StyledTableCell>
-                <StyledTableCell scope="row" align="center">
-                  Data
-                </StyledTableCell>
-                <StyledTableCell scope="row" align="center">
-                  Valor
-                </StyledTableCell>
-                <StyledTableCell scope="row" align="center">
-                  Cashback
-                </StyledTableCell>
-                <StyledTableCell scope="row" align="center">
-                  Status
-                </StyledTableCell>
-                <StyledTableCell scope="row" align="center">
-                  Ações
-                </StyledTableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <StyledTableRow key={row.code}>
-                  <StyledTableCell component="th" scope="row" align="center">
-                    {row.code}
+        <Container classes={{ root: classes.container }} maxWidth="lg">
+          <TableContainer className={classes.table}>
+            <Table stickyHeader aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell scope="row" align="center">
+                    Codigo
                   </StyledTableCell>
                   <StyledTableCell scope="row" align="center">
-                    {row.date}
+                    Data
                   </StyledTableCell>
                   <StyledTableCell scope="row" align="center">
-                    {row.value}
+                    Valor
                   </StyledTableCell>
                   <StyledTableCell scope="row" align="center">
-                    {row.cashbackValue}
+                    Cashback
                   </StyledTableCell>
                   <StyledTableCell scope="row" align="center">
-                    <Chip label={row.status} color="primary" />
+                    Status
                   </StyledTableCell>
-                  <StyledTableCell scope="row" align="right">
-                    <Button
-                      size="small"
-                      color="secondary"
-                      startIcon={<EditIcon />}
-                    >
-                      Editar
-                    </Button>
-                    <Button
-                      size="small"
-                      color="primary"
-                      startIcon={<DeleteIcon />}
-                    >
-                      Excluir
-                    </Button>
+                  <StyledTableCell scope="row" align="center">
+                    Ações
                   </StyledTableCell>
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Container>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {purchases.map((purchase) => (
+                  <StyledTableRow key={purchase.code}>
+                    <StyledTableCell component="th" scope="row" align="center">
+                      {purchase.code}
+                    </StyledTableCell>
+                    <StyledTableCell scope="row" align="center">
+                      {purchase.date}
+                    </StyledTableCell>
+                    <StyledTableCell scope="row" align="center">
+                      {purchase.value}
+                    </StyledTableCell>
+                    <StyledTableCell scope="row" align="center">
+                      {purchase.cashbackValue}
+                    </StyledTableCell>
+                    <StyledTableCell scope="row" align="center">
+                      <Chip label={purchase.status} color="primary" />
+                    </StyledTableCell>
+                    <StyledTableCell scope="row" align="right">
+                      <Button
+                        size="small"
+                        color="secondary"
+                        startIcon={<EditIcon />}
+                        onClick={handleOnOpenDialog}
+                      >
+                        Editar
+                      </Button>
+                      <Button
+                        size="small"
+                        color="primary"
+                        startIcon={<DeleteIcon />}
+                        onClick={handleOnOpenDialog}
+                      >
+                        Excluir
+                      </Button>
+                    </StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Container>
+      </React.Fragment>
     )
   }
   return (
-    <div style={{ marginTop: '72px', marginBottom: '72px' }}>
-      <Paper classes={{ root: classes.paper }}>
-        <Typography color="textSecondary" gutterBottom>
-          Seu total acumulado de cashback é: R$2000,00
-        </Typography>
-      </Paper>
-      <Paper classes={{ root: classes.paper }}>
-        <Typography color="textSecondary" gutterBottom>
-          <Link
-            // component="button"
-            color="primary"
-            variant="contained"
-            href="/add_compra"
-          >
-            Add Compras
-          </Link>
-          <Link
-            // component="button"
-            color="primary"
-            variant="contained"
-            href="/update_lista"
-          >
-            Editar Lista
-          </Link>
-        </Typography>
-      </Paper>
-      {Array.from(new Array(3)).map((item, id) => (
-        <Card key={id} />
+    <React.Fragment>
+      <CashbackInfo value={cashback}></CashbackInfo>
+
+      {purchases.map((purchase) => (
+        <Card key={purchase.code} purchase={purchase} />
       ))}
-    </div>
+    </React.Fragment>
   )
 }

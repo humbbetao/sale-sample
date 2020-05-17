@@ -5,7 +5,10 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { useDispatch } from 'react-redux'
-import { addBuy } from '../../store/reducers/buy/actionCreators'
+import {
+  addBuy,
+  calculateCashBack,
+} from '../../store/reducers/buy/actionCreators'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
@@ -79,6 +82,7 @@ export default function FormBuy({ open = true, handleOnClose }) {
           date.getMonth() + 1
         }/${date.getFullYear()}`
         dispatch(addBuy(code, value, formattedDate))
+        dispatch(calculateCashBack(code, value))
         handleOnClose()
       } else {
         console.log('ops deu erro')

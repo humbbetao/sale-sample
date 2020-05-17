@@ -1,6 +1,23 @@
 import ActionTypes from './actionTypes'
+const values = {
+  cashback: '157.50',
+  purchases: [
+    {
+      code: '123',
+      value: '450',
+      date: '17/5/2020',
+      cashbackRate: '0.35',
+      cashbackValue: '157.50',
+      status: 'Aprovado',
+    },
+  ],
+}
+const novo = { cashback: 0, purchases: [] }
 
-export const INITIAL_STATE = { cashback: 0, list: [] }
+export const INITIAL_STATE = {
+  ...novo,
+  ...values,
+}
 const STATUS = ['Em validação', 'Reprovado', 'Aprovado']
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -12,8 +29,8 @@ export default function reducer(state = INITIAL_STATE, action) {
       const cashbackValue = (action.payload.value * cashbackRate).toFixed(2)
       return {
         ...state,
-        list: [
-          ...state.list,
+        purchases: [
+          ...state.purchases,
           {
             code: action.payload.code,
             value: action.payload.value,
@@ -25,29 +42,36 @@ export default function reducer(state = INITIAL_STATE, action) {
         ],
       }
     }
+    case ActionTypes.CALCULATE_CASHBACK: {
+      return {
+        ...state,
+      }
+    }
     case ActionTypes.REMOVE_BUY: {
       return {
         ...state,
-        list: state.list.filter((buy) => buy.code !== action.payload.code),
+        purchases: state.purchases.filter(
+          (buy) => buy.code !== action.payload.code
+        ),
       }
     }
     case ActionTypes.EDIT_BUY: {
-      const buyIndex = state.list.findIndex(
+      const buyIndex = state.purchases.findIndex(
         (buy) => buy.code === action.payload.code
       )
       if (buyIndex === -1) {
         throw new Error('this should not happen')
       }
-      const list = [...state.list]
-      list[buyIndex] = {
-        ...list[buyIndex],
+      const purchases = [...state.purchases]
+      purchases[buyIndex] = {
+        ...purchases[buyIndex],
         code: action.payload.code,
         value: action.payload.value,
         date: action.payload.date,
       }
       return {
         ...state,
-        list: [...list],
+        purchasess: [...purchases],
       }
     }
     default: {

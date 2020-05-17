@@ -22,6 +22,12 @@ const useStyles = makeStyles({
     alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
+  cardActions: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+  },
   title: {
     fontSize: 14,
   },
@@ -30,7 +36,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function ProductCard() {
+export default function ProductCard({ purchase }) {
   const classes = useStyles()
 
   return (
@@ -49,7 +55,7 @@ export default function ProductCard() {
             color="textSecondary"
             gutterBottom
           >
-            R$22,00(10%)
+            {`R$ ${purchase.cashbackValue}`}
           </Typography>
         </div>
         <div className={classes.cardContent}>
@@ -65,7 +71,7 @@ export default function ProductCard() {
             color="textSecondary"
             gutterBottom
           >
-            12222
+            {purchase.code}
           </Typography>
         </div>
         <div className={classes.cardContent}>
@@ -81,7 +87,7 @@ export default function ProductCard() {
             color="textSecondary"
             gutterBottom
           >
-            R$150,00
+            {`R$ ${purchase.value}`}
           </Typography>
         </div>
         <div className={classes.cardContent}>
@@ -89,15 +95,15 @@ export default function ProductCard() {
             Status
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            <Chip label="Aprovado" color="primary" />
+            <Chip label={purchase.status} color="primary" />
           </Typography>
         </div>
       </CardContent>
-      <CardActions>
-        <Button color="secondary" variant="contained">
+      <CardActions classes={{ root: classes.cardActions }}>
+        <Button color="secondary" variant="outlined">
           Editar
         </Button>
-        <Button color="primary" variant="contained">
+        <Button color="primary" variant="outlined">
           Excluir
         </Button>
       </CardActions>

@@ -15,25 +15,13 @@ const CofrinhoIcon = styled(Cofrinho)`
   max-width: 150px;
 `
 
-const WrapperMoney = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  & > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-`
-
 const useStyles = makeStyles((theme) => ({
   container: {
-    paddingTop: '90px',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
+    paddingTop: '90px',
   },
   paperWithoutMoney: {
     display: 'flex',
@@ -56,23 +44,21 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     boxSizing: 'border-box',
     padding: '16px',
-    width: '100%',
-    height: '100%',
     display: 'flex',
-    justifyContent: 'space-between',
-    flexDirection: 'column',
-
+    // justifyContent: 'space-between',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    // align
     '& > *': {
-      padding: theme.spacing(1),
+      padding: theme.spacing(2),
     },
 
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
-      margin: theme.spacing(2),
-      '& > *': {
-        width: '200px',
-        margin: theme.spacing(1),
-      },
+      padding: '16px',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   },
 }))
@@ -112,19 +98,18 @@ export default function CashbackInfo({ isEmpty, handleOnOpenDialog }) {
   return (
     <Container classes={{ root: classes.container }} maxWidth="lg">
       <Paper classes={{ root: classes.paper }}>
-        <WrapperMoney>
-          <div>
-            <Typography color="textPrimary" align="left">
-              Cashback
-            </Typography>
-            <Typography
-              color="primary"
-              align="left"
-              variant="h3"
-            >{`R$ ${cashback}`}</Typography>
-          </div>
+        <div>
+          <Typography color="textPrimary" align="left">
+            Cashback
+          </Typography>
           <CofrinhoIcon></CofrinhoIcon>
-        </WrapperMoney>
+        </div>
+
+        <Typography
+          color="primary"
+          align="left"
+          variant="h4"
+        >{`R$ ${cashback}`}</Typography>
       </Paper>
     </Container>
   )
