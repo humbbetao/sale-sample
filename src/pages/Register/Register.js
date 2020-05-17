@@ -9,11 +9,9 @@ import Avatar from '@material-ui/core/Avatar'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import styled from 'styled-components'
-import MaskedInput from 'react-text-mask'
-import IconButton from '@material-ui/core/IconButton'
-import InputAdornment from '@material-ui/core/InputAdornment'
-import VisibilityOff from '@material-ui/icons/VisibilityOff'
-import Visibility from '@material-ui/icons/Visibility'
+import CPFMaskCustom from '../../components/CPFMask'
+import PasswordTextInput from '../../components/PasswordTextInput'
+
 const useStyles = makeStyles((theme) => {
   return {
     root: {
@@ -65,27 +63,6 @@ const Img = styled.img`
   width: 50%;
 `
 
-const cpfRegex = [
-  /\d/,
-  /\d/,
-  /\d/,
-  '.',
-  /\d/,
-  /\d/,
-  /\d/,
-  '.',
-  /\d/,
-  /\d/,
-  /\d/,
-  '-',
-  /\d/,
-  /\d/,
-]
-function CPFMaskCustom(props) {
-  const { inputRef, ...other } = props
-  return <MaskedInput {...other} ref={inputRef} mask={cpfRegex} />
-}
-
 export default function LoginPage() {
   const classes = useStyles()
 
@@ -94,10 +71,6 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
-  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(
-    false
-  )
 
   const errors = {}
 
@@ -109,21 +82,6 @@ export default function LoginPage() {
   const handleOnChangePassword = useCallback((event) => {
     const password = event.target.value
     setPassword(password)
-  }, [])
-  const handleClickShowPassword = useCallback(() => {
-    setIsPasswordVisible(true)
-  }, [])
-
-  const handleMouseDownPassword = useCallback(() => {
-    setIsPasswordVisible(false)
-  }, [])
-
-  const handleClickShowConfirmPassword = useCallback(() => {
-    setIsConfirmPasswordVisible(true)
-  }, [])
-
-  const handleMouseDownConfirmPassword = useCallback(() => {
-    setIsConfirmPasswordVisible(false)
   }, [])
 
   const handleOnChangeName = useCallback((event) => {
@@ -207,7 +165,6 @@ export default function LoginPage() {
               helperText={errors.cpf && 'CPF inválido'}
               data-test="CPF"
             />
-
             <TextField
               margin="normal"
               required
@@ -222,40 +179,18 @@ export default function LoginPage() {
               helperText={errors.email && 'Email inválido'}
               data-test="email"
             />
-
-            <TextField
-              margin="normal"
-              required
-              fullWidth
+            <PasswordTextInput
               name="password"
               label="Senha"
               id="password"
-              autoComplete="new-password"
               value={password}
-              onChange={handleOnChangePassword}
+              handleOnChange={handleOnChangePassword}
               error={errors.password}
               helperText={errors.password && 'Password tem que ser iguais'}
               data-test="password"
-              type={isPasswordVisible ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {isPasswordVisible ? <Visibility /> : <VisibilityOff />}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
+              autoComplete="new-password"
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
+            <PasswordTextInput
               name="confirmPassword"
               label="Confirme sua senha"
               id="confirmPassword"
@@ -267,25 +202,6 @@ export default function LoginPage() {
                 errors.confirmPassword && 'Password tem que ser iguais'
               }
               data-test="confirmPassword"
-              type={isConfirmPasswordVisible ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowConfirmPassword}
-                      onMouseDown={handleMouseDownConfirmPassword}
-                      edge="end"
-                    >
-                      {isConfirmPasswordVisible ? (
-                        <Visibility />
-                      ) : (
-                        <VisibilityOff />
-                      )}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
             />
 
             <Button

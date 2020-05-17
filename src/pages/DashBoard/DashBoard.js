@@ -8,7 +8,7 @@ import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
 import { makeStyles } from '@material-ui/core/styles'
 
-const NewBuyDialog = lazy(() => import('../FormBuy'))
+const NewBuyDialog = lazy(() => import('../../components/FormBuy'))
 
 const useStyles = makeStyles((theme) => ({
   fab: {

@@ -16,7 +16,7 @@ import CashbackInfo from '../CashbackInfo'
 import TableCell from '../TableCell'
 import TableRow from '../TableRow'
 const DeletePurchaseDialog = lazy(() => import('../DeletePurchaseDialog'))
-const FormBuy = lazy(() => import('../../pages/FormBuy'))
+const FormBuy = lazy(() => import('../FormBuy'))
 
 const useStyles = makeStyles({
   table: {
