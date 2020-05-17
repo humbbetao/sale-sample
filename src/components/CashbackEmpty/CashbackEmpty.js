@@ -3,9 +3,10 @@ import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import { Container } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
-import { useSelector } from 'react-redux'
 import { ReactComponent as Cofrinho } from '../../assets/cofrinho.svg'
 import styled from 'styled-components'
+import Button from '@material-ui/core/Button'
+import Add from '@material-ui/icons/Add'
 
 const CofrinhoIcon = styled(Cofrinho)`
   fill: ${(props) => props.theme.colors.red};
@@ -21,46 +22,46 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     paddingTop: '90px',
   },
-
   paper: {
-    boxSizing: 'border-box',
-    padding: '16px',
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
     alignItems: 'center',
-    flexDirection: 'row',
-    '& > *': {
-      padding: theme.spacing(2),
-    },
-
+    height: '400px',
+    justifyContent: 'space-evenly',
+    padding: '16px',
+    boxSizing: 'border-box',
     [theme.breakpoints.up('md')]: {
-      flexDirection: 'row',
-      padding: '16px',
-      justifyContent: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100%',
       alignItems: 'center',
+      height: '400px',
+      justifyContent: 'space-evenly',
     },
   },
 }))
 
-export default function CashbackInfo() {
+export default function CashBackEmpty({ handleOnOpenDialog }) {
   const classes = useStyles()
-  const cashback = useSelector((state) => state.purchase.cashback)
-
   return (
     <Container classes={{ root: classes.container }} maxWidth="lg">
       <Paper classes={{ root: classes.paper }}>
-        <div>
-          <Typography color="textPrimary" align="left">
-            Cashback
-          </Typography>
-          <CofrinhoIcon></CofrinhoIcon>
-        </div>
+        <Typography color="textPrimary" variant="h6" align="left">
+          Você não tem nenhuma compra registrada
+        </Typography>
+        <CofrinhoIcon></CofrinhoIcon>
 
-        <Typography
+        <Button
           color="primary"
-          align="left"
-          variant="h4"
-        >{`R$ ${cashback}`}</Typography>
+          component="button"
+          variant="outlined"
+          size="large"
+          onClick={handleOnOpenDialog}
+          startIcon={<Add />}
+        >
+          Nova Compra
+        </Button>
       </Paper>
     </Container>
   )

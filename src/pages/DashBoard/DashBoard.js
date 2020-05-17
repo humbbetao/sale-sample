@@ -1,12 +1,12 @@
 import React, { useState, useCallback, Suspense, lazy } from 'react'
 import Header from '../../components/Header'
-import Purchases from '../../components/Purchases'
 import { useSelector } from 'react-redux'
-import CashBackInfo from '../../components/CashbackInfo'
 import Loading from '../../components/Loading'
 import AddPurchaseIcon from '../../components/AddPurchaseIcon'
 
 const NewBuyDialog = lazy(() => import('../../components/FormBuy'))
+const Purchases = lazy(() => import('../../components/Purchases'))
+const CashbackEmpty = lazy(() => import('../../components/CashbackEmpty'))
 
 export default function DashBoard() {
   const [isNewBuyOpened, setIsNewBuyOpened] = useState(false)
@@ -24,10 +24,7 @@ export default function DashBoard() {
     return (
       <React.Fragment>
         <Header handleOnOpenDialog={handleOnOpenDialog} />
-        <CashBackInfo
-          isEmpty
-          handleOnOpenDialog={handleOnOpenDialog}
-        ></CashBackInfo>
+        <CashbackEmpty handleOnOpenDialog={handleOnOpenDialog}></CashbackEmpty>
         <Suspense fallback={<Loading handleOnClick={handleOnCloseDialog} />}>
           {isNewBuyOpened && (
             <NewBuyDialog
@@ -43,8 +40,8 @@ export default function DashBoard() {
   return (
     <React.Fragment>
       <Header handleOnOpenDialog={handleOnOpenDialog} />
-      <Purchases handleOnOpenDialog={handleOnOpenDialog} />
       <Suspense fallback={<Loading handleOnClick={handleOnCloseDialog} />}>
+        <Purchases handleOnOpenDialog={handleOnOpenDialog} />
         {isNewBuyOpened && (
           <NewBuyDialog
             open={isNewBuyOpened}
