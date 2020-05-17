@@ -36,7 +36,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function ProductCard({
+export default function PurchaseCard({
   purchase,
   handleOnClickOnEdit,
   handleOnClickOnDelete,

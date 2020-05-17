@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import { useDispatch } from 'react-redux'
 import { deleteBuy } from '../../store/reducers/purchase/actionCreators'
 import Transition from '../Transition'
-import PurchaseInfo from '../Purchases/PurchaseInfo'
+import PurchaseInfo from '../PurchaseInfo'
 
 export default function AlertDialogSlide({ purchase, handleClose }) {
   const dispatch = useDispatch()

@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
 import TableCell from '../TableCell'
-import PurchaseInfo from './PurchaseInfo'
+import PurchaseInfo from '../PurchaseInfo'
 
 export default function PurchaseRow({
   purchase,

@@ -5,13 +5,13 @@ import TableBody from '@material-ui/core/TableBody'
 import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import Card from './Card'
+import Card from '../PurchaseCard'
 import { Container } from '@material-ui/core'
 import { useSelector } from 'react-redux'
 import CashbackInfo from '../CashbackInfo'
 import TableCell from '../TableCell'
 import TableRow from '../TableRow'
-import PurchaseRow from './PurchaseRow'
+import PurchaseRow from '../PurchaseRow'
 const DeletePurchaseDialog = lazy(() => import('../DeletePurchaseDialog'))
 const FormBuy = lazy(() => import('../FormBuy'))
 
