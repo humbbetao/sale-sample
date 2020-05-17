@@ -6,15 +6,12 @@ import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Card from './Card'
-import Button from '@material-ui/core/Button'
 import { Container } from '@material-ui/core'
-import Chip from '@material-ui/core/Chip'
-import DeleteIcon from '@material-ui/icons/Delete'
-import EditIcon from '@material-ui/icons/Edit'
 import { useSelector } from 'react-redux'
 import CashbackInfo from '../CashbackInfo'
 import TableCell from '../TableCell'
 import TableRow from '../TableRow'
+import PurchaseRow from './PurchaseRow'
 const DeletePurchaseDialog = lazy(() => import('../DeletePurchaseDialog'))
 const FormBuy = lazy(() => import('../FormBuy'))
 
@@ -96,41 +93,12 @@ export default function Purchases() {
               </TableHead>
               <TableBody>
                 {purchases.map((purchase) => (
-                  <TableRow key={purchase.code}>
-                    <TableCell component="th" scope="row" align="center">
-                      {purchase.code}
-                    </TableCell>
-                    <TableCell scope="row" align="center">
-                      {purchase.date}
-                    </TableCell>
-                    <TableCell scope="row" align="center">
-                      {purchase.value}
-                    </TableCell>
-                    <TableCell scope="row" align="center">
-                      {purchase.cashbackValue}
-                    </TableCell>
-                    <TableCell scope="row" align="center">
-                      <Chip label={purchase.status} color="primary" />
-                    </TableCell>
-                    <TableCell scope="row" align="right">
-                      <Button
-                        size="small"
-                        color="secondary"
-                        startIcon={<EditIcon />}
-                        onClick={handleClickOpenEditDialog(purchase)}
-                      >
-                        Editar
-                      </Button>
-                      <Button
-                        size="small"
-                        color="primary"
-                        startIcon={<DeleteIcon />}
-                        onClick={handleClickOpenDeleteDialog(purchase)}
-                      >
-                        Excluir
-                      </Button>
-                    </TableCell>
-                  </TableRow>
+                  <PurchaseRow
+                    key={purchase.code}
+                    purchase={purchase}
+                    handleClickOpenEditDialog={handleClickOpenEditDialog}
+                    handleClickOpenDeleteDialog={handleClickOpenDeleteDialog}
+                  />
                 ))}
               </TableBody>
             </Table>

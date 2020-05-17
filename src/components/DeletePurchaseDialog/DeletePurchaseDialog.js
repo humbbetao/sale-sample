@@ -5,12 +5,10 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
-import TableCell from '../TableCell'
-import TableRow from '@material-ui/core/TableRow'
-import Chip from '@material-ui/core/Chip'
 import { useDispatch } from 'react-redux'
 import { deleteBuy } from '../../store/reducers/purchase/actionCreators'
 import Transition from '../Transition'
+import PurchaseInfo from '../Purchases/PurchaseInfo'
 
 export default function AlertDialogSlide({ purchase, handleClose }) {
   const dispatch = useDispatch()
@@ -32,23 +30,7 @@ export default function AlertDialogSlide({ purchase, handleClose }) {
       </DialogTitle>
       <DialogContent>
         <DialogContentText>
-          <TableRow key={purchase.code}>
-            <TableCell component="th" scope="row" align="center">
-              Código {purchase.code}
-            </TableCell>
-            <TableCell scope="row" align="center">
-              Data {purchase.date}
-            </TableCell>
-            <TableCell scope="row" align="center">
-              {`Valor R$ ${purchase.value}`}
-            </TableCell>
-            <TableCell scope="row" align="center">
-              {`Cashback R$ ${purchase.cashbackValue}`}
-            </TableCell>
-            <TableCell scope="row" align="center">
-              Status <Chip label={purchase.status} color="primary" />
-            </TableCell>
-          </TableRow>
+          <PurchaseInfo purchase={purchase} />
         </DialogContentText>
       </DialogContent>
       <DialogActions>
