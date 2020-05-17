@@ -12,6 +12,8 @@ import Card from './Card'
 import Button from '@material-ui/core/Button'
 import { Container } from '@material-ui/core'
 import Chip from '@material-ui/core/Chip'
+import DeleteIcon from '@material-ui/icons/Delete'
+import EditIcon from '@material-ui/icons/Edit'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import { useSelector } from 'react-redux'
@@ -78,35 +80,57 @@ export default function CustomizedTables() {
           <Table stickyHeader aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>Codigo</StyledTableCell>
-                <StyledTableCell align="right">Data</StyledTableCell>
-                <StyledTableCell align="right">Valor</StyledTableCell>
-                <StyledTableCell align="right">Cashback</StyledTableCell>
-                <StyledTableCell align="right">Status</StyledTableCell>
-                <StyledTableCell align="right">Ações</StyledTableCell>
+                <StyledTableCell scope="row" align="center">
+                  Codigo
+                </StyledTableCell>
+                <StyledTableCell scope="row" align="center">
+                  Data
+                </StyledTableCell>
+                <StyledTableCell scope="row" align="center">
+                  Valor
+                </StyledTableCell>
+                <StyledTableCell scope="row" align="center">
+                  Cashback
+                </StyledTableCell>
+                <StyledTableCell scope="row" align="center">
+                  Status
+                </StyledTableCell>
+                <StyledTableCell scope="row" align="center">
+                  Ações
+                </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {rows.map((row) => (
-                <StyledTableRow key={row.name}>
-                  <StyledTableCell component="th" scope="row">
-                    {row.name}
+                <StyledTableRow key={row.code}>
+                  <StyledTableCell component="th" scope="row" align="center">
+                    {row.code}
                   </StyledTableCell>
-                  <StyledTableCell align="right">{row.date}</StyledTableCell>
-                  <StyledTableCell align="right">
-                    {row.totalValue}
+                  <StyledTableCell scope="row" align="center">
+                    {row.date}
                   </StyledTableCell>
-                  <StyledTableCell align="right">
-                    {row.refundValue}
+                  <StyledTableCell scope="row" align="center">
+                    {row.value}
                   </StyledTableCell>
-                  <StyledTableCell align="right">
+                  <StyledTableCell scope="row" align="center">
+                    {row.cashbackValue}
+                  </StyledTableCell>
+                  <StyledTableCell scope="row" align="center">
                     <Chip label={row.status} color="primary" />
                   </StyledTableCell>
-                  <StyledTableCell align="right">
-                    <Button size="small" color="primary">
+                  <StyledTableCell scope="row" align="right">
+                    <Button
+                      size="small"
+                      color="secondary"
+                      startIcon={<EditIcon />}
+                    >
                       Editar
                     </Button>
-                    <Button size="small" color="primary">
+                    <Button
+                      size="small"
+                      color="primary"
+                      startIcon={<DeleteIcon />}
+                    >
                       Excluir
                     </Button>
                   </StyledTableCell>

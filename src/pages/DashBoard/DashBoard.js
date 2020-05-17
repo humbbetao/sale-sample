@@ -38,7 +38,7 @@ export default function DashBoard() {
   if (isEmpty) {
     return (
       <React.Fragment>
-        <Header />
+        <Header handleOnOpenDialog={handleOnOpenDialog} />
         <CashBackInfo
           isEmpty
           handleOnOpenDialog={handleOnOpenDialog}
@@ -56,16 +56,25 @@ export default function DashBoard() {
   }
   return (
     <React.Fragment>
-      <Header />
-      <Table />
+      <Header handleOnOpenDialog={handleOnOpenDialog} />
+      <Table handleOnOpenDialog={handleOnOpenDialog} />
       <Fab
         color="primary"
         aria-label="Nova compra"
         classes={classes}
         component="button"
+        onClick={handleOnOpenDialog}
       >
         <AddIcon />
       </Fab>
+      <Suspense fallback={<Loading handleOnClick={handleOnCloseDialog} />}>
+        {isNewBuyOpened && (
+          <NewBuyDialog
+            open={isNewBuyOpened}
+            handleOnClose={handleOnCloseDialog}
+          ></NewBuyDialog>
+        )}
+      </Suspense>
     </React.Fragment>
   )
 }

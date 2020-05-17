@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 import { ReactComponent as Cofrinho } from '../../assets/cofrinho.svg'
 import styled from 'styled-components'
-import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import Add from '@material-ui/icons/Add'
 
@@ -92,12 +91,9 @@ function CashBackIsEmpty({ handleOnOpenDialog }) {
           color="primary"
           component="button"
           variant="outlined"
+          size="large"
           onClick={handleOnOpenDialog}
-          startIcon={
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Add />
-            </IconButton>
-          }
+          startIcon={<Add />}
         >
           Nova Compra
         </Button>

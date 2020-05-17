@@ -1,15 +1,15 @@
 import ActionTypes from './actionTypes'
 
 export const INITIAL_STATE = { cashback: 0, list: [] }
-
+const STATUS = ['Em validação', 'Reprovado', 'Aprovado']
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ActionTypes.ADD_CASHBACK: {
       return { ...state, cashback: state.cashback + action.payload.amount }
     }
     case ActionTypes.ADD_BUY: {
-      const cashbackRate = Math.random()
-      const cashbackValue = action.payload.value * cashbackRate
+      const cashbackRate = Math.random().toFixed(2)
+      const cashbackValue = (action.payload.value * cashbackRate).toFixed(2)
       return {
         ...state,
         list: [
@@ -20,6 +20,7 @@ export default function reducer(state = INITIAL_STATE, action) {
             date: action.payload.date,
             cashbackRate: cashbackRate,
             cashbackValue: cashbackValue,
+            status: STATUS[(Math.random() * 2).toFixed(0)],
           },
         ],
       }

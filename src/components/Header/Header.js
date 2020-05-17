@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Header() {
+export default function Header({ handleOnOpenDialog }) {
   const classes = useStyles()
 
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
@@ -110,7 +110,7 @@ export default function Header() {
                 <p>Início</p>
               </MenuItem>
 
-              <MenuItem component="a" href="/add_buy">
+              <MenuItem onClick={handleOnOpenDialog}>
                 <IconButton aria-label="show 4 new mails" color="inherit">
                   <Add />
                 </IconButton>
@@ -164,7 +164,7 @@ export default function Header() {
             </IconButton>
             <p>Início</p>
           </MenuItem>
-          <MenuItem component="a" href="/add_buy">
+          <MenuItem onClick={handleOnOpenDialog}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Add />
             </IconButton>

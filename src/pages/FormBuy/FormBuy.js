@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { useDispatch } from 'react-redux'
 import { addBuy } from '../../store/reducers/buy/actionCreators'
-import { useHistory } from 'react-router-dom'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
@@ -23,21 +22,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const useStyles = makeStyles((theme) => {
   return {
-    loginContainer: {
-      padding: '16px',
-      width: '100vw',
-      height: '100vh',
-      backgroundColor: theme.palette.common.white,
-    },
-    paper: {
-      marginTop: theme.spacing(8),
-      display: 'flex',
-      flexDirection: 'column',
-    },
-
-    submit: {
-      margin: theme.spacing(3, 0, 2),
-    },
     form: {
       display: 'flex',
       flexDirection: 'column',
@@ -86,20 +70,23 @@ export default function FormBuy({ open = true, handleOnClose }) {
   const [value, setValue] = useState('')
   const [date, setDate] = useState(new Date())
   const dispatch = useDispatch()
-  const history = useHistory()
   const handleOnSubmit = useCallback(
     (event) => {
       event.preventDefault()
       const isFormValidated = true
       if (isFormValidated) {
-        dispatch(addBuy(code, value, date))
-        history.push('/dash')
+        const formattedDate = `${date.getDate()}/${
+          date.getMonth() + 1
+        }/${date.getFullYear()}`
+        dispatch(addBuy(code, value, formattedDate))
+        handleOnClose()
       } else {
         console.log('ops deu erro')
       }
     },
-    [code, value, date, dispatch, history]
+    [code, date, value, dispatch, handleOnClose]
   )
+
   const handleOnChangeCode = useCallback((event) => {
     const code = event.target.value
     setCode(code)
@@ -195,11 +182,11 @@ export default function FormBuy({ open = true, handleOnClose }) {
             Cancelar
           </Button>
           <Button
-            type="submit"
             fullWidth={actionButtonsInFullWidth}
             variant="contained"
             color="primary"
             size="large"
+            onClick={handleOnSubmit}
           >
             Adicionar
           </Button>
