@@ -11,10 +11,7 @@ import Button from '@material-ui/core/Button'
 import Add from '@material-ui/icons/Add'
 
 const CofrinhoIcon = styled(Cofrinho)`
-  fill: ${(props) => {
-    console.log(props)
-    return props.theme.colors.red
-  }};
+  fill: ${(props) => props.theme.colors.red};
   width: 120px;
   max-width: 150px;
 `

@@ -1,8 +1,5 @@
-import React from 'react'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import DashBoard from './pages/DashBoard'
-import NotFound from './pages/NotFound'
+import React, { Suspense, lazy } from 'react'
+
 import ErrorBoundary from './components/ErrorBoundary'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import store from './store'
@@ -15,37 +12,43 @@ import GlobalStyle, {
 } from './components/GlobalStyle'
 
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
-
 import DateFnsUtils from '@date-io/date-fns'
+import Loading from './components/Loading'
+const Login = lazy(() => import('./pages/Login'))
+const Register = lazy(() => import('./pages/Register'))
+const DashBoard = lazy(() => import('./pages/DashBoard'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 export default function App() {
   return (
     <ErrorBoundary>
-      <Provider store={store}>
-        <ThemeProvider theme={themeMaterialUi}>
-          <ThemeStyled theme={themeStyled}>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-              <GlobalStyle />
-              <Router>
-                <Switch>
-                  <Route path="/register">
-                    <Register />
-                  </Route>
-                  <Route path="/dash">
-                    <DashBoard />
-                  </Route>
-                  <Route path="/">
-                    <Login />
-                  </Route>
-                  <Route path="*">
-                    <NotFound />
-                  </Route>
-                </Switch>
-              </Router>
-            </MuiPickersUtilsProvider>
-          </ThemeStyled>
-        </ThemeProvider>
-      </Provider>
+      <Suspense fallback={<Loading />}>
+        <Provider store={store}>
+          <ThemeProvider theme={themeMaterialUi}>
+            <ThemeStyled theme={themeStyled}>
+              <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <GlobalStyle />
+                <Router>
+                  <Switch>
+                    <Route path="/register">
+                      <Register />
+                    </Route>
+                    <Route path="/dash">
+                      <DashBoard />
+                    </Route>
+                    <Route path="/">
+                      <Login />
+                    </Route>
+                    <Route path="*">
+                      <NotFound />
+                    </Route>
+                  </Switch>
+                </Router>
+              </MuiPickersUtilsProvider>
+            </ThemeStyled>
+          </ThemeProvider>
+        </Provider>
+      </Suspense>
     </ErrorBoundary>
   )
 }

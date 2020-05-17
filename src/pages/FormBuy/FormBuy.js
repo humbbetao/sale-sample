@@ -15,12 +15,13 @@ import Slide from '@material-ui/core/Slide'
 import { useTheme } from '@material-ui/core/styles'
 import FormControl from '@material-ui/core/FormControl'
 import { KeyboardDatePicker } from '@material-ui/pickers'
+import InputAdornment from '@material-ui/core/InputAdornment'
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />
 })
 
 const useStyles = makeStyles((theme) => {
-  console.log(theme)
   return {
     loginContainer: {
       padding: '16px',
@@ -89,7 +90,6 @@ export default function FormBuy({ open = true, handleOnClose }) {
   const handleOnSubmit = useCallback(
     (event) => {
       event.preventDefault()
-      console.log(code, value, date)
       const isFormValidated = true
       if (isFormValidated) {
         dispatch(addBuy(code, value, date))
@@ -137,16 +137,18 @@ export default function FormBuy({ open = true, handleOnClose }) {
               name="Codigo"
               autoComplete="Codigo"
               autoFocus
+              type="number"
               value={code}
               onChange={handleOnChangeCode}
             />
             <KeyboardDatePicker
-              format="MM/dd/yyyy"
+              format="dd/MM/yyyy"
               value={date}
               onChange={handleOnChangeDate}
               label="Date"
               name="Date"
               required
+              disableFuture
               autoComplete="Date"
               KeyboardButtonProps={{
                 'aria-label': 'change date',
@@ -163,6 +165,12 @@ export default function FormBuy({ open = true, handleOnClose }) {
               autoComplete="Valor"
               value={value}
               onChange={handleOnChangeValue}
+              type="number"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">R$</InputAdornment>
+                ),
+              }}
             />
           </FormControl>
         </form>

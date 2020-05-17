@@ -24,7 +24,6 @@ describe('Login', () => {
     const cpfFormatted = '987.654.321-00'
     const event = { target: { name: 'cpf', value: cpf } }
     wrapper.find('[data-test="CPF"] input').simulate('change', event)
-    console.log(wrapper.find('[data-test="CPF"] input').instance().value)
     expect(wrapper.find('[data-test="CPF"] input').instance().value).toEqual(
       cpfFormatted
     )

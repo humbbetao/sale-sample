@@ -123,7 +123,6 @@ export default function LoginPage() {
     // event.stopPropagation()
     event.preventDefault()
     const isFormValidated = true
-    console.log({ name, cpf, email, password, confirmPassword })
     if (!isFormValidated) {
       console.log('not isFormValidated')
       return
