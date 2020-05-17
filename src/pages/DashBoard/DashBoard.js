@@ -4,10 +4,20 @@ import Table from '../../components/Table'
 import { useSelector } from 'react-redux'
 import CashBackInfo from '../../components/CashbackInfo'
 import Loading from '../../components/Loading'
-
+import Fab from '@material-ui/core/Fab'
+import AddIcon from '@material-ui/icons/Add'
+import { makeStyles } from '@material-ui/core/styles'
 const NewBuyDialog = lazy(() => import('../FormBuy'))
 
+const useStyles = makeStyles((theme) => ({
+  fab: {
+    bottom: theme.spacing(3),
+    right: theme.spacing(3),
+    position: 'absolute',
+  },
+}))
 export default function DashBoard() {
+  const classes = useStyles()
   const [isNewBuyOpened, setIsNewBuyOpened] = useState(false)
 
   const handleOnCloseDialog = useCallback(() => {
@@ -35,6 +45,14 @@ export default function DashBoard() {
             ></NewBuyDialog>
           )}
         </Suspense>
+        <Fab
+          onClick={handleOnOpenDialog}
+          classes={{ root: classes.fab }}
+          color="primary"
+          aria-label="add"
+        >
+          <AddIcon />
+        </Fab>
       </React.Fragment>
     )
   }
@@ -50,6 +68,14 @@ export default function DashBoard() {
           ></NewBuyDialog>
         )}
       </Suspense>
+      <Fab
+        onClick={handleOnOpenDialog}
+        classes={{ root: classes.fab }}
+        color="primary"
+        aria-label="add"
+      >
+        <AddIcon />
+      </Fab>
     </React.Fragment>
   )
 }

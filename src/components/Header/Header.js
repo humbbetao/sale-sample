@@ -7,9 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import MenuItem from '@material-ui/core/MenuItem'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import Add from '@material-ui/icons/Add'
-import Home from '@material-ui/icons/Home'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-
 const useStyles = makeStyles((theme) => ({
   appBarBottom: {
     top: 'auto',
@@ -85,6 +83,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  fab: {
+    [theme.breakpoints.down('md')]: {
+      // margin: theme.spacing(3),
+      bottom: theme.spacing(3),
+      right: theme.spacing(3),
+    },
+  },
 }))
 
 export default function Header({ handleOnOpenDialog }) {
@@ -103,13 +108,6 @@ export default function Header({ handleOnOpenDialog }) {
             <div className={classes.grow} />
 
             <div className={classes.sectionDesktop}>
-              <MenuItem component="a" href="/dash">
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                  <Home />
-                </IconButton>
-                <p>Início</p>
-              </MenuItem>
-
               <MenuItem onClick={handleOnOpenDialog}>
                 <IconButton aria-label="show 4 new mails" color="inherit">
                   <Add />
@@ -154,23 +152,6 @@ export default function Header({ handleOnOpenDialog }) {
             </MenuItem>
           </Toolbar>
         </div>
-      </AppBar>
-
-      <AppBar position="fixed" classes={{ root: classes.appBarBottom }}>
-        <Toolbar classes={{ root: classes.appBarBottom }}>
-          <MenuItem component="a" href="/dash">
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Home />
-            </IconButton>
-            <p>Início</p>
-          </MenuItem>
-          <MenuItem onClick={handleOnOpenDialog}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Add />
-            </IconButton>
-            <p>Nova Compra</p>
-          </MenuItem>
-        </Toolbar>
       </AppBar>
     </div>
   )
