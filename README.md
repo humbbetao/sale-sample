@@ -1,4 +1,4 @@
-# boticario-sample
+# sale-sample
 
 Made by Humberto Gonçalves
 

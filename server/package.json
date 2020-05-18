@@ -1,8 +1,8 @@
 {
-  "name": "server-purchase-boticario",
+  "name": "server-purchase",
   "version": "1.0.0",
   "description": "",
-  "main": "server-purchase-boticario",
+  "main": "server-purchase",
   "scripts": {
     "start": "node server.js"
   },

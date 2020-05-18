@@ -1,16 +1,13 @@
 {
-  "name": "server-purchase-boticario",
+  "name": "server-sale",
   "version": "1.0.0",
   "description": "",
-  "main": "server-purchase-boticario",
+  "main": "server-sale",
   "scripts": {
     "start:app": "cd ./app && npm run start",
     "start:server": "node server/server.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "apisauce": "^1.1.1",
-    "redux-saga": "^1.1.3"
-  }
+  "dependencies": {}
 }
