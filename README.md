@@ -23,14 +23,15 @@ na sua linha de comando, digite:
 
 Isso irá levar alguns minutos para instalar todas as dependencias, após finalizado:
 
-###  1 - Ligar o servidor:
+### 1 - Ligar o servidor:
 
 `npm run start`
 
 ## Frontend
+
 entre no diretório app
 
-###  Como instalar:
+### Como instalar:
 
 na sua linha de comando, digite:
 
@@ -42,13 +43,13 @@ Isso irá levar alguns minutos para instalar todas as dependencias, após finali
 
 Você pode ligar o projeto em modo de desenvolvimento:
 
-###  1 - development mode:
+### 1 - development mode:
 
 `npm run start`
 
 Gerar build de desenvolvimento && subir local:
 
-###  2 - build development mode:
+### 2 - build development mode:
 
 ```
       npm run build:dev
@@ -57,28 +58,28 @@ Gerar build de desenvolvimento && subir local:
 
 Gerar build de produção && subir local:
 
-###  4 - build production mode:
+### 4 - build production mode:
 
 ```
       npm run build:prod
       npx serve -s build
 ```
 
-###  5 - Tests:
+### 5 - Tests:
 
 Foi feitos testes unitario e integração com jest e enzyme:
 
-`npm run test` - roda os testes sempre escutando as mudanças
-`npm run test:coverage` - computa a cobertura do projetoem testes
-`npm run test:noWatch`- roda os testes uma vez
-
-###  6 - Tests UI:
+`npm run test` - roda os testes sempre escutando as mudanças  
+`npm run test:coverage` - computa a cobertura do projetoem testes  
+`npm run test:noWatch`- roda os testes uma vez  
+ 
+### 6 - Tests UI:
 
 Foi feitos testes de ui com cypress:
 
-`npm run cy:open`  - para abrir o cypress modo visualização
-`npm run cy:run`  - para roda os tests em linha de comando
-`npm run cy:test` - para start os tests em linha de comando e subir o projeto localmente
+`npm run cy:open` - para abrir o cypress modo visualização  
+`npm run cy:run` - para roda os tests em linha de comando  
+`npm run cy:test` - para start os tests em linha de comando e subir o projeto localmente  
 
 ## 7 - Husky:
 
