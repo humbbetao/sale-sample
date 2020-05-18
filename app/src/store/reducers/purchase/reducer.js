@@ -1,43 +1,25 @@
 import ActionTypes from './actionTypes'
-import calculateCashBack from '../../../helpers/calculateCashback'
-import getStatus from '../../../helpers/getStatus'
-const novo = { cashback: 0, purchases: [] }
 
 export const INITIAL_STATE = {
-  ...novo,
+  cashback: 0,
+  purchases: [],
 }
 
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ActionTypes.ADD_CASHBACK: {
-      return { ...state, cashback: state.cashback + action.payload.amount }
+    case ActionTypes.GET_CASHBACK_SUCCESS: {
+      return { ...state, cashback: action.payload.cashback }
     }
-    case ActionTypes.CREATE_PURCHASE: {
-      const { cashbackRate, cashbackValue } = calculateCashBack(
-        action.payload.value
-      )
-      const status = getStatus(action.payload.value)
+    case ActionTypes.CREATE_PURCHASE_SUCCESS: {
+      debugger
+
       return {
         ...state,
-        purchases: [
-          ...state.purchases,
-          {
-            code: action.payload.code,
-            value: action.payload.value,
-            date: action.payload.date,
-            cashbackRate: cashbackRate,
-            cashbackValue: cashbackValue,
-            status: status,
-          },
-        ],
+        purchases: [...state.purchases, action.payload.purchase],
       }
     }
-    case ActionTypes.CALCULATE_CASHBACK: {
-      return {
-        ...state,
-      }
-    }
-    case ActionTypes.DELETE_PURCHASE: {
+
+    case ActionTypes.DELETE_PURCHASE_SUCCESS: {
       return {
         ...state,
         purchases: state.purchases.filter(
@@ -45,9 +27,10 @@ export default function reducer(state = INITIAL_STATE, action) {
         ),
       }
     }
-    case ActionTypes.EDIT_PURCHASE: {
+    case ActionTypes.EDIT_PURCHASE_SUCCESS: {
+      debugger
       const purchaseIndex = state.purchases.findIndex(
-        (purchase) => purchase.code === action.payload.code
+        (purchase) => purchase.code === action.payload.purchase.code
       )
       if (purchaseIndex === -1) {
         throw new Error('this should not happen')
@@ -55,15 +38,19 @@ export default function reducer(state = INITIAL_STATE, action) {
       const purchases = [...state.purchases]
       purchases[purchaseIndex] = {
         ...purchases[purchaseIndex],
-        code: action.payload.code,
-        value: action.payload.value,
-        date: action.payload.date,
+        ...action.payload.purchase,
       }
       return {
         ...state,
         purchases: [...purchases],
       }
     }
+    case ActionTypes.GET_PURCHASES_SUCCESS:
+      debugger
+      return {
+        ...state,
+        purchases: [...action.payload.purchases],
+      }
     default: {
       return { ...state }
     }

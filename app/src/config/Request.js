@@ -13,6 +13,7 @@ const api = create({
 
 const Request = {
   get: (url, params, axiosConfig) => {
+    debugger
     if (!url) {
       throw new Error('Missing url parameter')
     }

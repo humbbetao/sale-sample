@@ -6,9 +6,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { useDispatch } from 'react-redux'
 import {
-  addBuy,
-  editBuy,
-  calculateCashBack,
+  addPurchase,
+  editPurchase,
 } from '../../store/reducers/purchase/actionCreators'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
@@ -94,16 +93,14 @@ export default function AddPurchase({
         const formattedDate = `${('0' + date.getDate()).slice(-2)}/${(
           '0' + date.getMonth()
         ).slice(-2)}/${date.getFullYear()}`
-        dispatch(editBuy(code, value, formattedDate))
-        dispatch(calculateCashBack(code, value))
+        dispatch(editPurchase(code, value, formattedDate))
         handleOnClose()
         return
       }
       const formattedDate = `${('0' + date.getDate()).slice(-2)}/${(
         '0' + date.getMonth()
       ).slice(-2)}/${date.getFullYear()}`
-      dispatch(addBuy(code, value, formattedDate))
-      dispatch(calculateCashBack(code, value))
+      dispatch(addPurchase(code, value, formattedDate))
       handleOnClose()
     },
     [code, date, value, dispatch, handleOnClose, purchase.code]

@@ -1,8 +1,12 @@
-import React, { useState, useCallback, Suspense, lazy } from 'react'
+import React, { useState, useCallback, Suspense, lazy, useEffect } from 'react'
 import Header from '../../components/Header'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Loading from '../../components/Loading'
 import AddPurchaseIcon from '../../components/AddPurchaseIcon'
+import {
+  getPurchases,
+  getCashback,
+} from '../../store/reducers/purchase/actionCreators'
 
 const AddPurchase = lazy(() => import('../../components/AddPurchase'))
 const Purchases = lazy(() => import('../../components/Purchases'))
@@ -17,8 +21,13 @@ export default function DashBoard() {
   const handleOnOpenDialog = useCallback(() => {
     setIsNewBuyOpened(true)
   }, [])
-
+  const dispatch = useDispatch()
   const isEmpty = useSelector((state) => state.purchase.purchases.length === 0)
+
+  useEffect(() => {
+    dispatch(getPurchases())
+    dispatch(getCashback())
+  }, [dispatch])
 
   if (isEmpty) {
     return (

@@ -1,10 +1,9 @@
 import ActionTypes from '../actionTypes'
 import {
   addCashback,
-  addBuy,
-  calculateCashBack,
-  deleteBuy,
-  editBuy,
+  addPurchase,
+  deletePurchase,
+  editPurchase,
 } from '../actionCreators'
 
 describe('Purchase Action Creators', () => {
@@ -17,31 +16,24 @@ describe('Purchase Action Creators', () => {
     const code = 255
     const value = 250
     const date = '17/07/2019'
-    const action = addBuy(code, value, date)
+    const action = addPurchase(code, value, date)
     expect(action.type).toEqual(ActionTypes.CREATE_PURCHASE)
     expect(action.payload).toBeTruthy()
     expect(action.payload).toEqual({ code, value, date })
   })
-  it('calculateCashBack', () => {
+
+  it('deletePurchase', () => {
     const code = 255
-    const value = 250
-    const action = calculateCashBack(code, value)
-    expect(action.type).toEqual(ActionTypes.CALCULATE_CASHBACK)
-    expect(action.payload).toBeTruthy()
-    expect(action.payload).toEqual({ code, value })
-  })
-  it('deleteBuy', () => {
-    const code = 255
-    const action = deleteBuy(code)
+    const action = deletePurchase(code)
     expect(action.type).toEqual(ActionTypes.DELETE_PURCHASE)
     expect(action.payload).toBeTruthy()
     expect(action.payload).toEqual({ code })
   })
-  it('editBuy', () => {
+  it('editPurchase', () => {
     const code = 255
     const value = 250
     const date = '17/07/2019'
-    const action = editBuy(code, value, date)
+    const action = editPurchase(code, value, date)
     expect(action.type).toEqual(ActionTypes.EDIT_PURCHASE)
     expect(action.payload).toBeTruthy()
     expect(action.payload).toEqual({ code, value, date })

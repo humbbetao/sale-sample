@@ -6,14 +6,14 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { useDispatch } from 'react-redux'
-import { deleteBuy } from '../../store/reducers/purchase/actionCreators'
+import { deletePurchase } from '../../store/reducers/purchase/actionCreators'
 import Transition from '../Transition'
 import PurchaseInfo from '../PurchaseInfo'
 
 export default function AlertDialogSlide({ purchase, handleClose }) {
   const dispatch = useDispatch()
   const handleOnConfirm = useCallback(() => {
-    dispatch(deleteBuy(purchase.code))
+    dispatch(deletePurchase(purchase.code))
     handleClose()
   }, [dispatch, purchase, handleClose])
   return (
