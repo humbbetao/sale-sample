@@ -1,9 +1,6 @@
-# Boticario-sample
+# boticario-sample
 
 Made by Humberto Gonçalves
-
-Frontend Developer test - "O Boticario"
-Desafio: “Eu revendedor ‘O Boticário’ quero ter benefícios de acordo com o meu volume de vendas”.
 
 Projeto foi separado em server(backend) e app (frontend)
 
@@ -83,4 +80,4 @@ Foi feitos testes de ui com cypress:
 
 ## 7 - Husky:
 
-Foi adicionado no projeto jusky de pre commit com eslint e prettier
+Foi adicionado no projeto husky de pre commit com eslint e prettier
