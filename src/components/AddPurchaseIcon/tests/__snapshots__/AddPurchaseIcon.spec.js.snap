@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPurchaseIcon should render correctly 1`] = `
+<WithStyles(ForwardRef(Fab))
+  aria-label="add"
+  classes={
+    Object {
+      "root": "makeStyles-fab-1",
+    }
+  }
+  color="primary"
+>
+  <ForwardRef(Fab)
+    aria-label="add"
+    classes={
+      Object {
+        "colorInherit": "MuiFab-colorInherit",
+        "disabled": "Mui-disabled",
+        "extended": "MuiFab-extended",
+        "focusVisible": "Mui-focusVisible",
+        "label": "MuiFab-label",
+        "primary": "MuiFab-primary",
+        "root": "MuiFab-root makeStyles-fab-1",
+        "secondary": "MuiFab-secondary",
+        "sizeMedium": "MuiFab-sizeMedium",
+        "sizeSmall": "MuiFab-sizeSmall",
+      }
+    }
+    color="primary"
+  >
+    <WithStyles(ForwardRef(ButtonBase))
+      aria-label="add"
+      className="MuiFab-root makeStyles-fab-1 MuiFab-primary"
+      component="button"
+      disabled={false}
+      focusRipple={true}
+      focusVisibleClassName="Mui-focusVisible"
+    >
+      <ForwardRef(ButtonBase)
+        aria-label="add"
+        className="MuiFab-root makeStyles-fab-1 MuiFab-primary"
+        classes={
+          Object {
+            "disabled": "Mui-disabled",
+            "focusVisible": "Mui-focusVisible",
+            "root": "MuiButtonBase-root",
+          }
+        }
+        component="button"
+        disabled={false}
+        focusRipple={true}
+        focusVisibleClassName="Mui-focusVisible"
+      >
+        <button
+          aria-label="add"
+          className="MuiButtonBase-root MuiFab-root makeStyles-fab-1 MuiFab-primary"
+          disabled={false}
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiFab-label"
+          >
+            <ForwardRef>
+              <WithStyles(ForwardRef(SvgIcon))>
+                <ForwardRef(SvgIcon)
+                  classes={
+                    Object {
+                      "colorAction": "MuiSvgIcon-colorAction",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled",
+                      "colorError": "MuiSvgIcon-colorError",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                      "root": "MuiSvgIcon-root",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                    />
+                  </svg>
+                </ForwardRef(SvgIcon)>
+              </WithStyles(ForwardRef(SvgIcon))>
+            </ForwardRef>
+          </span>
+          <WithStyles(memo)
+            center={false}
+          >
+            <ForwardRef(TouchRipple)
+              center={false}
+              classes={
+                Object {
+                  "child": "MuiTouchRipple-child",
+                  "childLeaving": "MuiTouchRipple-childLeaving",
+                  "childPulsate": "MuiTouchRipple-childPulsate",
+                  "ripple": "MuiTouchRipple-ripple",
+                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                  "root": "MuiTouchRipple-root",
+                }
+              }
+            >
+              <span
+                className="MuiTouchRipple-root"
+              />
+            </ForwardRef(TouchRipple)>
+          </WithStyles(memo)>
+        </button>
+      </ForwardRef(ButtonBase)>
+    </WithStyles(ForwardRef(ButtonBase))>
+  </ForwardRef(Fab)>
+</WithStyles(ForwardRef(Fab))>
+`;

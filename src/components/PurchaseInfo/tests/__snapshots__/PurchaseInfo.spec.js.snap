@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PurchaseInfo should render correctly with the values 1`] = `
+<WithStyles(WithStyles(ForwardRef(TableRow)))>
+  <WithStyles(ForwardRef(TableRow))
+    classes={
+      Object {
+        "root": "WithStyles(ForwardRef(TableRow))-root-1",
+      }
+    }
+  >
+    <ForwardRef(TableRow)
+      classes={
+        Object {
+          "footer": "MuiTableRow-footer",
+          "head": "MuiTableRow-head",
+          "hover": "MuiTableRow-hover",
+          "root": "MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-1",
+          "selected": "Mui-selected",
+        }
+      }
+    >
+      <tr
+        className="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-1"
+        role={null}
+      >
+        <WithStyles(WithStyles(ForwardRef(TableCell)))
+          align="center"
+          component="th"
+          data-test="purchase-code"
+          scope="row"
+        >
+          <WithStyles(ForwardRef(TableCell))
+            align="center"
+            classes={
+              Object {
+                "body": "WithStyles(ForwardRef(TableCell))-body-8",
+                "head": "WithStyles(ForwardRef(TableCell))-head-7",
+              }
+            }
+            component="th"
+            data-test="purchase-code"
+            scope="row"
+          >
+            <ForwardRef(TableCell)
+              align="center"
+              classes={
+                Object {
+                  "alignCenter": "MuiTableCell-alignCenter",
+                  "alignJustify": "MuiTableCell-alignJustify",
+                  "alignLeft": "MuiTableCell-alignLeft",
+                  "alignRight": "MuiTableCell-alignRight",
+                  "body": "MuiTableCell-body WithStyles(ForwardRef(TableCell))-body-8",
+                  "footer": "MuiTableCell-footer",
+                  "head": "MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-7",
+                  "paddingCheckbox": "MuiTableCell-paddingCheckbox",
+                  "paddingNone": "MuiTableCell-paddingNone",
+                  "root": "MuiTableCell-root",
+                  "sizeSmall": "MuiTableCell-sizeSmall",
+                  "stickyHeader": "MuiTableCell-stickyHeader",
+                }
+              }
+              component="th"
+              data-test="purchase-code"
+              scope="row"
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-alignCenter"
+                data-test="purchase-code"
+                role="cell"
+                scope="row"
+              >
+                25
+              </th>
+            </ForwardRef(TableCell)>
+          </WithStyles(ForwardRef(TableCell))>
+        </WithStyles(WithStyles(ForwardRef(TableCell)))>
+        <WithStyles(WithStyles(ForwardRef(TableCell)))
+          align="center"
+          data-test="purchase-date"
+          scope="row"
+        >
+          <WithStyles(ForwardRef(TableCell))
+            align="center"
+            classes={
+              Object {
+                "body": "WithStyles(ForwardRef(TableCell))-body-8",
+                "head": "WithStyles(ForwardRef(TableCell))-head-7",
+              }
+            }
+            data-test="purchase-date"
+            scope="row"
+          >
+            <ForwardRef(TableCell)
+              align="center"
+              classes={
+                Object {
+                  "alignCenter": "MuiTableCell-alignCenter",
+                  "alignJustify": "MuiTableCell-alignJustify",
+                  "alignLeft": "MuiTableCell-alignLeft",
+                  "alignRight": "MuiTableCell-alignRight",
+                  "body": "MuiTableCell-body WithStyles(ForwardRef(TableCell))-body-8",
+                  "footer": "MuiTableCell-footer",
+                  "head": "MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-7",
+                  "paddingCheckbox": "MuiTableCell-paddingCheckbox",
+                  "paddingNone": "MuiTableCell-paddingNone",
+                  "root": "MuiTableCell-root",
+                  "sizeSmall": "MuiTableCell-sizeSmall",
+                  "stickyHeader": "MuiTableCell-stickyHeader",
+                }
+              }
+              data-test="purchase-date"
+              scope="row"
+            >
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-alignCenter"
+                data-test="purchase-date"
+                scope="row"
+              >
+                17/05/2020
+              </td>
+            </ForwardRef(TableCell)>
+          </WithStyles(ForwardRef(TableCell))>
+        </WithStyles(WithStyles(ForwardRef(TableCell)))>
+        <WithStyles(WithStyles(ForwardRef(TableCell)))
+          align="center"
+          data-test="purchase-value"
+          scope="row"
+        >
+          <WithStyles(ForwardRef(TableCell))
+            align="center"
+            classes={
+              Object {
+                "body": "WithStyles(ForwardRef(TableCell))-body-8",
+                "head": "WithStyles(ForwardRef(TableCell))-head-7",
+              }
+            }
+            data-test="purchase-value"
+            scope="row"
+          >
+            <ForwardRef(TableCell)
+              align="center"
+              classes={
+                Object {
+                  "alignCenter": "MuiTableCell-alignCenter",
+                  "alignJustify": "MuiTableCell-alignJustify",
+                  "alignLeft": "MuiTableCell-alignLeft",
+                  "alignRight": "MuiTableCell-alignRight",
+                  "body": "MuiTableCell-body WithStyles(ForwardRef(TableCell))-body-8",
+                  "footer": "MuiTableCell-footer",
+                  "head": "MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-7",
+                  "paddingCheckbox": "MuiTableCell-paddingCheckbox",
+                  "paddingNone": "MuiTableCell-paddingNone",
+                  "root": "MuiTableCell-root",
+                  "sizeSmall": "MuiTableCell-sizeSmall",
+                  "stickyHeader": "MuiTableCell-stickyHeader",
+                }
+              }
+              data-test="purchase-value"
+              scope="row"
+            >
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-alignCenter"
+                data-test="purchase-value"
+                scope="row"
+              >
+                R$ 250.00
+              </td>
+            </ForwardRef(TableCell)>
+          </WithStyles(ForwardRef(TableCell))>
+        </WithStyles(WithStyles(ForwardRef(TableCell)))>
+        <WithStyles(WithStyles(ForwardRef(TableCell)))
+          align="center"
+          data-test="purchase-cashbackValue"
+          scope="row"
+        >
+          <WithStyles(ForwardRef(TableCell))
+            align="center"
+            classes={
+              Object {
+                "body": "WithStyles(ForwardRef(TableCell))-body-8",
+                "head": "WithStyles(ForwardRef(TableCell))-head-7",
+              }
+            }
+            data-test="purchase-cashbackValue"
+            scope="row"
+          >
+            <ForwardRef(TableCell)
+              align="center"
+              classes={
+                Object {
+                  "alignCenter": "MuiTableCell-alignCenter",
+                  "alignJustify": "MuiTableCell-alignJustify",
+                  "alignLeft": "MuiTableCell-alignLeft",
+                  "alignRight": "MuiTableCell-alignRight",
+                  "body": "MuiTableCell-body WithStyles(ForwardRef(TableCell))-body-8",
+                  "footer": "MuiTableCell-footer",
+                  "head": "MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-7",
+                  "paddingCheckbox": "MuiTableCell-paddingCheckbox",
+                  "paddingNone": "MuiTableCell-paddingNone",
+                  "root": "MuiTableCell-root",
+                  "sizeSmall": "MuiTableCell-sizeSmall",
+                  "stickyHeader": "MuiTableCell-stickyHeader",
+                }
+              }
+              data-test="purchase-cashbackValue"
+              scope="row"
+            >
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-alignCenter"
+                data-test="purchase-cashbackValue"
+                scope="row"
+              >
+                R$ 17.00
+              </td>
+            </ForwardRef(TableCell)>
+          </WithStyles(ForwardRef(TableCell))>
+        </WithStyles(WithStyles(ForwardRef(TableCell)))>
+        <WithStyles(WithStyles(ForwardRef(TableCell)))
+          align="center"
+          data-test="purchase-status"
+          scope="row"
+        >
+          <WithStyles(ForwardRef(TableCell))
+            align="center"
+            classes={
+              Object {
+                "body": "WithStyles(ForwardRef(TableCell))-body-8",
+                "head": "WithStyles(ForwardRef(TableCell))-head-7",
+              }
+            }
+            data-test="purchase-status"
+            scope="row"
+          >
+            <ForwardRef(TableCell)
+              align="center"
+              classes={
+                Object {
+                  "alignCenter": "MuiTableCell-alignCenter",
+                  "alignJustify": "MuiTableCell-alignJustify",
+                  "alignLeft": "MuiTableCell-alignLeft",
+                  "alignRight": "MuiTableCell-alignRight",
+                  "body": "MuiTableCell-body WithStyles(ForwardRef(TableCell))-body-8",
+                  "footer": "MuiTableCell-footer",
+                  "head": "MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-7",
+                  "paddingCheckbox": "MuiTableCell-paddingCheckbox",
+                  "paddingNone": "MuiTableCell-paddingNone",
+                  "root": "MuiTableCell-root",
+                  "sizeSmall": "MuiTableCell-sizeSmall",
+                  "stickyHeader": "MuiTableCell-stickyHeader",
+                }
+              }
+              data-test="purchase-status"
+              scope="row"
+            >
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-alignCenter"
+                data-test="purchase-status"
+                scope="row"
+              >
+                <WithStyles(ForwardRef(Chip))
+                  color="primary"
+                >
+                  <ForwardRef(Chip)
+                    classes={
+                      Object {
+                        "avatar": "MuiChip-avatar",
+                        "avatarColorPrimary": "MuiChip-avatarColorPrimary",
+                        "avatarColorSecondary": "MuiChip-avatarColorSecondary",
+                        "avatarSmall": "MuiChip-avatarSmall",
+                        "clickable": "MuiChip-clickable",
+                        "clickableColorPrimary": "MuiChip-clickableColorPrimary",
+                        "clickableColorSecondary": "MuiChip-clickableColorSecondary",
+                        "colorPrimary": "MuiChip-colorPrimary",
+                        "colorSecondary": "MuiChip-colorSecondary",
+                        "deletable": "MuiChip-deletable",
+                        "deletableColorPrimary": "MuiChip-deletableColorPrimary",
+                        "deletableColorSecondary": "MuiChip-deletableColorSecondary",
+                        "deleteIcon": "MuiChip-deleteIcon",
+                        "deleteIconColorPrimary": "MuiChip-deleteIconColorPrimary",
+                        "deleteIconColorSecondary": "MuiChip-deleteIconColorSecondary",
+                        "deleteIconOutlinedColorPrimary": "MuiChip-deleteIconOutlinedColorPrimary",
+                        "deleteIconOutlinedColorSecondary": "MuiChip-deleteIconOutlinedColorSecondary",
+                        "deleteIconSmall": "MuiChip-deleteIconSmall",
+                        "disabled": "Mui-disabled",
+                        "icon": "MuiChip-icon",
+                        "iconColorPrimary": "MuiChip-iconColorPrimary",
+                        "iconColorSecondary": "MuiChip-iconColorSecondary",
+                        "iconSmall": "MuiChip-iconSmall",
+                        "label": "MuiChip-label",
+                        "labelSmall": "MuiChip-labelSmall",
+                        "outlined": "MuiChip-outlined",
+                        "outlinedPrimary": "MuiChip-outlinedPrimary",
+                        "outlinedSecondary": "MuiChip-outlinedSecondary",
+                        "root": "MuiChip-root",
+                        "sizeSmall": "MuiChip-sizeSmall",
+                      }
+                    }
+                    color="primary"
+                  >
+                    <div
+                      className="MuiChip-root MuiChip-colorPrimary"
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                    >
+                      <span
+                        className="MuiChip-label"
+                      />
+                    </div>
+                  </ForwardRef(Chip)>
+                </WithStyles(ForwardRef(Chip))>
+              </td>
+            </ForwardRef(TableCell)>
+          </WithStyles(ForwardRef(TableCell))>
+        </WithStyles(WithStyles(ForwardRef(TableCell)))>
+      </tr>
+    </ForwardRef(TableRow)>
+  </WithStyles(ForwardRef(TableRow))>
+</WithStyles(WithStyles(ForwardRef(TableRow)))>
+`;

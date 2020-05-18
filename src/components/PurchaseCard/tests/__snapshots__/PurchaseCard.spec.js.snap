@@ -1,0 +1,1853 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PurchaseCard should render correctly with the values 1`] = `
+<WithStyles(ForwardRef(Card))
+  className="makeStyles-root-1"
+  variant="outlined"
+>
+  <ForwardRef(Card)
+    className="makeStyles-root-1"
+    classes={
+      Object {
+        "root": "MuiCard-root",
+      }
+    }
+    variant="outlined"
+  >
+    <WithStyles(ForwardRef(Paper))
+      className="MuiCard-root makeStyles-root-1"
+      elevation={1}
+      variant="outlined"
+    >
+      <ForwardRef(Paper)
+        className="MuiCard-root makeStyles-root-1"
+        classes={
+          Object {
+            "elevation0": "MuiPaper-elevation0",
+            "elevation1": "MuiPaper-elevation1",
+            "elevation10": "MuiPaper-elevation10",
+            "elevation11": "MuiPaper-elevation11",
+            "elevation12": "MuiPaper-elevation12",
+            "elevation13": "MuiPaper-elevation13",
+            "elevation14": "MuiPaper-elevation14",
+            "elevation15": "MuiPaper-elevation15",
+            "elevation16": "MuiPaper-elevation16",
+            "elevation17": "MuiPaper-elevation17",
+            "elevation18": "MuiPaper-elevation18",
+            "elevation19": "MuiPaper-elevation19",
+            "elevation2": "MuiPaper-elevation2",
+            "elevation20": "MuiPaper-elevation20",
+            "elevation21": "MuiPaper-elevation21",
+            "elevation22": "MuiPaper-elevation22",
+            "elevation23": "MuiPaper-elevation23",
+            "elevation24": "MuiPaper-elevation24",
+            "elevation3": "MuiPaper-elevation3",
+            "elevation4": "MuiPaper-elevation4",
+            "elevation5": "MuiPaper-elevation5",
+            "elevation6": "MuiPaper-elevation6",
+            "elevation7": "MuiPaper-elevation7",
+            "elevation8": "MuiPaper-elevation8",
+            "elevation9": "MuiPaper-elevation9",
+            "outlined": "MuiPaper-outlined",
+            "root": "MuiPaper-root",
+            "rounded": "MuiPaper-rounded",
+          }
+        }
+        elevation={1}
+        variant="outlined"
+      >
+        <div
+          className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-outlined MuiPaper-rounded"
+        >
+          <WithStyles(ForwardRef(CardContent))>
+            <ForwardRef(CardContent)
+              classes={
+                Object {
+                  "root": "MuiCardContent-root",
+                }
+              }
+            >
+              <div
+                className="MuiCardContent-root"
+              >
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        CashBack
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-cashbackValue"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-cashbackValue"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-cashbackValue"
+                      >
+                        R$ 17.00
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        Codigo
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-code"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-code"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-code"
+                      >
+                        25
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        Valor
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-value"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-value"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-value"
+                      >
+                        R$ 250.00
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        Data
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-date"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-date"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-date"
+                      >
+                        17/05/2020
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-pos-6"
+                    color="textSecondary"
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-pos-6"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-pos-6 MuiTypography-body1 MuiTypography-colorTextSecondary"
+                      >
+                        Status
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-pos-6"
+                    color="textSecondary"
+                    data-test="purchase-status"
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-pos-6"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-status"
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-pos-6 MuiTypography-body1 MuiTypography-colorTextSecondary"
+                        data-test="purchase-status"
+                      >
+                        <WithStyles(ForwardRef(Chip))
+                          color="primary"
+                        >
+                          <ForwardRef(Chip)
+                            classes={
+                              Object {
+                                "avatar": "MuiChip-avatar",
+                                "avatarColorPrimary": "MuiChip-avatarColorPrimary",
+                                "avatarColorSecondary": "MuiChip-avatarColorSecondary",
+                                "avatarSmall": "MuiChip-avatarSmall",
+                                "clickable": "MuiChip-clickable",
+                                "clickableColorPrimary": "MuiChip-clickableColorPrimary",
+                                "clickableColorSecondary": "MuiChip-clickableColorSecondary",
+                                "colorPrimary": "MuiChip-colorPrimary",
+                                "colorSecondary": "MuiChip-colorSecondary",
+                                "deletable": "MuiChip-deletable",
+                                "deletableColorPrimary": "MuiChip-deletableColorPrimary",
+                                "deletableColorSecondary": "MuiChip-deletableColorSecondary",
+                                "deleteIcon": "MuiChip-deleteIcon",
+                                "deleteIconColorPrimary": "MuiChip-deleteIconColorPrimary",
+                                "deleteIconColorSecondary": "MuiChip-deleteIconColorSecondary",
+                                "deleteIconOutlinedColorPrimary": "MuiChip-deleteIconOutlinedColorPrimary",
+                                "deleteIconOutlinedColorSecondary": "MuiChip-deleteIconOutlinedColorSecondary",
+                                "deleteIconSmall": "MuiChip-deleteIconSmall",
+                                "disabled": "Mui-disabled",
+                                "icon": "MuiChip-icon",
+                                "iconColorPrimary": "MuiChip-iconColorPrimary",
+                                "iconColorSecondary": "MuiChip-iconColorSecondary",
+                                "iconSmall": "MuiChip-iconSmall",
+                                "label": "MuiChip-label",
+                                "labelSmall": "MuiChip-labelSmall",
+                                "outlined": "MuiChip-outlined",
+                                "outlinedPrimary": "MuiChip-outlinedPrimary",
+                                "outlinedSecondary": "MuiChip-outlinedSecondary",
+                                "root": "MuiChip-root",
+                                "sizeSmall": "MuiChip-sizeSmall",
+                              }
+                            }
+                            color="primary"
+                          >
+                            <div
+                              className="MuiChip-root MuiChip-colorPrimary"
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                            >
+                              <span
+                                className="MuiChip-label"
+                              />
+                            </div>
+                          </ForwardRef(Chip)>
+                        </WithStyles(ForwardRef(Chip))>
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+              </div>
+            </ForwardRef(CardContent)>
+          </WithStyles(ForwardRef(CardContent))>
+          <WithStyles(ForwardRef(CardActions))
+            classes={
+              Object {
+                "root": "makeStyles-cardActions-4",
+              }
+            }
+          >
+            <ForwardRef(CardActions)
+              classes={
+                Object {
+                  "root": "MuiCardActions-root makeStyles-cardActions-4",
+                  "spacing": "MuiCardActions-spacing",
+                }
+              }
+            >
+              <div
+                className="MuiCardActions-root makeStyles-cardActions-4 MuiCardActions-spacing"
+              >
+                <WithStyles(ForwardRef(Button))
+                  color="secondary"
+                  data-test="edit-purchase-button"
+                  variant="outlined"
+                >
+                  <ForwardRef(Button)
+                    classes={
+                      Object {
+                        "colorInherit": "MuiButton-colorInherit",
+                        "contained": "MuiButton-contained",
+                        "containedPrimary": "MuiButton-containedPrimary",
+                        "containedSecondary": "MuiButton-containedSecondary",
+                        "containedSizeLarge": "MuiButton-containedSizeLarge",
+                        "containedSizeSmall": "MuiButton-containedSizeSmall",
+                        "disableElevation": "MuiButton-disableElevation",
+                        "disabled": "Mui-disabled",
+                        "endIcon": "MuiButton-endIcon",
+                        "focusVisible": "Mui-focusVisible",
+                        "fullWidth": "MuiButton-fullWidth",
+                        "iconSizeLarge": "MuiButton-iconSizeLarge",
+                        "iconSizeMedium": "MuiButton-iconSizeMedium",
+                        "iconSizeSmall": "MuiButton-iconSizeSmall",
+                        "label": "MuiButton-label",
+                        "outlined": "MuiButton-outlined",
+                        "outlinedPrimary": "MuiButton-outlinedPrimary",
+                        "outlinedSecondary": "MuiButton-outlinedSecondary",
+                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                        "root": "MuiButton-root",
+                        "sizeLarge": "MuiButton-sizeLarge",
+                        "sizeSmall": "MuiButton-sizeSmall",
+                        "startIcon": "MuiButton-startIcon",
+                        "text": "MuiButton-text",
+                        "textPrimary": "MuiButton-textPrimary",
+                        "textSecondary": "MuiButton-textSecondary",
+                        "textSizeLarge": "MuiButton-textSizeLarge",
+                        "textSizeSmall": "MuiButton-textSizeSmall",
+                      }
+                    }
+                    color="secondary"
+                    data-test="edit-purchase-button"
+                    variant="outlined"
+                  >
+                    <WithStyles(ForwardRef(ButtonBase))
+                      className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                      component="button"
+                      data-test="edit-purchase-button"
+                      disabled={false}
+                      focusRipple={true}
+                      focusVisibleClassName="Mui-focusVisible"
+                      type="button"
+                    >
+                      <ForwardRef(ButtonBase)
+                        className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        component="button"
+                        data-test="edit-purchase-button"
+                        disabled={false}
+                        focusRipple={true}
+                        focusVisibleClassName="Mui-focusVisible"
+                        type="button"
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                          data-test="edit-purchase-button"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="MuiButton-label"
+                          >
+                            Editar
+                          </span>
+                          <WithStyles(memo)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              />
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(memo)>
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(Button)>
+                </WithStyles(ForwardRef(Button))>
+                <WithStyles(ForwardRef(Button))
+                  color="primary"
+                  data-test="delete-purchase-button"
+                  variant="outlined"
+                >
+                  <ForwardRef(Button)
+                    classes={
+                      Object {
+                        "colorInherit": "MuiButton-colorInherit",
+                        "contained": "MuiButton-contained",
+                        "containedPrimary": "MuiButton-containedPrimary",
+                        "containedSecondary": "MuiButton-containedSecondary",
+                        "containedSizeLarge": "MuiButton-containedSizeLarge",
+                        "containedSizeSmall": "MuiButton-containedSizeSmall",
+                        "disableElevation": "MuiButton-disableElevation",
+                        "disabled": "Mui-disabled",
+                        "endIcon": "MuiButton-endIcon",
+                        "focusVisible": "Mui-focusVisible",
+                        "fullWidth": "MuiButton-fullWidth",
+                        "iconSizeLarge": "MuiButton-iconSizeLarge",
+                        "iconSizeMedium": "MuiButton-iconSizeMedium",
+                        "iconSizeSmall": "MuiButton-iconSizeSmall",
+                        "label": "MuiButton-label",
+                        "outlined": "MuiButton-outlined",
+                        "outlinedPrimary": "MuiButton-outlinedPrimary",
+                        "outlinedSecondary": "MuiButton-outlinedSecondary",
+                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                        "root": "MuiButton-root",
+                        "sizeLarge": "MuiButton-sizeLarge",
+                        "sizeSmall": "MuiButton-sizeSmall",
+                        "startIcon": "MuiButton-startIcon",
+                        "text": "MuiButton-text",
+                        "textPrimary": "MuiButton-textPrimary",
+                        "textSecondary": "MuiButton-textSecondary",
+                        "textSizeLarge": "MuiButton-textSizeLarge",
+                        "textSizeSmall": "MuiButton-textSizeSmall",
+                      }
+                    }
+                    color="primary"
+                    data-test="delete-purchase-button"
+                    variant="outlined"
+                  >
+                    <WithStyles(ForwardRef(ButtonBase))
+                      className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                      component="button"
+                      data-test="delete-purchase-button"
+                      disabled={false}
+                      focusRipple={true}
+                      focusVisibleClassName="Mui-focusVisible"
+                      type="button"
+                    >
+                      <ForwardRef(ButtonBase)
+                        className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        component="button"
+                        data-test="delete-purchase-button"
+                        disabled={false}
+                        focusRipple={true}
+                        focusVisibleClassName="Mui-focusVisible"
+                        type="button"
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                          data-test="delete-purchase-button"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="MuiButton-label"
+                          >
+                            Excluir
+                          </span>
+                          <WithStyles(memo)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              />
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(memo)>
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(Button)>
+                </WithStyles(ForwardRef(Button))>
+              </div>
+            </ForwardRef(CardActions)>
+          </WithStyles(ForwardRef(CardActions))>
+        </div>
+      </ForwardRef(Paper)>
+    </WithStyles(ForwardRef(Paper))>
+  </ForwardRef(Card)>
+</WithStyles(ForwardRef(Card))>
+`;
+
+exports[`PurchaseRow should render correctly 1`] = `
+<WithStyles(ForwardRef(Card))
+  className="makeStyles-root-1"
+  variant="outlined"
+>
+  <ForwardRef(Card)
+    className="makeStyles-root-1"
+    classes={
+      Object {
+        "root": "MuiCard-root",
+      }
+    }
+    variant="outlined"
+  >
+    <WithStyles(ForwardRef(Paper))
+      className="MuiCard-root makeStyles-root-1"
+      elevation={1}
+      variant="outlined"
+    >
+      <ForwardRef(Paper)
+        className="MuiCard-root makeStyles-root-1"
+        classes={
+          Object {
+            "elevation0": "MuiPaper-elevation0",
+            "elevation1": "MuiPaper-elevation1",
+            "elevation10": "MuiPaper-elevation10",
+            "elevation11": "MuiPaper-elevation11",
+            "elevation12": "MuiPaper-elevation12",
+            "elevation13": "MuiPaper-elevation13",
+            "elevation14": "MuiPaper-elevation14",
+            "elevation15": "MuiPaper-elevation15",
+            "elevation16": "MuiPaper-elevation16",
+            "elevation17": "MuiPaper-elevation17",
+            "elevation18": "MuiPaper-elevation18",
+            "elevation19": "MuiPaper-elevation19",
+            "elevation2": "MuiPaper-elevation2",
+            "elevation20": "MuiPaper-elevation20",
+            "elevation21": "MuiPaper-elevation21",
+            "elevation22": "MuiPaper-elevation22",
+            "elevation23": "MuiPaper-elevation23",
+            "elevation24": "MuiPaper-elevation24",
+            "elevation3": "MuiPaper-elevation3",
+            "elevation4": "MuiPaper-elevation4",
+            "elevation5": "MuiPaper-elevation5",
+            "elevation6": "MuiPaper-elevation6",
+            "elevation7": "MuiPaper-elevation7",
+            "elevation8": "MuiPaper-elevation8",
+            "elevation9": "MuiPaper-elevation9",
+            "outlined": "MuiPaper-outlined",
+            "root": "MuiPaper-root",
+            "rounded": "MuiPaper-rounded",
+          }
+        }
+        elevation={1}
+        variant="outlined"
+      >
+        <div
+          className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-outlined MuiPaper-rounded"
+        >
+          <WithStyles(ForwardRef(CardContent))>
+            <ForwardRef(CardContent)
+              classes={
+                Object {
+                  "root": "MuiCardContent-root",
+                }
+              }
+            >
+              <div
+                className="MuiCardContent-root"
+              >
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        CashBack
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-cashbackValue"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-cashbackValue"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-cashbackValue"
+                      >
+                        R$ 0.00
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        Codigo
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-code"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-code"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-code"
+                      />
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        Valor
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-value"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-value"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-value"
+                      >
+                        R$ 0.00
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                      >
+                        Data
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-title-5"
+                    color="textSecondary"
+                    data-test="purchase-date"
+                    gutterBottom={true}
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-title-5"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-date"
+                      gutterBottom={true}
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-title-5 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                        data-test="purchase-date"
+                      />
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+                <div
+                  className="makeStyles-cardContent-3"
+                >
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-pos-6"
+                    color="textSecondary"
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-pos-6"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-pos-6 MuiTypography-body1 MuiTypography-colorTextSecondary"
+                      >
+                        Status
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-pos-6"
+                    color="textSecondary"
+                    data-test="purchase-status"
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-pos-6"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      color="textSecondary"
+                      data-test="purchase-status"
+                    >
+                      <p
+                        className="MuiTypography-root makeStyles-pos-6 MuiTypography-body1 MuiTypography-colorTextSecondary"
+                        data-test="purchase-status"
+                      >
+                        <WithStyles(ForwardRef(Chip))
+                          color="primary"
+                        >
+                          <ForwardRef(Chip)
+                            classes={
+                              Object {
+                                "avatar": "MuiChip-avatar",
+                                "avatarColorPrimary": "MuiChip-avatarColorPrimary",
+                                "avatarColorSecondary": "MuiChip-avatarColorSecondary",
+                                "avatarSmall": "MuiChip-avatarSmall",
+                                "clickable": "MuiChip-clickable",
+                                "clickableColorPrimary": "MuiChip-clickableColorPrimary",
+                                "clickableColorSecondary": "MuiChip-clickableColorSecondary",
+                                "colorPrimary": "MuiChip-colorPrimary",
+                                "colorSecondary": "MuiChip-colorSecondary",
+                                "deletable": "MuiChip-deletable",
+                                "deletableColorPrimary": "MuiChip-deletableColorPrimary",
+                                "deletableColorSecondary": "MuiChip-deletableColorSecondary",
+                                "deleteIcon": "MuiChip-deleteIcon",
+                                "deleteIconColorPrimary": "MuiChip-deleteIconColorPrimary",
+                                "deleteIconColorSecondary": "MuiChip-deleteIconColorSecondary",
+                                "deleteIconOutlinedColorPrimary": "MuiChip-deleteIconOutlinedColorPrimary",
+                                "deleteIconOutlinedColorSecondary": "MuiChip-deleteIconOutlinedColorSecondary",
+                                "deleteIconSmall": "MuiChip-deleteIconSmall",
+                                "disabled": "Mui-disabled",
+                                "icon": "MuiChip-icon",
+                                "iconColorPrimary": "MuiChip-iconColorPrimary",
+                                "iconColorSecondary": "MuiChip-iconColorSecondary",
+                                "iconSmall": "MuiChip-iconSmall",
+                                "label": "MuiChip-label",
+                                "labelSmall": "MuiChip-labelSmall",
+                                "outlined": "MuiChip-outlined",
+                                "outlinedPrimary": "MuiChip-outlinedPrimary",
+                                "outlinedSecondary": "MuiChip-outlinedSecondary",
+                                "root": "MuiChip-root",
+                                "sizeSmall": "MuiChip-sizeSmall",
+                              }
+                            }
+                            color="primary"
+                          >
+                            <div
+                              className="MuiChip-root MuiChip-colorPrimary"
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                            >
+                              <span
+                                className="MuiChip-label"
+                              />
+                            </div>
+                          </ForwardRef(Chip)>
+                        </WithStyles(ForwardRef(Chip))>
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                </div>
+              </div>
+            </ForwardRef(CardContent)>
+          </WithStyles(ForwardRef(CardContent))>
+          <WithStyles(ForwardRef(CardActions))
+            classes={
+              Object {
+                "root": "makeStyles-cardActions-4",
+              }
+            }
+          >
+            <ForwardRef(CardActions)
+              classes={
+                Object {
+                  "root": "MuiCardActions-root makeStyles-cardActions-4",
+                  "spacing": "MuiCardActions-spacing",
+                }
+              }
+            >
+              <div
+                className="MuiCardActions-root makeStyles-cardActions-4 MuiCardActions-spacing"
+              >
+                <WithStyles(ForwardRef(Button))
+                  color="secondary"
+                  data-test="edit-purchase-button"
+                  variant="outlined"
+                >
+                  <ForwardRef(Button)
+                    classes={
+                      Object {
+                        "colorInherit": "MuiButton-colorInherit",
+                        "contained": "MuiButton-contained",
+                        "containedPrimary": "MuiButton-containedPrimary",
+                        "containedSecondary": "MuiButton-containedSecondary",
+                        "containedSizeLarge": "MuiButton-containedSizeLarge",
+                        "containedSizeSmall": "MuiButton-containedSizeSmall",
+                        "disableElevation": "MuiButton-disableElevation",
+                        "disabled": "Mui-disabled",
+                        "endIcon": "MuiButton-endIcon",
+                        "focusVisible": "Mui-focusVisible",
+                        "fullWidth": "MuiButton-fullWidth",
+                        "iconSizeLarge": "MuiButton-iconSizeLarge",
+                        "iconSizeMedium": "MuiButton-iconSizeMedium",
+                        "iconSizeSmall": "MuiButton-iconSizeSmall",
+                        "label": "MuiButton-label",
+                        "outlined": "MuiButton-outlined",
+                        "outlinedPrimary": "MuiButton-outlinedPrimary",
+                        "outlinedSecondary": "MuiButton-outlinedSecondary",
+                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                        "root": "MuiButton-root",
+                        "sizeLarge": "MuiButton-sizeLarge",
+                        "sizeSmall": "MuiButton-sizeSmall",
+                        "startIcon": "MuiButton-startIcon",
+                        "text": "MuiButton-text",
+                        "textPrimary": "MuiButton-textPrimary",
+                        "textSecondary": "MuiButton-textSecondary",
+                        "textSizeLarge": "MuiButton-textSizeLarge",
+                        "textSizeSmall": "MuiButton-textSizeSmall",
+                      }
+                    }
+                    color="secondary"
+                    data-test="edit-purchase-button"
+                    variant="outlined"
+                  >
+                    <WithStyles(ForwardRef(ButtonBase))
+                      className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                      component="button"
+                      data-test="edit-purchase-button"
+                      disabled={false}
+                      focusRipple={true}
+                      focusVisibleClassName="Mui-focusVisible"
+                      type="button"
+                    >
+                      <ForwardRef(ButtonBase)
+                        className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        component="button"
+                        data-test="edit-purchase-button"
+                        disabled={false}
+                        focusRipple={true}
+                        focusVisibleClassName="Mui-focusVisible"
+                        type="button"
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+                          data-test="edit-purchase-button"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="MuiButton-label"
+                          >
+                            Editar
+                          </span>
+                          <WithStyles(memo)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              />
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(memo)>
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(Button)>
+                </WithStyles(ForwardRef(Button))>
+                <WithStyles(ForwardRef(Button))
+                  color="primary"
+                  data-test="delete-purchase-button"
+                  variant="outlined"
+                >
+                  <ForwardRef(Button)
+                    classes={
+                      Object {
+                        "colorInherit": "MuiButton-colorInherit",
+                        "contained": "MuiButton-contained",
+                        "containedPrimary": "MuiButton-containedPrimary",
+                        "containedSecondary": "MuiButton-containedSecondary",
+                        "containedSizeLarge": "MuiButton-containedSizeLarge",
+                        "containedSizeSmall": "MuiButton-containedSizeSmall",
+                        "disableElevation": "MuiButton-disableElevation",
+                        "disabled": "Mui-disabled",
+                        "endIcon": "MuiButton-endIcon",
+                        "focusVisible": "Mui-focusVisible",
+                        "fullWidth": "MuiButton-fullWidth",
+                        "iconSizeLarge": "MuiButton-iconSizeLarge",
+                        "iconSizeMedium": "MuiButton-iconSizeMedium",
+                        "iconSizeSmall": "MuiButton-iconSizeSmall",
+                        "label": "MuiButton-label",
+                        "outlined": "MuiButton-outlined",
+                        "outlinedPrimary": "MuiButton-outlinedPrimary",
+                        "outlinedSecondary": "MuiButton-outlinedSecondary",
+                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                        "root": "MuiButton-root",
+                        "sizeLarge": "MuiButton-sizeLarge",
+                        "sizeSmall": "MuiButton-sizeSmall",
+                        "startIcon": "MuiButton-startIcon",
+                        "text": "MuiButton-text",
+                        "textPrimary": "MuiButton-textPrimary",
+                        "textSecondary": "MuiButton-textSecondary",
+                        "textSizeLarge": "MuiButton-textSizeLarge",
+                        "textSizeSmall": "MuiButton-textSizeSmall",
+                      }
+                    }
+                    color="primary"
+                    data-test="delete-purchase-button"
+                    variant="outlined"
+                  >
+                    <WithStyles(ForwardRef(ButtonBase))
+                      className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                      component="button"
+                      data-test="delete-purchase-button"
+                      disabled={false}
+                      focusRipple={true}
+                      focusVisibleClassName="Mui-focusVisible"
+                      type="button"
+                    >
+                      <ForwardRef(ButtonBase)
+                        className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        component="button"
+                        data-test="delete-purchase-button"
+                        disabled={false}
+                        focusRipple={true}
+                        focusVisibleClassName="Mui-focusVisible"
+                        type="button"
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                          data-test="delete-purchase-button"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="MuiButton-label"
+                          >
+                            Excluir
+                          </span>
+                          <WithStyles(memo)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              />
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(memo)>
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(Button)>
+                </WithStyles(ForwardRef(Button))>
+              </div>
+            </ForwardRef(CardActions)>
+          </WithStyles(ForwardRef(CardActions))>
+        </div>
+      </ForwardRef(Paper)>
+    </WithStyles(ForwardRef(Paper))>
+  </ForwardRef(Card)>
+</WithStyles(ForwardRef(Card))>
+`;

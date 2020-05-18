@@ -1,16 +1,26 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import Register from '../Register'
+import { BrowserRouter } from 'react-router-dom'
+
 describe('Login', () => {
   it('should render the Login page correctly', () => {
-    let wrapper = shallow(<Register />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    )
 
     expect(wrapper).toMatchSnapshot()
     expect(wrapper).toHaveLength(1)
   })
 
   it('should have name after type correctly', () => {
-    const wrapper = mount(<Register />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    )
 
     const name = 'João das neves'
     const event = { target: { name: 'name', value: name } }
@@ -18,7 +28,11 @@ describe('Login', () => {
     expect(wrapper.find('[data-test="name"] input').props().value).toEqual(name)
   })
   it('should have CPF after type correctly', () => {
-    const wrapper = mount(<Register />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    )
 
     const cpf = '98765432100'
     const cpfFormatted = '987.654.321-00'
@@ -29,7 +43,11 @@ describe('Login', () => {
     )
   })
   it('should have email after type correctly', () => {
-    const wrapper = mount(<Register />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    )
 
     const email = 'joa@gmail.com'
     const event = { target: { name: 'name', value: email } }
@@ -39,7 +57,11 @@ describe('Login', () => {
     )
   })
   it('should have password after type correctly', () => {
-    const wrapper = mount(<Register />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    )
 
     const password = 'password'
     const event = { target: { name: 'password', value: password } }
@@ -49,7 +71,11 @@ describe('Login', () => {
     )
   })
   it('should have confirmPassword after type correctly', () => {
-    const wrapper = mount(<Register />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    )
 
     const confirmPassword = 'password'
     const event = {
@@ -63,7 +89,11 @@ describe('Login', () => {
     ).toEqual(confirmPassword)
   })
   it('should have the equal password and confirmPassword after type correctly', () => {
-    const wrapper = mount(<Register />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+    )
 
     const password = 'password'
     const eventPassword = { target: { name: 'password', value: password } }

@@ -54,6 +54,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "cypress": "^4.5.0",
+    "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jest": "^23.10.0",
@@ -75,6 +76,9 @@
     ]
   },
   "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "watchPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/cypress/"

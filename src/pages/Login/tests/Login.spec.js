@@ -1,16 +1,24 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
+import { BrowserRouter } from 'react-router-dom'
 import Login from '../Login'
 describe('Login', () => {
   it('should render the Login page correctly', () => {
-    let wrapper = shallow(<Login />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Login />
+      </BrowserRouter>
+    )
 
     expect(wrapper).toMatchSnapshot()
     expect(wrapper).toHaveLength(1)
   })
   it('should have email after type correctly', () => {
-    const wrapper = mount(<Login />)
-
+    let wrapper = mount(
+      <BrowserRouter>
+        <Login />
+      </BrowserRouter>
+    )
     const email = 'joa@gmail.com'
     const event = { target: { name: 'name', value: email } }
     wrapper.find('[data-test="email"] input').simulate('change', event)
@@ -19,7 +27,11 @@ describe('Login', () => {
     )
   })
   it('should have password after type correctly', () => {
-    const wrapper = mount(<Login />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Login />
+      </BrowserRouter>
+    )
 
     const password = 'password'
     const event = { target: { name: 'password', value: password } }
@@ -30,7 +42,11 @@ describe('Login', () => {
   })
 
   it('should check be ckecked after click on it', () => {
-    const wrapper = mount(<Login />)
+    let wrapper = mount(
+      <BrowserRouter>
+        <Login />
+      </BrowserRouter>
+    )
 
     const event = { target: { checked: true } }
     expect(
