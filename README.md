@@ -46,7 +46,7 @@ Você pode ligar o projeto em modo de desenvolvimento:
 
 `npm run start`
 
-Gerar build de desenvolvimento && subir o projeto local:
+Gerar build de desenvolvimento && subir o projeto local, antes de rodar o build como teremos teste de e2e, o server precisa estar ligado:
 
 ### 2 - build development mode:
 
@@ -55,7 +55,7 @@ Gerar build de desenvolvimento && subir o projeto local:
       npx serve -s build
 ```
 
-Gerar build de produção && subir o projeto local:
+Gerar build de produção && subir o projeto local, antes de rodar o build como teremos teste de e2e, o server precisa estar ligado:
 
 ### 4 - build production mode:
 
@@ -72,7 +72,7 @@ Foi feitos testes unitario e integração com jest e enzyme:
 `npm run test:coverage` - computa a cobertura do projetoem testes  
 `npm run test:noWatch`- roda os testes uma vez
 
-### 6 - Tests UI:
+### 6 - Tests UI/e2e:
 
 Foi feitos testes de ui com cypress:
 

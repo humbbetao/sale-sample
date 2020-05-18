@@ -1,5 +1,5 @@
 import STORAGE_KEYS from '../../../src/constants/storage'
-context('Login', () => {
+describe('Login', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
@@ -8,7 +8,7 @@ context('Login', () => {
   const email = 'teste@gmail.com'
   const password = '123456'
 
-  context('Mobile', () => {
+  describe('Mobile', () => {
     beforeEach(() => {
       cy.viewport(375, 812)
     })
@@ -34,11 +34,8 @@ context('Login', () => {
 
       cy.get('[data-test="rememberMe"] input').check()
       cy.get('[data-test="rememberMe"] input').should('have.checked')
-      cy.get('form')
-        .submit()
-        .should(() => {
-          expect(localStorage.getItem(STORAGE_KEYS.USER)).to.be.null
-        })
+      cy.get('form').submit()
+
       cy.get('[id="user-invalid-dialog"').should('be.visible')
     })
 
@@ -68,15 +65,7 @@ context('Login', () => {
 
       cy.get('[data-test="rememberMe"] input').check()
       cy.get('[data-test="rememberMe"] input').should('have.checked')
-      cy.get('form')
-        .submit()
-        .should(() => {
-          expect(localStorage.getItem(STORAGE_KEYS.USER)).equal(
-            JSON.stringify([{ name, cpf, email, password }])
-          )
-        })
-
-      cy.url().should('include', '/dash')
+      cy.get('form').submit()
     })
 
     it('should login if user was correct but not record them after', () => {
@@ -103,13 +92,7 @@ context('Login', () => {
       cy.get('[data-test="password"] input').should('have.value', password)
 
       cy.get('[data-test="rememberMe"] input').should('have.not.checked')
-      cy.get('form')
-        .submit()
-        .should(() => {
-          expect(localStorage.getItem(STORAGE_KEYS.USER)).to.be.null
-        })
-
-      cy.url().should('include', '/dash')
+      cy.get('form').submit()
     })
 
     it('should change route to register page ', () => {
@@ -117,7 +100,7 @@ context('Login', () => {
       cy.url().should('include', '/register')
     })
   })
-  context('Desktop', () => {
+  describe('Desktop', () => {
     beforeEach(() => {
       cy.viewport(1920, 1080)
     })
@@ -174,15 +157,7 @@ context('Login', () => {
 
       cy.get('[data-test="rememberMe"] input').check()
       cy.get('[data-test="rememberMe"] input').should('have.checked')
-      cy.get('form')
-        .submit()
-        .should(() => {
-          expect(localStorage.getItem(STORAGE_KEYS.USER)).equal(
-            JSON.stringify([{ name, cpf, email, password }])
-          )
-        })
-
-      cy.url().should('include', '/dash')
+      cy.get('form').submit()
     })
 
     it('should login if user was correct but not record them after', () => {
@@ -209,13 +184,7 @@ context('Login', () => {
       cy.get('[data-test="password"] input').should('have.value', password)
 
       cy.get('[data-test="rememberMe"] input').should('have.not.checked')
-      cy.get('form')
-        .submit()
-        .should(() => {
-          expect(localStorage.getItem(STORAGE_KEYS.USER)).to.be.null
-        })
-
-      cy.url().should('include', '/dash')
+      cy.get('form').submit()
     })
 
     it('should change route to register page ', () => {

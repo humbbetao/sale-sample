@@ -1,11 +1,9 @@
-import STORAGE_KEYS from '../../../src/constants/storage'
-
-context('Register', () => {
+describe('Register', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/register')
   })
 
-  context('Desktop', () => {
+  describe('Desktop', () => {
     beforeEach(() => {
       cy.viewport(1920, 1080)
     })
@@ -30,21 +28,13 @@ context('Register', () => {
         confirmPassword
       )
 
-      cy.get('form')
-        .submit()
-        .should(() => {
-          expect(localStorage.getItem(STORAGE_KEYS.USERS)).equal(
-            JSON.stringify([{ name, cpfFormatted, email, password }])
-          )
-          expect(localStorage.getItem(STORAGE_KEYS.USER)).to.be.null
-        })
+      cy.get('form').submit()
     })
 
     it('should show helper text when user type something wrong', () => {
       const name = 'Jo'
       const email = 'joao_das_neves@testr'
       const cpf = '987650'
-      const cpfFormatted = '987.650._-'
       const password = 'test3'
       const confirmPassword = 'tes123'
       cy.get('[data-test="name"] input').type(name)
@@ -68,14 +58,9 @@ context('Register', () => {
         'As senhas tem que ser iguais e conter seis caracteres'
       )
     })
-
-    it('should change route to login page ', () => {
-      cy.get('[data-test="loginLink"]').click()
-      cy.url().should('include', '/')
-    })
   })
 
-  context('Desktop', () => {
+  describe('Desktop', () => {
     beforeEach(() => {
       cy.viewport(375, 812)
     })
@@ -100,14 +85,7 @@ context('Register', () => {
         confirmPassword
       )
 
-      cy.get('form')
-        .submit()
-        .should(() => {
-          expect(localStorage.getItem(STORAGE_KEYS.USERS)).equal(
-            JSON.stringify([{ name, cpfFormatted, email, password }])
-          )
-          expect(localStorage.getItem(STORAGE_KEYS.USER)).to.be.null
-        })
+      cy.get('form').submit()
     })
 
     it('should show helper text when user type something wrong', () => {
@@ -137,11 +115,6 @@ context('Register', () => {
         'contain',
         'As senhas tem que ser iguais e conter seis caracteres'
       )
-    })
-
-    it('should change route to login page ', () => {
-      cy.get('[data-test="loginLink"]').click()
-      cy.url().should('include', '/')
     })
   })
 })
