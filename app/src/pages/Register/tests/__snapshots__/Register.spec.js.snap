@@ -9,7 +9,7 @@ exports[`Login should render the Login page correctly 1`] = `
     }
   }
   container={true}
-  direction="row"
+  direction="column"
   justify="center"
 >
   <ForwardRef(Grid)
@@ -122,11 +122,11 @@ exports[`Login should render the Login page correctly 1`] = `
       }
     }
     container={true}
-    direction="row"
+    direction="column"
     justify="center"
   >
     <div
-      className="MuiGrid-root makeStyles-root-2 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+      className="MuiGrid-root makeStyles-root-2 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
     >
       <WithStyles(ForwardRef(Grid))
         classes={

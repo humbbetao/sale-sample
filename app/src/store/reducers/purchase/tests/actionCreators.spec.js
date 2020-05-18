@@ -1,17 +1,7 @@
 import ActionTypes from '../actionTypes'
-import {
-  addCashback,
-  addPurchase,
-  deletePurchase,
-  editPurchase,
-} from '../actionCreators'
+import { addPurchase, deletePurchase, editPurchase } from '../actionCreators'
 
 describe('Purchase Action Creators', () => {
-  it('addCashback', () => {
-    const action = addCashback()
-    expect(action.type).toEqual(ActionTypes.ADD_CASHBACK)
-    expect(action.payload).toBeFalsy()
-  })
   it('actionBuy', () => {
     const code = 255
     const value = 250

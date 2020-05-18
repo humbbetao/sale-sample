@@ -2,16 +2,18 @@
 
 Made by Humberto Gonçalves
 
-Frontend Developer test - "O Boticario"
+Frontend Developer test - "O Boticario"  
 Desafio: “Eu revendedor ‘O Boticário’ quero ter benefícios de acordo com o meu volume de vendas”.
 
 Projeto foi separado em server(backend) e app (frontend)
 
 ## Backend
 
+Requerimentos: NodeJs 12 ou superior
+
 Utilizado NodeJS;
 
-entre no diretório server
+entre no diretório `/server`
 
 ### Como instalar:
 
@@ -21,7 +23,7 @@ na sua linha de comando, digite:
   npm install
 ```
 
-Isso irá levar alguns minutos para instalar todas as dependencias, após finalizado:
+Isso irá levar alguns minutos para instalar todas as dependencias, após finalizado você pode:
 
 ### 1 - Ligar o servidor:
 
@@ -29,7 +31,7 @@ Isso irá levar alguns minutos para instalar todas as dependencias, após finali
 
 ## Frontend
 
-entre no diretório app
+entre no diretório `/app`
 
 ### Como instalar:
 
@@ -39,7 +41,7 @@ na sua linha de comando, digite:
   npm install
 ```
 
-Isso irá levar alguns minutos para instalar todas as dependencias, após finalizado:
+Isso irá levar alguns minutos para instalar todas as dependencias.
 
 Você pode ligar o projeto em modo de desenvolvimento:
 
@@ -47,7 +49,7 @@ Você pode ligar o projeto em modo de desenvolvimento:
 
 `npm run start`
 
-Gerar build de desenvolvimento && subir local:
+Gerar build de desenvolvimento && subir o projeto local:
 
 ### 2 - build development mode:
 
@@ -56,7 +58,7 @@ Gerar build de desenvolvimento && subir local:
       npx serve -s build
 ```
 
-Gerar build de produção && subir local:
+Gerar build de produção && subir o projeto local:
 
 ### 4 - build production mode:
 
@@ -71,15 +73,15 @@ Foi feitos testes unitario e integração com jest e enzyme:
 
 `npm run test` - roda os testes sempre escutando as mudanças  
 `npm run test:coverage` - computa a cobertura do projetoem testes  
-`npm run test:noWatch`- roda os testes uma vez  
- 
+`npm run test:noWatch`- roda os testes uma vez
+
 ### 6 - Tests UI:
 
 Foi feitos testes de ui com cypress:
 
 `npm run cy:open` - para abrir o cypress modo visualização  
 `npm run cy:run` - para roda os tests em linha de comando  
-`npm run cy:test` - para start os tests em linha de comando e subir o projeto localmente  
+`npm run cy:test` - para start os tests em linha de comando e subir o projeto localmente
 
 ## 7 - Husky:
 
