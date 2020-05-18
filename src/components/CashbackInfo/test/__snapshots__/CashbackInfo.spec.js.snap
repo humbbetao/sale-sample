@@ -180,7 +180,7 @@ exports[`CashbackInfo should render correctly 1`] = `
                 <h4
                   className="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary MuiTypography-alignLeft"
                 >
-                  R$ 157.50
+                  R$ 0.00
                 </h4>
               </ForwardRef(Typography)>
             </WithStyles(ForwardRef(Typography))>

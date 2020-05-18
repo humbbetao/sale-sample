@@ -13,7 +13,7 @@ import TableCell from '../TableCell'
 import TableRow from '../TableRow'
 import PurchaseRow from '../PurchaseRow'
 const DeletePurchaseDialog = lazy(() => import('../DeletePurchaseDialog'))
-const FormBuy = lazy(() => import('../FormBuy'))
+const AddPurchase = lazy(() => import('../AddPurchase'))
 
 const useStyles = makeStyles({
   table: {
@@ -111,7 +111,7 @@ export default function Purchases() {
           />
         )}
         {openEditDialog && (
-          <FormBuy
+          <AddPurchase
             purchase={purchaseSelected}
             handleOnClose={handleClickCloseEditDialog}
           />
@@ -138,7 +138,7 @@ export default function Purchases() {
         />
       )}
       {openEditDialog && (
-        <FormBuy
+        <AddPurchase
           purchase={purchaseSelected}
           handleOnClose={handleClickCloseEditDialog}
         />

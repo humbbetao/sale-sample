@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PurchaseInfo should render correctly with the values 1`] = `
-<WithStyles(WithStyles(ForwardRef(TableRow)))>
+<WithStyles(WithStyles(ForwardRef(TableRow)))
+  data-test="25-purchase"
+>
   <WithStyles(ForwardRef(TableRow))
     classes={
       Object {
         "root": "WithStyles(ForwardRef(TableRow))-root-1",
       }
     }
+    data-test="25-purchase"
   >
     <ForwardRef(TableRow)
       classes={
@@ -19,9 +22,11 @@ exports[`PurchaseInfo should render correctly with the values 1`] = `
           "selected": "Mui-selected",
         }
       }
+      data-test="25-purchase"
     >
       <tr
         className="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-1"
+        data-test="25-purchase"
         role={null}
       >
         <WithStyles(WithStyles(ForwardRef(TableCell)))

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import Loading from '../../components/Loading'
 import AddPurchaseIcon from '../../components/AddPurchaseIcon'
 
-const NewBuyDialog = lazy(() => import('../../components/FormBuy'))
+const AddPurchase = lazy(() => import('../../components/AddPurchase'))
 const Purchases = lazy(() => import('../../components/Purchases'))
 const CashbackEmpty = lazy(() => import('../../components/CashbackEmpty'))
 
@@ -29,10 +29,10 @@ export default function DashBoard() {
             handleOnOpenDialog={handleOnOpenDialog}
           ></CashbackEmpty>
           {isNewBuyOpened && (
-            <NewBuyDialog
+            <AddPurchase
               open={isNewBuyOpened}
               handleOnClose={handleOnCloseDialog}
-            ></NewBuyDialog>
+            ></AddPurchase>
           )}
         </Suspense>
         <AddPurchaseIcon handleOnClick={handleOnOpenDialog} />
@@ -45,10 +45,10 @@ export default function DashBoard() {
       <Suspense fallback={<Loading handleOnClick={handleOnCloseDialog} />}>
         <Purchases handleOnOpenDialog={handleOnOpenDialog} />
         {isNewBuyOpened && (
-          <NewBuyDialog
+          <AddPurchase
             open={isNewBuyOpened}
             handleOnClose={handleOnCloseDialog}
-          ></NewBuyDialog>
+          ></AddPurchase>
         )}
       </Suspense>
       <AddPurchaseIcon handleOnClick={handleOnOpenDialog} />

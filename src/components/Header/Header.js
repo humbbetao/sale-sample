@@ -61,7 +61,10 @@ export default function Header({ handleOnOpenDialog }) {
                 </IconButton>
                 <p>Nova Compra</p>
               </MenuItem>
-              <MenuItem onClick={handleOnClickOnLogout}>
+              <MenuItem
+                onClick={handleOnClickOnLogout}
+                data-test="logout-button"
+              >
                 <IconButton
                   aria-label="account of current user"
                   aria-controls="primary-search-account-menu"
@@ -86,7 +89,7 @@ export default function Header({ handleOnOpenDialog }) {
             <Typography className={classes.title} variant="h6">
               Eu Revendedor &apos;o Boticário&apos;
             </Typography>
-            <MenuItem onClick={handleOnClickOnLogout}>
+            <MenuItem onClick={handleOnClickOnLogout} data-test="logout-button">
               <IconButton
                 aria-label="account of current user"
                 aria-controls="primary-search-account-menu"

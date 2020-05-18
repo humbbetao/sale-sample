@@ -4,12 +4,17 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test  --env=jsdom",
     "eject": "react-scripts eject",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test:coverage": "react-scripts test --coverage --watchAll=false"
+    "cy:test": "start-server-and-test start  http-get://localhost:3000 cy:run",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "test:noWatch": "react-scripts test --watchAll=false --env=jsdom",
+    "build:dev": "npm run test:noWatch && npm run cy:test && npm run build:development",
+    "build:prod": "npm run test:noWatch && npm run cy:test && npm run build:production",
+    "build:development": "env-cmd -f .env.development react-scripts build",
+    "build:production": "env-cmd -f .env react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,6 +60,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "cypress": "^4.5.0",
+    "env-cmd": "^10.1.0",
     "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
@@ -63,7 +69,8 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "start-server-and-test": "^1.11.0"
   },
   "husky": {
     "hooks": {

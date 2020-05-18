@@ -427,20 +427,19 @@ exports[`Login should render the Login page correctly 1`] = `
                   >
                     <WithStyles(ForwardRef(TextField))
                       autoComplete="name"
-                      autoFocus={true}
                       data-test="name"
                       fullWidth={true}
                       id="name"
                       label="Nome Completo"
                       margin="normal"
                       name="name"
+                      onBlur={[Function]}
                       onChange={[Function]}
                       required={true}
                       value=""
                     >
                       <ForwardRef(TextField)
                         autoComplete="name"
-                        autoFocus={true}
                         classes={
                           Object {
                             "root": "MuiTextField-root",
@@ -452,6 +451,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         label="Nome Completo"
                         margin="normal"
                         name="name"
+                        onBlur={[Function]}
                         onChange={[Function]}
                         required={true}
                         value=""
@@ -568,17 +568,18 @@ exports[`Login should render the Login page correctly 1`] = `
                               </WithStyles(ForwardRef(InputLabel))>
                               <WithStyles(ForwardRef(Input))
                                 autoComplete="name"
-                                autoFocus={true}
+                                autoFocus={false}
                                 fullWidth={true}
                                 id="name"
                                 multiline={false}
                                 name="name"
+                                onBlur={[Function]}
                                 onChange={[Function]}
                                 value=""
                               >
                                 <ForwardRef(Input)
                                   autoComplete="name"
-                                  autoFocus={true}
+                                  autoFocus={false}
                                   classes={
                                     Object {
                                       "colorSecondary": "MuiInput-colorSecondary",
@@ -601,12 +602,13 @@ exports[`Login should render the Login page correctly 1`] = `
                                   id="name"
                                   multiline={false}
                                   name="name"
+                                  onBlur={[Function]}
                                   onChange={[Function]}
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(InputBase))
                                     autoComplete="name"
-                                    autoFocus={true}
+                                    autoFocus={false}
                                     classes={
                                       Object {
                                         "colorSecondary": "MuiInput-colorSecondary",
@@ -630,13 +632,14 @@ exports[`Login should render the Login page correctly 1`] = `
                                     inputComponent="input"
                                     multiline={false}
                                     name="name"
+                                    onBlur={[Function]}
                                     onChange={[Function]}
                                     type="text"
                                     value=""
                                   >
                                     <ForwardRef(InputBase)
                                       autoComplete="name"
-                                      autoFocus={true}
+                                      autoFocus={false}
                                       classes={
                                         Object {
                                           "adornedEnd": "MuiInputBase-adornedEnd",
@@ -664,6 +667,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                       inputComponent="input"
                                       multiline={false}
                                       name="name"
+                                      onBlur={[Function]}
                                       onChange={[Function]}
                                       type="text"
                                       value=""
@@ -675,7 +679,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                         <input
                                           aria-invalid={false}
                                           autoComplete="name"
-                                          autoFocus={true}
+                                          autoFocus={false}
                                           className="MuiInputBase-input MuiInput-input"
                                           disabled={false}
                                           id="name"
@@ -711,6 +715,7 @@ exports[`Login should render the Login page correctly 1`] = `
                       label="CPF"
                       margin="normal"
                       name="CPF"
+                      onBlur={[Function]}
                       onChange={[Function]}
                       required={true}
                       value=""
@@ -733,6 +738,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         label="CPF"
                         margin="normal"
                         name="CPF"
+                        onBlur={[Function]}
                         onChange={[Function]}
                         required={true}
                         value=""
@@ -855,6 +861,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                 inputComponent={[Function]}
                                 multiline={false}
                                 name="CPF"
+                                onBlur={[Function]}
                                 onChange={[Function]}
                                 value=""
                               >
@@ -884,6 +891,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                   inputComponent={[Function]}
                                   multiline={false}
                                   name="CPF"
+                                  onBlur={[Function]}
                                   onChange={[Function]}
                                   value=""
                                 >
@@ -913,6 +921,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                     inputComponent={[Function]}
                                     multiline={false}
                                     name="CPF"
+                                    onBlur={[Function]}
                                     onChange={[Function]}
                                     type="text"
                                     value=""
@@ -947,6 +956,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                       inputComponent={[Function]}
                                       multiline={false}
                                       name="CPF"
+                                      onBlur={[Function]}
                                       onChange={[Function]}
                                       type="text"
                                       value=""
@@ -988,6 +998,7 @@ exports[`Login should render the Login page correctly 1`] = `
                       label="Email"
                       margin="normal"
                       name="email"
+                      onBlur={[Function]}
                       onChange={[Function]}
                       required={true}
                       value=""
@@ -1005,6 +1016,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         label="Email"
                         margin="normal"
                         name="email"
+                        onBlur={[Function]}
                         onChange={[Function]}
                         required={true}
                         value=""
@@ -1126,6 +1138,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                 id="email"
                                 multiline={false}
                                 name="email"
+                                onBlur={[Function]}
                                 onChange={[Function]}
                                 value=""
                               >
@@ -1154,6 +1167,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                   id="email"
                                   multiline={false}
                                   name="email"
+                                  onBlur={[Function]}
                                   onChange={[Function]}
                                   value=""
                                 >
@@ -1183,6 +1197,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                     inputComponent="input"
                                     multiline={false}
                                     name="email"
+                                    onBlur={[Function]}
                                     onChange={[Function]}
                                     type="text"
                                     value=""
@@ -1217,6 +1232,7 @@ exports[`Login should render the Login page correctly 1`] = `
                                       inputComponent="input"
                                       multiline={false}
                                       name="email"
+                                      onBlur={[Function]}
                                       onChange={[Function]}
                                       type="text"
                                       value=""
@@ -1270,6 +1286,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         }
                       }
                       autoComplete="new-password"
+                      data-test="password"
                       fullWidth={true}
                       id="password"
                       label="Senha"
@@ -1304,6 +1321,7 @@ exports[`Login should render the Login page correctly 1`] = `
                             "root": "MuiTextField-root",
                           }
                         }
+                        data-test="password"
                         fullWidth={true}
                         id="password"
                         label="Senha"
@@ -1317,6 +1335,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         <WithStyles(ForwardRef(FormControl))
                           className="MuiTextField-root"
                           color="primary"
+                          data-test="password"
                           disabled={false}
                           error={false}
                           fullWidth={true}
@@ -1335,6 +1354,7 @@ exports[`Login should render the Login page correctly 1`] = `
                               }
                             }
                             color="primary"
+                            data-test="password"
                             disabled={false}
                             error={false}
                             fullWidth={true}
@@ -1344,6 +1364,7 @@ exports[`Login should render the Login page correctly 1`] = `
                           >
                             <div
                               className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+                              data-test="password"
                             >
                               <WithStyles(ForwardRef(InputLabel))
                                 htmlFor="password"
@@ -1792,6 +1813,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         }
                       }
                       autoComplete="new-password"
+                      data-test="confirmPassword"
                       fullWidth={true}
                       id="confirmPassword"
                       label="Confirme sua senha"
@@ -1826,6 +1848,7 @@ exports[`Login should render the Login page correctly 1`] = `
                             "root": "MuiTextField-root",
                           }
                         }
+                        data-test="confirmPassword"
                         fullWidth={true}
                         id="confirmPassword"
                         label="Confirme sua senha"
@@ -1839,6 +1862,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         <WithStyles(ForwardRef(FormControl))
                           className="MuiTextField-root"
                           color="primary"
+                          data-test="confirmPassword"
                           disabled={false}
                           error={false}
                           fullWidth={true}
@@ -1857,6 +1881,7 @@ exports[`Login should render the Login page correctly 1`] = `
                               }
                             }
                             color="primary"
+                            data-test="confirmPassword"
                             disabled={false}
                             error={false}
                             fullWidth={true}
@@ -1866,6 +1891,7 @@ exports[`Login should render the Login page correctly 1`] = `
                           >
                             <div
                               className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+                              data-test="confirmPassword"
                             >
                               <WithStyles(ForwardRef(InputLabel))
                                 htmlFor="confirmPassword"

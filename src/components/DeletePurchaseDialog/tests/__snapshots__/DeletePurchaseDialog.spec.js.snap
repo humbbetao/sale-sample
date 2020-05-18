@@ -427,6 +427,7 @@ exports[`CashbackInfo should render correctly 1`] = `
                       >
                         <tr
                           class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-80"
+                          data-test="undefined-purchase"
                         >
                           <th
                             class="MuiTableCell-root MuiTableCell-alignCenter"
@@ -815,13 +816,16 @@ exports[`CashbackInfo should render correctly 1`] = `
                                         <p
                                           className="MuiTypography-root MuiDialogContentText-root MuiTypography-body1 MuiTypography-colorTextSecondary"
                                         >
-                                          <WithStyles(WithStyles(ForwardRef(TableRow)))>
+                                          <WithStyles(WithStyles(ForwardRef(TableRow)))
+                                            data-test="undefined-purchase"
+                                          >
                                             <WithStyles(ForwardRef(TableRow))
                                               classes={
                                                 Object {
                                                   "root": "WithStyles(ForwardRef(TableRow))-root-80",
                                                 }
                                               }
+                                              data-test="undefined-purchase"
                                             >
                                               <ForwardRef(TableRow)
                                                 classes={
@@ -833,9 +837,11 @@ exports[`CashbackInfo should render correctly 1`] = `
                                                     "selected": "Mui-selected",
                                                   }
                                                 }
+                                                data-test="undefined-purchase"
                                               >
                                                 <tr
                                                   className="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-80"
+                                                  data-test="undefined-purchase"
                                                   role={null}
                                                 >
                                                   <WithStyles(WithStyles(ForwardRef(TableCell)))
@@ -1839,6 +1845,7 @@ exports[`CashbackInfo should render correctly with the values 1`] = `
                       >
                         <tr
                           class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-80"
+                          data-test="undefined-purchase"
                         >
                           <th
                             class="MuiTableCell-root MuiTableCell-alignCenter"
@@ -1966,6 +1973,7 @@ exports[`CashbackInfo should render correctly with the values 1`] = `
                       >
                         <tr
                           class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-80"
+                          data-test="25-purchase"
                         >
                           <th
                             class="MuiTableCell-root MuiTableCell-alignCenter"
@@ -2358,13 +2366,16 @@ exports[`CashbackInfo should render correctly with the values 1`] = `
                                         <p
                                           className="MuiTypography-root MuiDialogContentText-root MuiTypography-body1 MuiTypography-colorTextSecondary"
                                         >
-                                          <WithStyles(WithStyles(ForwardRef(TableRow)))>
+                                          <WithStyles(WithStyles(ForwardRef(TableRow)))
+                                            data-test="25-purchase"
+                                          >
                                             <WithStyles(ForwardRef(TableRow))
                                               classes={
                                                 Object {
                                                   "root": "WithStyles(ForwardRef(TableRow))-root-80",
                                                 }
                                               }
+                                              data-test="25-purchase"
                                             >
                                               <ForwardRef(TableRow)
                                                 classes={
@@ -2376,9 +2387,11 @@ exports[`CashbackInfo should render correctly with the values 1`] = `
                                                     "selected": "Mui-selected",
                                                   }
                                                 }
+                                                data-test="25-purchase"
                                               >
                                                 <tr
                                                   className="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-80"
+                                                  data-test="25-purchase"
                                                   role={null}
                                                 >
                                                   <WithStyles(WithStyles(ForwardRef(TableCell)))

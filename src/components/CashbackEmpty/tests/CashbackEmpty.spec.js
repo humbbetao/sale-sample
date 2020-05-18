@@ -23,7 +23,7 @@ describe('CashbackEmpty', () => {
         <CashbackEmpty handleOnOpenDialog={handleOnOpenDialog} />
       </ThemeStyled>
     )
-    wrapper.find('[data-test="add-button"] button').simulate('click')
+    wrapper.find('[data-test="add-new-purchase"] button').simulate('click')
     expect(handleOnOpenDialog).toHaveBeenCalled()
     expect(handleOnOpenDialog).toHaveBeenCalledTimes(1)
   })

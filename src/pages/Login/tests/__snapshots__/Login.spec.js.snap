@@ -719,6 +719,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         }
                       }
                       autoComplete="current-password"
+                      data-test="password"
                       fullWidth={true}
                       id="password"
                       label="Senha"
@@ -753,6 +754,7 @@ exports[`Login should render the Login page correctly 1`] = `
                             "root": "MuiTextField-root",
                           }
                         }
+                        data-test="password"
                         fullWidth={true}
                         id="password"
                         label="Senha"
@@ -766,6 +768,7 @@ exports[`Login should render the Login page correctly 1`] = `
                         <WithStyles(ForwardRef(FormControl))
                           className="MuiTextField-root"
                           color="primary"
+                          data-test="password"
                           disabled={false}
                           error={false}
                           fullWidth={true}
@@ -784,6 +787,7 @@ exports[`Login should render the Login page correctly 1`] = `
                               }
                             }
                             color="primary"
+                            data-test="password"
                             disabled={false}
                             error={false}
                             fullWidth={true}
@@ -793,6 +797,7 @@ exports[`Login should render the Login page correctly 1`] = `
                           >
                             <div
                               className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+                              data-test="password"
                             >
                               <WithStyles(ForwardRef(InputLabel))
                                 htmlFor="password"

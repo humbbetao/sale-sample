@@ -45,7 +45,11 @@ export default function PurchaseCard({
   const classes = useStyles()
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card
+      className={classes.root}
+      variant="outlined"
+      data-test={`${purchase.code}-purchase`}
+    >
       <CardContent>
         <div className={classes.cardContent}>
           <Typography

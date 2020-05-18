@@ -57,9 +57,9 @@ export default function CashBackEmpty({ handleOnOpenDialog }) {
           component="button"
           variant="outlined"
           size="large"
-          data-test="add-button"
           onClick={handleOnOpenDialog}
           startIcon={<Add />}
+          data-test="add-new-purchase"
         >
           Nova Compra
         </Button>

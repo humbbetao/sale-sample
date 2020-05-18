@@ -3,6 +3,7 @@
 exports[`PurchaseCard should render correctly with the values 1`] = `
 <WithStyles(ForwardRef(Card))
   className="makeStyles-root-1"
+  data-test="25-purchase"
   variant="outlined"
 >
   <ForwardRef(Card)
@@ -12,10 +13,12 @@ exports[`PurchaseCard should render correctly with the values 1`] = `
         "root": "MuiCard-root",
       }
     }
+    data-test="25-purchase"
     variant="outlined"
   >
     <WithStyles(ForwardRef(Paper))
       className="MuiCard-root makeStyles-root-1"
+      data-test="25-purchase"
       elevation={1}
       variant="outlined"
     >
@@ -53,11 +56,13 @@ exports[`PurchaseCard should render correctly with the values 1`] = `
             "rounded": "MuiPaper-rounded",
           }
         }
+        data-test="25-purchase"
         elevation={1}
         variant="outlined"
       >
         <div
           className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-outlined MuiPaper-rounded"
+          data-test="25-purchase"
         >
           <WithStyles(ForwardRef(CardContent))>
             <ForwardRef(CardContent)
@@ -931,6 +936,7 @@ exports[`PurchaseCard should render correctly with the values 1`] = `
 exports[`PurchaseRow should render correctly 1`] = `
 <WithStyles(ForwardRef(Card))
   className="makeStyles-root-1"
+  data-test="undefined-purchase"
   variant="outlined"
 >
   <ForwardRef(Card)
@@ -940,10 +946,12 @@ exports[`PurchaseRow should render correctly 1`] = `
         "root": "MuiCard-root",
       }
     }
+    data-test="undefined-purchase"
     variant="outlined"
   >
     <WithStyles(ForwardRef(Paper))
       className="MuiCard-root makeStyles-root-1"
+      data-test="undefined-purchase"
       elevation={1}
       variant="outlined"
     >
@@ -981,11 +989,13 @@ exports[`PurchaseRow should render correctly 1`] = `
             "rounded": "MuiPaper-rounded",
           }
         }
+        data-test="undefined-purchase"
         elevation={1}
         variant="outlined"
       >
         <div
           className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-outlined MuiPaper-rounded"
+          data-test="undefined-purchase"
         >
           <WithStyles(ForwardRef(CardContent))>
             <ForwardRef(CardContent)

@@ -1,22 +1,9 @@
 import ActionTypes from './actionTypes'
-const values = {
-  cashback: '157.50',
-  purchases: [
-    {
-      code: '123',
-      value: '450',
-      date: '17/04/2020',
-      cashbackRate: '0.35',
-      cashbackValue: '157.50',
-      status: 'Aprovado',
-    },
-  ],
-}
+
 const novo = { cashback: 0, purchases: [] }
 
 export const INITIAL_STATE = {
   ...novo,
-  ...values,
 }
 const STATUS = ['Em validação', 'Reprovado', 'Aprovado']
 export default function reducer(state = INITIAL_STATE, action) {

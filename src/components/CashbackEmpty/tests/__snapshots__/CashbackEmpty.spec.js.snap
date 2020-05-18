@@ -136,7 +136,7 @@ exports[`CashbackEmpty should render correctly 1`] = `
             <WithStyles(ForwardRef(Button))
               color="primary"
               component="button"
-              data-test="add-button"
+              data-test="add-new-purchase"
               size="large"
               startIcon={<UNDEFINED />}
               variant="outlined"
@@ -177,7 +177,7 @@ exports[`CashbackEmpty should render correctly 1`] = `
                 }
                 color="primary"
                 component="button"
-                data-test="add-button"
+                data-test="add-new-purchase"
                 size="large"
                 startIcon={<UNDEFINED />}
                 variant="outlined"
@@ -185,7 +185,7 @@ exports[`CashbackEmpty should render correctly 1`] = `
                 <WithStyles(ForwardRef(ButtonBase))
                   className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
                   component="button"
-                  data-test="add-button"
+                  data-test="add-new-purchase"
                   disabled={false}
                   focusRipple={true}
                   focusVisibleClassName="Mui-focusVisible"
@@ -201,7 +201,7 @@ exports[`CashbackEmpty should render correctly 1`] = `
                       }
                     }
                     component="button"
-                    data-test="add-button"
+                    data-test="add-new-purchase"
                     disabled={false}
                     focusRipple={true}
                     focusVisibleClassName="Mui-focusVisible"
@@ -209,7 +209,7 @@ exports[`CashbackEmpty should render correctly 1`] = `
                   >
                     <button
                       className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
-                      data-test="add-button"
+                      data-test="add-new-purchase"
                       disabled={false}
                       onBlur={[Function]}
                       onDragLeave={[Function]}

@@ -6,7 +6,7 @@ import TableRow from '../TableRow'
 import formattedCurrency from '../../helpers/formattedCurrency'
 export default function PurchaseInfo({ purchase, children = null }) {
   return (
-    <TableRow>
+    <TableRow data-test={`${purchase.code}-purchase`}>
       <TableCell
         component="th"
         scope="row"

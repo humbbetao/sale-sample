@@ -62,7 +62,11 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-export default function FormBuy({ open = true, handleOnClose, purchase = {} }) {
+export default function AddPurchase({
+  open = true,
+  handleOnClose,
+  purchase = {},
+}) {
   const classes = useStyles()
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'))
   const actionButtonsInFullWidth = useMemo(() => !matches, [matches])
@@ -145,6 +149,7 @@ export default function FormBuy({ open = true, handleOnClose, purchase = {} }) {
               type="number"
               value={code}
               onChange={handleOnChangeCode}
+              data-test="code-purchase"
             />
             <KeyboardDatePicker
               format="dd/MM/yyyy"
@@ -158,6 +163,7 @@ export default function FormBuy({ open = true, handleOnClose, purchase = {} }) {
               KeyboardButtonProps={{
                 'aria-label': 'change date',
               }}
+              data-test="date-purchase"
             />
 
             <TextField
@@ -176,6 +182,7 @@ export default function FormBuy({ open = true, handleOnClose, purchase = {} }) {
                   <InputAdornment position="start">R$</InputAdornment>
                 ),
               }}
+              data-test="value-purchase"
             />
           </FormControl>
         </form>
@@ -196,6 +203,7 @@ export default function FormBuy({ open = true, handleOnClose, purchase = {} }) {
             size="large"
             type="button"
             onClick={handleOnClose}
+            data-test="cancel-button"
           >
             Cancelar
           </Button>
@@ -205,6 +213,7 @@ export default function FormBuy({ open = true, handleOnClose, purchase = {} }) {
             color="primary"
             size="large"
             onClick={handleOnSubmit}
+            data-test="add-button"
           >
             Adicionar
           </Button>
