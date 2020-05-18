@@ -4,11 +4,14 @@ import DeletePurchaseDialog from '../DeletePurchaseDialog'
 import { themeStyled } from '../../GlobalStyle'
 import { ThemeProvider as ThemeStyled } from 'styled-components'
 import { Provider } from 'react-redux'
-import store from '../../../store'
+import configureMockStore from 'redux-mock-store'
+const mockStore = configureMockStore([])
 
+const store = mockStore({ purchase: { cashback: 0, purchases: [] } })
 describe('CashbackInfo', () => {
   it('should render correctly', () => {
     const purchase = {}
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>
@@ -28,6 +31,7 @@ describe('CashbackInfo', () => {
       cashbackValue: '17',
       cashbackRate: '0.1',
     }
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>
@@ -49,6 +53,7 @@ describe('CashbackInfo', () => {
       cashbackRate: '0.1',
     }
     const handleOnClose = jest.fn()
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>

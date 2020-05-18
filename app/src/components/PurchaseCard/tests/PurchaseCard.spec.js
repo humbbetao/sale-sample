@@ -4,8 +4,12 @@ import PurchaseCard from '../PurchaseCard'
 import { themeStyled } from '../../GlobalStyle'
 import { ThemeProvider as ThemeStyled } from 'styled-components'
 import { Provider } from 'react-redux'
-import store from '../../../store'
 import formattedCurrency from '../../../helpers/formattedCurrency'
+import configureMockStore from 'redux-mock-store'
+const mockStore = configureMockStore([])
+
+const store = mockStore({ purchase: { cashback: 0, purchases: [] } })
+
 describe('PurchaseCard', () => {
   it('should render correctly with the values', () => {
     const purchase = {
@@ -17,6 +21,7 @@ describe('PurchaseCard', () => {
     }
     const handleClickOpenEditDialog = jest.fn()
     const handleClickOpenDeleteDialog = jest.fn()
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>
@@ -52,6 +57,7 @@ describe('PurchaseRow', () => {
     const handleClickOpenEditDialog = jest.fn()
     const handleClickOpenDeleteDialog = jest.fn()
     const purchase = {}
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>
@@ -78,6 +84,7 @@ describe('PurchaseRow', () => {
     }
     const handleClickOpenEditDialog = jest.fn()
     const handleClickOpenDeleteDialog = jest.fn()
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>
@@ -104,6 +111,7 @@ describe('PurchaseRow', () => {
     }
     const handleClickOpenEditDialog = jest.fn()
     const handleClickOpenDeleteDialog = jest.fn()
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>

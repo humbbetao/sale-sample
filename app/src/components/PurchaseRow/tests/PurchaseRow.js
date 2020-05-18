@@ -4,11 +4,14 @@ import PurchaseInfo from '../PurchaseInfo'
 import { themeStyled } from '../../GlobalStyle'
 import { ThemeProvider as ThemeStyled } from 'styled-components'
 import { Provider } from 'react-redux'
-import store from '../../../store'
+import configureMockStore from 'redux-mock-store'
+const mockStore = configureMockStore([])
 
+const store = mockStore({ purchase: { cashback: 0, purchases: [] } })
 describe('PurchaseRow', () => {
   it('should render correctly', () => {
     const purchase = {}
+
     let wrapper = mount(
       <Provider store={store}>
         <ThemeStyled theme={themeStyled}>
@@ -28,8 +31,10 @@ describe('PurchaseRow', () => {
       cashbackValue: '17',
       cashbackRate: '0.1',
     }
+    const mockStore = { purchase: { cashback: 0, purchases: [] } }
+
     let wrapper = mount(
-      <Provider store={store}>
+      <Provider store={mockStore}>
         <ThemeStyled theme={themeStyled}>
           <PurchaseInfo purchase={purchase} />
         </ThemeStyled>
@@ -50,8 +55,10 @@ describe('PurchaseRow', () => {
     }
     const handleClickOpenEditDialog = jest.fn()
     const handleClickOpenDeleteDialog = jest.fn()
+    const mockStore = { purchase: { cashback: 0, purchases: [] } }
+
     let wrapper = mount(
-      <Provider store={store}>
+      <Provider store={mockStore}>
         <ThemeStyled theme={themeStyled}>
           <PurchaseInfo
             purchase={purchase}
@@ -76,8 +83,10 @@ describe('PurchaseRow', () => {
     }
     const handleClickOpenEditDialog = jest.fn()
     const handleClickOpenDeleteDialog = jest.fn()
+    const mockStore = { purchase: { cashback: 0, purchases: [] } }
+
     let wrapper = mount(
-      <Provider store={store}>
+      <Provider store={mockStore}>
         <ThemeStyled theme={themeStyled}>
           <PurchaseInfo
             purchase={purchase}

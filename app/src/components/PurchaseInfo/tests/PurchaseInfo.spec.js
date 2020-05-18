@@ -4,8 +4,11 @@ import PurchaseInfo from '../PurchaseInfo'
 import { themeStyled } from '../../GlobalStyle'
 import { ThemeProvider as ThemeStyled } from 'styled-components'
 import { Provider } from 'react-redux'
-import store from '../../../store'
 import formattedCurrency from '../../../helpers/formattedCurrency'
+import configureMockStore from 'redux-mock-store'
+const mockStore = configureMockStore([])
+
+const store = mockStore({ purchase: { cashback: 0, purchases: [] } })
 describe('PurchaseInfo', () => {
   it('should render correctly with the values', () => {
     const purchase = {

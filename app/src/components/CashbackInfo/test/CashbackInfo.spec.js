@@ -4,8 +4,10 @@ import CashbackInfo from '../CashbackInfo'
 import { themeStyled } from '../../GlobalStyle'
 import { ThemeProvider as ThemeStyled } from 'styled-components'
 import { Provider } from 'react-redux'
-import store from '../../../store'
+import configureMockStore from 'redux-mock-store'
+const mockStore = configureMockStore([])
 
+const store = mockStore({ purchase: { cashback: 0, purchases: [] } })
 describe('CashbackInfo', () => {
   it('should render correctly', () => {
     const purchase = {}
