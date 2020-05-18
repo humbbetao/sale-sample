@@ -68,17 +68,17 @@ Gerar build de produção && subir local:
 
 Foi feitos testes unitario e integração com jest e enzyme:
 
-`npm run test` - roda os testes sempre escutando as mudanças
-`npm run test:coverage` - computa a cobertura do projetoem testes
-`npm run test:noWatch`- roda os testes uma vez
+`npm run test` - roda os testes sempre escutando as mudanças/n
+`npm run test:coverage` - computa a cobertura do projetoem testes/n
+`npm run test:noWatch`- roda os testes uma vez/n
 
 ## 6 - Tests UI:
 
 Foi feitos testes de ui com cypress:
 
-    `npm run cy:open`  - para abrir o cypress modo visualização
-    `npm run cy:run`  - para roda os tests em linha de comando
-    `npm run cy:test` - para start os tests em linha de comando e subir o projeto localmente
+    `npm run cy:open`  - para abrir o cypress modo visualização/n
+    `npm run cy:run`  - para roda os tests em linha de comando/n
+    `npm run cy:test` - para start os tests em linha de comando e subir o projeto localmente/n
 
 ## 7 - Husky:
 
