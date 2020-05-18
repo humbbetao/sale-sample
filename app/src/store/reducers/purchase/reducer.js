@@ -13,7 +13,9 @@ export default function reducer(state = INITIAL_STATE, action) {
       return { ...state, cashback: state.cashback + action.payload.amount }
     }
     case ActionTypes.ADD_BUY: {
-      const { cashbackRate, cashbackValue } = calculateCashBack(value)
+      const { cashbackRate, cashbackValue } = calculateCashBack(
+        action.payload.value
+      )
       const status = getStatus(action.payload.value)
       return {
         ...state,

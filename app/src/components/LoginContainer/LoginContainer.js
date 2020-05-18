@@ -21,10 +21,11 @@ const useStyles = makeStyles((theme) => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      direction: 'column',
+      flexDirection: 'row',
       [theme.breakpoints.down('md')]: {
-        margin: '0 16px',
-        direction: 'row',
+        margin: '16px',
+        boxSizing: 'border-box',
+        flexDirection: 'column',
       },
     },
     paper: {
@@ -57,11 +58,11 @@ const Img = styled.img`
 
 export default function LoginContainer({ children, handleOnSubmit }) {
   const classes = useStyles()
-
+  // const
   return (
     <Grid
       container
-      direction="row"
+      direction="column"
       justify="center"
       alignItems="center"
       classes={{ root: classes.root }}

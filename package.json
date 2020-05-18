@@ -1,0 +1,13 @@
+{
+  "name": "server-purchase-boticario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server-purchase-boticario",
+  "scripts": {
+    "start:app": "cd ./app && npm run start",
+    "start:server": "node server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
