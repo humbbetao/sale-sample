@@ -1,4 +1,4 @@
-# spotify-example
+# Boticario-sample
 
 Made by Humberto Gonçalves
 
