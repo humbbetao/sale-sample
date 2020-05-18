@@ -3,6 +3,11 @@ context('Login', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
+  const name = 'João das neves'
+  const cpf = '987.654.321-00'
+  const email = 'teste@gmail.com'
+  const password = '123456'
+
   context('Mobile', () => {
     beforeEach(() => {
       cy.viewport(375, 812)
@@ -43,14 +48,14 @@ context('Login', () => {
           expect(ls.getItem(STORAGE_KEYS.USER)).to.be.null
           expect(ls.getItem(STORAGE_KEYS.USERS)).to.be.null
         })
+
         localStorage.setItem(
           STORAGE_KEYS.USERS,
-          JSON.stringify([{ email, password }])
+          JSON.stringify([{ name, cpf, email, password }])
         )
+        cy.wait(100)
       })
 
-      const email = 'teste@teste.com.br'
-      const password = 'testes123'
       cy.get('[data-test="email"] input').should('have.value', '')
       cy.get('[data-test="password"] input').should('have.value', '')
       cy.get('[data-test="rememberMe"] input').should('not.have.checked')
@@ -67,14 +72,14 @@ context('Login', () => {
         .submit()
         .should(() => {
           expect(localStorage.getItem(STORAGE_KEYS.USER)).equal(
-            JSON.stringify({ email, password })
+            JSON.stringify([{ name, cpf, email, password }])
           )
         })
 
       cy.url().should('include', '/dash')
     })
 
-    it('should login if user was correct', () => {
+    it('should login if user was correct but not record them after', () => {
       beforeEach(() => {
         cy.clearLocalStorage().should((ls) => {
           expect(ls.getItem(STORAGE_KEYS.USER)).to.be.null
@@ -82,12 +87,11 @@ context('Login', () => {
         })
         localStorage.setItem(
           STORAGE_KEYS.USERS,
-          JSON.stringify([{ email, password }])
+          JSON.stringify([{ name, cpf, email, password }])
         )
+        cy.wait(100)
       })
 
-      const email = 'teste@teste.com.br'
-      const password = 'testes123'
       cy.get('[data-test="email"] input').should('have.value', '')
       cy.get('[data-test="password"] input').should('have.value', '')
       cy.get('[data-test="rememberMe"] input').should('not.have.checked')
@@ -101,7 +105,7 @@ context('Login', () => {
       cy.get('[data-test="rememberMe"] input').should('have.not.checked')
       cy.get('form')
         .submit()
-        .then(() => {
+        .should(() => {
           expect(localStorage.getItem(STORAGE_KEYS.USER)).to.be.null
         })
 
@@ -125,8 +129,6 @@ context('Login', () => {
         })
       })
 
-      const email = 'teste@teste.com.br'
-      const password = 'testes123'
       cy.get('[data-test="email"] input').should('have.value', '')
       cy.get('[data-test="password"] input').should('have.value', '')
       cy.get('[data-test="rememberMe"] input').should('not.have.checked')
@@ -155,12 +157,11 @@ context('Login', () => {
         })
         localStorage.setItem(
           STORAGE_KEYS.USERS,
-          JSON.stringify([{ email, password }])
+          JSON.stringify([{ name, cpf, email, password }])
         )
+        cy.wait(100)
       })
 
-      const email = 'teste@teste.com.br'
-      const password = 'testes123'
       cy.get('[data-test="email"] input').should('have.value', '')
       cy.get('[data-test="password"] input').should('have.value', '')
       cy.get('[data-test="rememberMe"] input').should('not.have.checked')
@@ -177,14 +178,14 @@ context('Login', () => {
         .submit()
         .should(() => {
           expect(localStorage.getItem(STORAGE_KEYS.USER)).equal(
-            JSON.stringify({ email, password })
+            JSON.stringify([{ name, cpf, email, password }])
           )
         })
 
       cy.url().should('include', '/dash')
     })
 
-    it('should login if user was correct', () => {
+    it('should login if user was correct but not record them after', () => {
       beforeEach(() => {
         cy.clearLocalStorage().should((ls) => {
           expect(ls.getItem(STORAGE_KEYS.USER)).to.be.null
@@ -192,12 +193,11 @@ context('Login', () => {
         })
         localStorage.setItem(
           STORAGE_KEYS.USERS,
-          JSON.stringify([{ email, password }])
+          JSON.stringify([{ name, cpf, email, password }])
         )
+        cy.wait(100)
       })
 
-      const email = 'teste@teste.com.br'
-      const password = 'testes123'
       cy.get('[data-test="email"] input').should('have.value', '')
       cy.get('[data-test="password"] input').should('have.value', '')
       cy.get('[data-test="rememberMe"] input').should('not.have.checked')
@@ -211,7 +211,7 @@ context('Login', () => {
       cy.get('[data-test="rememberMe"] input').should('have.not.checked')
       cy.get('form')
         .submit()
-        .then(() => {
+        .should(() => {
           expect(localStorage.getItem(STORAGE_KEYS.USER)).to.be.null
         })
 
