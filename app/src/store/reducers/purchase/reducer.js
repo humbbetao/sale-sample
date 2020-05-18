@@ -1,19 +1,20 @@
 import ActionTypes from './actionTypes'
-
+import calculateCashBack from '../../../helpers/calculateCashback'
+import getStatus from '../../../helpers/getStatus'
 const novo = { cashback: 0, purchases: [] }
 
 export const INITIAL_STATE = {
   ...novo,
 }
-const STATUS = ['Em validação', 'Reprovado', 'Aprovado']
+
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ActionTypes.ADD_CASHBACK: {
       return { ...state, cashback: state.cashback + action.payload.amount }
     }
     case ActionTypes.ADD_BUY: {
-      const cashbackRate = Math.random().toFixed(2)
-      const cashbackValue = (action.payload.value * cashbackRate).toFixed(2)
+      const { cashbackRate, cashbackValue } = calculateCashBack(value)
+      const status = getStatus(action.payload.value)
       return {
         ...state,
         purchases: [
@@ -24,7 +25,7 @@ export default function reducer(state = INITIAL_STATE, action) {
             date: action.payload.date,
             cashbackRate: cashbackRate,
             cashbackValue: cashbackValue,
-            status: STATUS[(Math.random() * 2).toFixed(0)],
+            status: status,
           },
         ],
       }
