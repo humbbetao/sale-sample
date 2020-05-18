@@ -7,6 +7,11 @@ import Link from '@material-ui/core/Link'
 import CPFMaskCustom from '../../components/CPFMask'
 import PasswordTextInput from '../../components/PasswordTextInput'
 import LoginContainer from '../../components/LoginContainer'
+import ValidatorCPF from 'cpf'
+import validatorEmail from '../../helpers/validatorEmail'
+import UserCreated from '../../components/UserCreated'
+import UserAlreadyCreated from '../../components/UserAlreadyCreated'
+import STORAGE_KEYS from '../../constants/storage'
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -24,17 +29,18 @@ export default function Register() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-
-  const errors = {}
+  const [errors, setErrors] = useState({})
+  const [userAlreadyCreated, setOpenUserAlreadyCreated] = useState(false)
+  const [userCreated, setOpenCreated] = useState(false)
 
   const handleOnChangeEmail = useCallback((event) => {
     const email = event.target.value
-    setEmail(email)
+    setEmail(email.toLowerCase().trim())
   }, [])
 
   const handleOnChangePassword = useCallback((event) => {
     const password = event.target.value
-    setPassword(password)
+    setPassword(password.trim())
   }, [])
 
   const handleOnChangeName = useCallback((event) => {
@@ -49,20 +55,57 @@ export default function Register() {
 
   const handleOnChangeConfirmPassword = useCallback((event) => {
     const confirmPassword = event.target.value
-    setConfirmPassword(confirmPassword)
+    setConfirmPassword(confirmPassword.trim())
   }, [])
 
+  const validateForm = () => {
+    let errorsCurrent = {}
+    if (name.trim().length <= 2) {
+      errorsCurrent = { ...errorsCurrent, name: true }
+    }
+    if (!ValidatorCPF.isValid(cpf)) {
+      errorsCurrent = { ...errorsCurrent, cpf: true }
+    }
+    if (!validatorEmail(email)) {
+      errorsCurrent = { ...errorsCurrent, email: true }
+    }
+    if (
+      password.length < 6 ||
+      confirmPassword.length < 6 ||
+      confirmPassword !== password
+    ) {
+      errorsCurrent = {
+        ...errorsCurrent,
+        password: true,
+        confirmPassword: true,
+      }
+    }
+    setErrors(errorsCurrent)
+    const hasAnyFieldInvalid = Object.values(errorsCurrent).some((item) => item)
+    if (hasAnyFieldInvalid) return false
+    return true
+  }
   const handleOnClickOnSubmit = (event) => {
     event.preventDefault()
-    const isFormValidated = true
-    if (!isFormValidated) {
-      console.log('not isFormValidated')
-      return
+    const isFormValidated = validateForm()
+    if (!isFormValidated) return
+
+    const users = JSON.parse(localStorage.getItem(STORAGE_KEYS.USERS) || '[]')
+    if (users.some((user) => user.cpf === cpf || user.cpf === email)) {
+      setOpenUserAlreadyCreated(true)
+    } else {
+      users.push({ name, cpf, email, password })
+      localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(users))
+      setOpenCreated(true)
     }
-    const users = localStorage.getItem('USERS') || []
-    users.push({ name, cpf, email, password, confirmPassword })
-    localStorage.setItem('USERS', JSON.stringify(users))
   }
+
+  const handleOnCloseUserAlreadyCreated = useCallback(
+    () => setOpenUserAlreadyCreated(false),
+    []
+  )
+
+  const handleOnBlur = validateForm
 
   return (
     <LoginContainer handleOnSubmit={handleOnClickOnSubmit}>
@@ -74,11 +117,14 @@ export default function Register() {
         label="Nome Completo"
         name="name"
         autoComplete="name"
-        autoFocus
         value={name}
         onChange={handleOnChangeName}
         error={errors.name}
-        helperText={errors.name && 'Nome Inválido'}
+        helperText={
+          errors.name &&
+          'Nome Inválido, nome precisa conter pelo menos 3 letras'
+        }
+        onBlur={handleOnBlur}
         data-test="name"
       />
       <TextField
@@ -94,6 +140,7 @@ export default function Register() {
         InputProps={{
           inputComponent: CPFMaskCustom,
         }}
+        onBlur={handleOnBlur}
         error={errors.cpf}
         helperText={errors.cpf && 'CPF inválido'}
         data-test="CPF"
@@ -109,6 +156,7 @@ export default function Register() {
         value={email}
         onChange={handleOnChangeEmail}
         error={errors.email}
+        onBlur={handleOnBlur}
         helperText={errors.email && 'Email inválido'}
         data-test="email"
       />
@@ -119,8 +167,12 @@ export default function Register() {
         value={password}
         handleOnChange={handleOnChangePassword}
         error={errors.password}
-        helperText={errors.password && 'Password tem que ser iguais'}
-        data-test="password"
+        onBlur={handleOnBlur}
+        helperText={
+          errors.password &&
+          'As senhas tem que ser iguais e conter seis caracteres'
+        }
+        dataTest="password"
         autoComplete="new-password"
       />
       <PasswordTextInput
@@ -131,8 +183,12 @@ export default function Register() {
         value={confirmPassword}
         handleOnChange={handleOnChangeConfirmPassword}
         error={errors.confirmPassword}
-        helperText={errors.confirmPassword && 'Password tem que ser iguais'}
-        data-test="confirmPassword"
+        onBlur={handleOnBlur}
+        helperText={
+          errors.confirmPassword &&
+          'As senhas tem que ser iguais e conter seis caracteres'
+        }
+        dataTest="confirmPassword"
       />
 
       <Button
@@ -150,6 +206,10 @@ export default function Register() {
           Já é cadastrado?
         </Link>
       </Grid>
+      {userCreated && <UserCreated />}
+      {userAlreadyCreated && (
+        <UserAlreadyCreated handleClose={handleOnCloseUserAlreadyCreated} />
+      )}
     </LoginContainer>
   )
 }

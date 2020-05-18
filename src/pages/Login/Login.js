@@ -9,7 +9,8 @@ import Link from '@material-ui/core/Link'
 import { useHistory } from 'react-router-dom'
 import PasswordTextInput from '../../components/PasswordTextInput'
 import LoginContainer from '../../components/LoginContainer'
-
+import InvalidUser from '../../components/InvalidUser'
+import STORAGE_KEYS from '../../constants/storage'
 const useStyles = makeStyles((theme) => {
   return {
     submit: {
@@ -23,9 +24,11 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [checked, setChecked] = useState(false)
+  const [invalidUser, setInvalidUser] = useState(false)
+
   const history = useHistory()
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('USER'))
+    const user = JSON.parse(localStorage.getItem(STORAGE_KEYS.USER))
     if (!user) return
     setEmail(user.email)
     setPassword(user.password)
@@ -48,21 +51,24 @@ export default function Login() {
 
   const handleOnClickOnSubmit = (event) => {
     event.preventDefault()
-    const users = JSON.parse(localStorage.getItem('USERS'))
+    const users = JSON.parse(localStorage.getItem(STORAGE_KEYS.USERS) || '[]')
     if (
       users.some((user) => user.email === email && user.password === password)
     ) {
       if (checked) {
-        localStorage.setItem('USER', JSON.stringify({ email, password }))
+        localStorage.setItem(
+          STORAGE_KEYS.USER,
+          JSON.stringify({ email, password })
+        )
       } else {
-        localStorage.removeItem('USER')
+        localStorage.removeItem(STORAGE_KEYS.USER)
       }
       history.push('/dash')
     } else {
-      console.log('is not registered')
+      setInvalidUser(true)
     }
   }
-
+  const handleOnCloseInvalidUser = useCallback(() => setInvalidUser(false), [])
   return (
     <LoginContainer handleOnSubmit={handleOnClickOnSubmit}>
       <TextField
@@ -85,9 +91,7 @@ export default function Login() {
         id="password"
         value={password}
         handleOnChange={handleOnChangePassword}
-        // error={errors.password}
-        // helperText={errors.password && 'Password tem que ser iguais'}
-        data-test="password"
+        dataTest="password"
         autoComplete="current-password"
       />
 
@@ -118,6 +122,7 @@ export default function Login() {
           Registre-se
         </Link>
       </Grid>
+      {invalidUser && <InvalidUser handleClose={handleOnCloseInvalidUser} />}
     </LoginContainer>
   )
 }
