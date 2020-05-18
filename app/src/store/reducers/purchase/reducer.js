@@ -12,7 +12,7 @@ export default function reducer(state = INITIAL_STATE, action) {
     case ActionTypes.ADD_CASHBACK: {
       return { ...state, cashback: state.cashback + action.payload.amount }
     }
-    case ActionTypes.ADD_BUY: {
+    case ActionTypes.CREATE_PURCHASE: {
       const { cashbackRate, cashbackValue } = calculateCashBack(
         action.payload.value
       )
@@ -37,7 +37,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         ...state,
       }
     }
-    case ActionTypes.DELETE_BUY: {
+    case ActionTypes.DELETE_PURCHASE: {
       return {
         ...state,
         purchases: state.purchases.filter(
@@ -45,7 +45,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         ),
       }
     }
-    case ActionTypes.EDIT_BUY: {
+    case ActionTypes.EDIT_PURCHASE: {
       const purchaseIndex = state.purchases.findIndex(
         (purchase) => purchase.code === action.payload.code
       )

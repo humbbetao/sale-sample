@@ -5,7 +5,7 @@ export function addCashback() {
 }
 
 export function addBuy(code, value, date) {
-  return { type: ActionTypes.ADD_BUY, payload: { code, value, date } }
+  return { type: ActionTypes.CREATE_PURCHASE, payload: { code, value, date } }
 }
 
 export function calculateCashBack(code, value) {
@@ -13,9 +13,9 @@ export function calculateCashBack(code, value) {
 }
 
 export function deleteBuy(code) {
-  return { type: ActionTypes.DELETE_BUY, payload: { code } }
+  return { type: ActionTypes.DELETE_PURCHASE, payload: { code } }
 }
 
 export function editBuy(code, value, date) {
-  return { type: ActionTypes.EDIT_BUY, payload: { code, value, date } }
+  return { type: ActionTypes.EDIT_PURCHASE, payload: { code, value, date } }
 }

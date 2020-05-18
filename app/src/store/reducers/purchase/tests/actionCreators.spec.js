@@ -18,7 +18,7 @@ describe('Purchase Action Creators', () => {
     const value = 250
     const date = '17/07/2019'
     const action = addBuy(code, value, date)
-    expect(action.type).toEqual(ActionTypes.ADD_BUY)
+    expect(action.type).toEqual(ActionTypes.CREATE_PURCHASE)
     expect(action.payload).toBeTruthy()
     expect(action.payload).toEqual({ code, value, date })
   })
@@ -33,7 +33,7 @@ describe('Purchase Action Creators', () => {
   it('deleteBuy', () => {
     const code = 255
     const action = deleteBuy(code)
-    expect(action.type).toEqual(ActionTypes.DELETE_BUY)
+    expect(action.type).toEqual(ActionTypes.DELETE_PURCHASE)
     expect(action.payload).toBeTruthy()
     expect(action.payload).toEqual({ code })
   })
@@ -42,7 +42,7 @@ describe('Purchase Action Creators', () => {
     const value = 250
     const date = '17/07/2019'
     const action = editBuy(code, value, date)
-    expect(action.type).toEqual(ActionTypes.EDIT_BUY)
+    expect(action.type).toEqual(ActionTypes.EDIT_PURCHASE)
     expect(action.payload).toBeTruthy()
     expect(action.payload).toEqual({ code, value, date })
   })
